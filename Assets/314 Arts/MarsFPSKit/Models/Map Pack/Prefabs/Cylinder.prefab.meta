@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: da1b1b0fdd00bce4b8cfb0640cb1182d
+timeCreated: 1499267966
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Models/Map Pack/Prefabs/Cylinder.prefab
+  uploadId: 938586

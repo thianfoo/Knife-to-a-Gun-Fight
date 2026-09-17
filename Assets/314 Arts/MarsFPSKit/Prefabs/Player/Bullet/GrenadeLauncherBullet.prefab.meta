@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d98c4234eb80d384b8af96b97f9db814
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/Player/Bullet/GrenadeLauncherBullet.prefab
+  uploadId: 938586

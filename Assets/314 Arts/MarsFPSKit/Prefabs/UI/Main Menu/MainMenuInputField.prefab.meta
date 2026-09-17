@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f9ff071a31f84164e8d9211de3ca2974
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/UI/Main Menu/MainMenuInputField.prefab
+  uploadId: 938586

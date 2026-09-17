@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c5687eb9ee555ac49b3a276928c19f4d
+timeCreated: 1494680761
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Animators/Weapons/GenericGun.controller
+  uploadId: 938586

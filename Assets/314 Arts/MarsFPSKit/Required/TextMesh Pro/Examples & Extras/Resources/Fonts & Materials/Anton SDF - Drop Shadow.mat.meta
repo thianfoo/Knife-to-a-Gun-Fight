@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 749b9069dc4742c5bfa5c74644049926
+timeCreated: 1484173523
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Required/TextMesh Pro/Examples & Extras/Resources/Fonts
+    & Materials/Anton SDF - Drop Shadow.mat
+  uploadId: 938586

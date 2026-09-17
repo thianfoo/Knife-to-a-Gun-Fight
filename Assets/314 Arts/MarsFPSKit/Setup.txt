@@ -1,0 +1,8 @@
+The project comes for Unity 2022.3.57f1 but will also work in other (later) versions.
+Before you can start using & modifying the kit, you will need to set the project up for the first time.
+Firstly, import the Mirror package from the asset store: https://assetstore.unity.com/packages/tools/network/mirror-129321
+Then, you need to connect the project with a Unity Project ID.
+You can find this in Edit/Project Settings/Services. You can either create a new Project ID here, or link it to an existing project.
+After you’ve done so, open the Unity Dashboard (https://cloud.unity.com). Make sure you’re logged in with the correct account.
+In the dashboard, select your project and activate the Lobby, Player Authentication and Relay services. Once those are activated, your project should be ready and work online!
+If you are having issues, don’t hesitate to contact us.

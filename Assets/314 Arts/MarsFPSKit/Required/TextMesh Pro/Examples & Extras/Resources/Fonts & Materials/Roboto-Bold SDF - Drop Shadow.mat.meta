@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b246c4190f4e46ec9352fe15a7b09ce0
+timeCreated: 1487723245
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Required/TextMesh Pro/Examples & Extras/Resources/Fonts
+    & Materials/Roboto-Bold SDF - Drop Shadow.mat
+  uploadId: 938586

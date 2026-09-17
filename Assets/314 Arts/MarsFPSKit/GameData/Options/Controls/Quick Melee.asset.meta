@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 76b83ec12d1497047b0d65d42989aae1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/GameData/Options/Controls/Quick Melee.asset
+  uploadId: 938586

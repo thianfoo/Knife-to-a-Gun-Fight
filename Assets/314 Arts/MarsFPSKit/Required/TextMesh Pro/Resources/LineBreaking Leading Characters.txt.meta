@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d82c1b31c7e74239bff1220585707d2b
+timeCreated: 1425440388
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Required/TextMesh Pro/Resources/LineBreaking
+    Leading Characters.txt
+  uploadId: 938586

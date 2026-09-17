@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 412823175078c1e4692957494933d09d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Materials/Game Mode/Domination/FlagTeamThree.mat
+  uploadId: 938586

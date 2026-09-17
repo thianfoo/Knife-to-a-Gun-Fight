@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: a38f4f9b63cdc7d44813191070d372c7
+timeCreated: 1497872307
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/UI/Victory Screen/Kit_VictoryScreen.cs
+  uploadId: 938586

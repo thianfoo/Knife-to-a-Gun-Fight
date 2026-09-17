@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: adca80b0404d5984da7ecf4beb55ee77
+timeCreated: 1547721313
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Models/Weapons/Bat/Prefabs/BaseBallBat_B.prefab
+  uploadId: 938586

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 46687f0908268384e950d07666434ffc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/GameData/Player/Weapons/Arms/Swimming.asset
+  uploadId: 938586

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5ca4c580b3888314581688fa46fb142d
+timeCreated: 1473946479
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Misc Effects/Prefabs/DustMotesEffect.prefab
+  uploadId: 938586

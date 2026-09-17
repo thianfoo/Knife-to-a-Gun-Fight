@@ -1,0 +1,583 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UserInterface_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c8fd8e9b5de7f1941989f8fc19a933b2, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 6989338168989057033
+  m_TableData:
+  - m_Id: 9432383488
+    m_Localized: Username
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8524758695936
+    m_Localized: Login
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9321038921728
+    m_Localized: Singleplayer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9339531608064
+    m_Localized: COOP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9356132663296
+    m_Localized: Multiplayer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9379130032128
+    m_Localized: Loadout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9396414758912
+    m_Localized: Statistics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9414383157248
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9435509866496
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9892303126528
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10107076657152
+    m_Localized: Browse Games
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10107940683776
+    m_Localized: Host Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10414112292864
+    m_Localized: HOST GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10439026458624
+    m_Localized: 'Room Name:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10454859956224
+    m_Localized: 'Room Password:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10469602934784
+    m_Localized: 'Game Mode:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10481963548672
+    m_Localized: 'Map:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10492851961856
+    m_Localized: 'Duration:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10506634444800
+    m_Localized: 'Player Limit:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10521666830336
+    m_Localized: 'Players Needed:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10538473406464
+    m_Localized: 'Ping Limit:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10552486576128
+    m_Localized: 'Afk Limit:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10566571048960
+    m_Localized: 'Bots:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10575064514560
+    m_Localized: 'Connectivity:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11059275939840
+    m_Localized: Host server
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11589884755968
+    m_Localized: Do you really want to quit?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11590711033856
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11592082571264
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11941317099520
+    m_Localized: BROWSE GAMES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11941858164736
+    m_Localized: Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11992168841216
+    m_Localized: Dedicated?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12003325689856
+    m_Localized: Game Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12013991804928
+    m_Localized: Map
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12023655481344
+    m_Localized: Players
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12032757121024
+    m_Localized: Ping
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12042357882880
+    m_Localized: Password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12055611883520
+    m_Localized: Join
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12068203184128
+    m_Localized: Refresh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12703363416064
+    m_Localized: Enter Password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12740105519104
+    m_Localized: Password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12777401270272
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12808506228736
+    m_Localized: Connect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13082419445760
+    m_Localized: Error!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13083019231232
+    m_Localized: OK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13914732937216
+    m_Localized: MULTIPLAYER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419348081983488
+    m_Localized: Disconnect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419736503894016
+    m_Localized: Start Vote
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419754480680960
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419775062130688
+    m_Localized: Disconnect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419669227257856
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419685945753600
+    m_Localized: Change Team
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419707575779328
+    m_Localized: Loadout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 438670112243712
+    m_Localized: Spawn Protection active!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 438779961065472
+    m_Localized: YOU ARE LEAVING THE BATTLEFIELD!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 438932293992448
+    m_Localized: Could not join team
+    m_Metadata:
+      m_Items: []
+  - m_Id: 439522885550080
+    m_Localized: Say to All
+    m_Metadata:
+      m_Items: []
+  - m_Id: 439541185298432
+    m_Localized: Say to Team
+    m_Metadata:
+      m_Items: []
+  - m_Id: 439667266076672
+    m_Localized: Waiting for more players to connect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 439850624270336
+    m_Localized: Auto respawn in {0} seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 439855212838912
+    m_Localized: Press F to respawn now
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441150783012864
+    m_Localized: Spectate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441318152519680
+    m_Localized: Blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441319977041920
+    m_Localized: Green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441320803319808
+    m_Localized: Red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441527779639296
+    m_Localized: Select Team
+    m_Metadata:
+      m_Items: []
+  - m_Id: 443775498764288
+    m_Localized: 'Level up!
+
+      {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455082876780544
+    m_Localized: Victory!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455083673698304
+    m_Localized: Defeat!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455084982321152
+    m_Localized: Tie!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455554043920384
+    m_Localized: You need to wait {0} seconds before you can start another vote!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455681668202496
+    m_Localized: A vote can currently not be started!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455771606663168
+    m_Localized: Only you are in this room!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455830133981184
+    m_Localized: Only one map is in this game!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455922601607168
+    m_Localized: This game only has one game mode!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455974745194496
+    m_Localized: 'Kick player: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456097399226368
+    m_Localized: 'Switch map to: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456179699859456
+    m_Localized: 'Switch Game Mode to: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456271198601216
+    m_Localized: F1 <color=#00ff00ff>YES</color> F2 <color=#ff0000ff>NO</color>
+    m_Metadata:
+      m_Items:
+      - rid: 6989338168989057033
+  - m_Id: 456444423356416
+    m_Localized: You voted <color=#ff0000ff>NO</color>
+    m_Metadata:
+      m_Items:
+      - rid: 6989338168989057033
+  - m_Id: 456429000900608
+    m_Localized: You voted <color=#00ff00ff>YES</color>
+    m_Metadata:
+      m_Items:
+      - rid: 6989338168989057033
+  - m_Id: 474363622506496
+    m_Localized: Kick Player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 474428500000768
+    m_Localized: Change Map
+    m_Metadata:
+      m_Items: []
+  - m_Id: 474469797117952
+    m_Localized: Change Game Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 474548268351488
+    m_Localized: Start Vote
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476897795817472
+    m_Localized: Spawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476953592643584
+    m_Localized: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476970751541248
+    m_Localized: Suicide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478060574326784
+    m_Localized: Deathmatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478101925969920
+    m_Localized: Domination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478134490546176
+    m_Localized: Gun Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478167742988288
+    m_Localized: Multi Team Deathmatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478201532301312
+    m_Localized: Multi Team Domination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478231781621760
+    m_Localized: Team Deathmatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1070886991347712
+    m_Localized: Sandbox
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071105032241152
+    m_Localized: SANDBOX SINGLEPLAYER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071204407885824
+    m_Localized: 'Map:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071307516461056
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071308384681984
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071445525839872
+    m_Localized: SANDBOX COOP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071448940003328
+    m_Localized: Browse Games
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071455323734016
+    m_Localized: Host Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072122234847232
+    m_Localized: Created By
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071990206545920
+    m_Localized: Browse Games
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072247107665920
+    m_Localized: Map
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072287616253952
+    m_Localized: Players
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072323708239872
+    m_Localized: Ping
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072360697806848
+    m_Localized: Refresh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089198911569920
+    m_Localized: 'K/D: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089195400937472
+    m_Localized: 'Deaths: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089194125869056
+    m_Localized: 'Assists: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089187888939008
+    m_Localized: 'Kills: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089187184295936
+    m_Localized: Statistics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1093788247703552
+    m_Localized: SELECT YOUR LOADOUT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094008566104064
+    m_Localized: SELECT CATEGORY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094146437070848
+    m_Localized: SELECT WEAPON CATEGORY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094295527800832
+    m_Localized: SELECT SUBCATEGORY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094403996696576
+    m_Localized: SELECT WEAPON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094529834205184
+    m_Localized: SELECT CATEGORY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094662755893248
+    m_Localized: SELECT ATTACHMENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094846848090112
+    m_Localized: SELECT TEAM TO CUSTOMIZE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094953488269312
+    m_Localized: SELECT YOUR NEW LOOKS!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1095545128402944
+    m_Localized: Loadout #{0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1095596189859840
+    m_Localized: '{0} [Unlocks at level {1}]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1101011346702336
+    m_Localized: 'Press [F] to: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1102396637233152
+    m_Localized: Weapons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1102397505454080
+    m_Localized: Player Model
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110733646905344
+    m_Localized: Enter Server Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110735370764288
+    m_Localized: Enter Server Password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110913884536832
+    m_Localized: '{0:p:{} player|{} players}'
+    m_Metadata:
+      m_Items:
+      - rid: 6989338168989057033
+  - m_Id: 1111598017462272
+    m_Localized: Disabled
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1111636747665408
+    m_Localized: Enabled
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113783124017152
+    m_Localized: Offline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113808570859520
+    m_Localized: Online
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113878456352768
+    m_Localized: '{0} ms'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113880138268672
+    m_Localized: '{0} seconds'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113881262342144
+    m_Localized: '{0} minutes'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 6989338168989057033
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 456271198601216
+        - id: 456429000900608
+        - id: 456444423356416
+        - id: 1110913884536832

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3a829e5f9fbaafc4e9adbf215a8cdd86
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Models/Game Mode Items/Medipack/Prefabs/Medipack.prefab
+  uploadId: 938586

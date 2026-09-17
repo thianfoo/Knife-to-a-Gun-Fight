@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 87220c434b13e684f84b32a5a04cf4be
+timeCreated: 1473950366
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/WeaponEffects/Materials/RocketTrailParticle.mat
+  uploadId: 938586

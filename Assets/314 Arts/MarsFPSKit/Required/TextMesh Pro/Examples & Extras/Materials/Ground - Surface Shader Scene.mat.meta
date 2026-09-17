@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: aadd5a709a48466c887296bb5b1b8110
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Required/TextMesh Pro/Examples & Extras/Materials/Ground
+    - Surface Shader Scene.mat
+  uploadId: 938586

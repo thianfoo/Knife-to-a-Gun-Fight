@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f88239865da4c79468e051ceb78c0317
+timeCreated: 1472113426
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/FireExplosionEffects/Materials/ShockWaveParticle.mat
+  uploadId: 938586

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 35042703e4f718f4dba8a9445d0be0ae
+timeCreated: 1498064767
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/GameLogic/PingLimit/Kit_PingLimitUIBase.cs
+  uploadId: 938586

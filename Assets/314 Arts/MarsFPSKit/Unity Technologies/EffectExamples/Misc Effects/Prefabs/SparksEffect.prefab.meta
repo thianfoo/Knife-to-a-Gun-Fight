@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 78b71003e8b357d4bbf89c8b5e5e4f0e
+timeCreated: 1473691359
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Misc Effects/Prefabs/SparksEffect.prefab
+  uploadId: 938586

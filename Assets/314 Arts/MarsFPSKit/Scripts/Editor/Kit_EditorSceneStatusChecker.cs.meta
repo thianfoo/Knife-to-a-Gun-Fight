@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e242ceba50e817f47b70c19b6bf9fd70
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/Editor/Kit_EditorSceneStatusChecker.cs
+  uploadId: 938586

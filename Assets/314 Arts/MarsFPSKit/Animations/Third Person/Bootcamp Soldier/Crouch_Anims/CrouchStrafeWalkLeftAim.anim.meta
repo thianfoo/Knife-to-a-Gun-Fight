@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 013daff9669c13244b6725389a2f5318
+timeCreated: 1536518565
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Animations/Third Person/Bootcamp Soldier/Crouch_Anims/CrouchStrafeWalkLeftAim.anim
+  uploadId: 938586

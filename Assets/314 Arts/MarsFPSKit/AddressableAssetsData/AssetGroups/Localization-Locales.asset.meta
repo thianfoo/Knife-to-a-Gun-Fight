@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0ce9da7ed54fe2943bf1ead83b627afb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/AddressableAssetsData/AssetGroups/Localization-Locales.asset
+  uploadId: 938586

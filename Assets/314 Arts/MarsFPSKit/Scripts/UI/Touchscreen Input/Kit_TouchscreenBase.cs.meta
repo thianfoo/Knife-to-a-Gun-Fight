@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 5bbd75351bf60a344a6edd77edd2506f
+timeCreated: 1523041712
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/UI/Touchscreen Input/Kit_TouchscreenBase.cs
+  uploadId: 938586

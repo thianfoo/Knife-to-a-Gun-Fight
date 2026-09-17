@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e27a3e2f84809914fa5bf3a7ac14ce9f
+timeCreated: 1473686037
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Misc Effects/Materials/DustMoteParticle.mat
+  uploadId: 938586

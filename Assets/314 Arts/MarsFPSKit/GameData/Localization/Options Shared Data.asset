@@ -1,0 +1,553 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Options Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Options
+  m_TableCollectionNameGuidString: 14efd8d8c5fc1ce4b805ca9d4348f943
+  m_Entries:
+  - m_Id: 1170386370560
+    m_Key: audio_mastervolume_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1195841601536
+    m_Key: audio_mastervolume_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1217580679168
+    m_Key: audio_voicechatmode_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1220286005248
+    m_Key: audio_voicechatmode_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1262635892736
+    m_Key: audio_voicemicrophone_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1263353118720
+    m_Key: audio_voicemicrophone_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1700730945536
+    m_Key: gameplay_aimingtoggle_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735094878208
+    m_Key: gameplay_aimingtoggle_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1750752215040
+    m_Key: gameplay_aimsens_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1775410528256
+    m_Key: gameplay_aimsens_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1792179355648
+    m_Key: gameplay_crouchtoggle_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1826371321856
+    m_Key: gameplay_crouchtoggle_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1846130688000
+    m_Key: gameplay_fov_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1865231548416
+    m_Key: gameplay_fov_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1885926244352
+    m_Key: gameplay_sensitivityscope_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1890552561664
+    m_Key: gameplay_sensitivityscope_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1972995801088
+    m_Key: gameplay_sensitivityhip_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1990209224704
+    m_Key: gameplay_sensitivityhip_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3084071124992
+    m_Key: graphics_anisotropicfiltering_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3085874675712
+    m_Key: graphics_anisotropicfiltering_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3534740701184
+    m_Key: graphics_fullscreen_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3535357263872
+    m_Key: graphics_fullscreen_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3757034618880
+    m_Key: graphics_lodbias_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3757592461312
+    m_Key: graphics_lodbias_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950702411776
+    m_Key: graphics_resolution_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3951331557376
+    m_Key: graphics_resolution_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4148371570688
+    m_Key: graphics_shadowdistance_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4149000716288
+    m_Key: graphics_shadowdistance_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4533765193728
+    m_Key: graphics_shadows_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4534461448192
+    m_Key: graphics_shadows_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703357681664
+    m_Key: graphics_softparticles_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703986827264
+    m_Key: graphics_softparticles_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5119390695424
+    m_Key: graphics_shadowresolution_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5119994675200
+    m_Key: graphics_shadowresolution_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5286265274368
+    m_Key: graphics_softvegetation_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5286894419968
+    m_Key: graphics_softvegetation_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5541048270848
+    m_Key: graphics_texturequality_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5541652250624
+    m_Key: graphics_texturequality_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5706945576960
+    m_Key: graphics_vsync_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5707541168128
+    m_Key: graphics_vsync_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6257586388992
+    m_Key: controls_changeperspective_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6259280887808
+    m_Key: controls_changeperspective_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6259968753664
+    m_Key: controls_crouch_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6260585316352
+    m_Key: controls_crouch_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6261168324608
+    m_Key: controls_cyclegrenadelethal_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6261730361344
+    m_Key: controls_cyclegrenadelethal_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6262300786688
+    m_Key: controls_cyclegrenadenonlethal_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6262833463296
+    m_Key: controls_cyclegrenadenonlethal_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6263424860160
+    m_Key: controls_fire_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6263957536768
+    m_Key: controls_fire_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6269909254144
+    m_Key: controls_flashlight_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6271893159936
+    m_Key: controls_flashlight_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6274694955008
+    m_Key: controls_grenadelethal_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6277006016512
+    m_Key: controls_grenadelethal_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6278734069760
+    m_Key: controls_grenadenonlethal_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6280634089472
+    m_Key: controls_grenadenonlethal_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6281271623680
+    m_Key: controls_jump_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6281867214848
+    m_Key: controls_jump_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6282487971840
+    m_Key: controls_laser_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6283100340224
+    m_Key: controls_laser_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6283733680128
+    m_Key: controls_leanleft_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6284362825728
+    m_Key: controls_leanleft_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6285021331456
+    m_Key: controls_leanright_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6285608534016
+    m_Key: controls_leanright_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6286250262528
+    m_Key: controls_melee_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6286866825216
+    m_Key: controls_melee_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6287487582208
+    m_Key: controls_move_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6288200613888
+    m_Key: controls_move_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6288892674048
+    m_Key: controls_move1_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6289530208256
+    m_Key: controls_move1_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6290192908288
+    m_Key: controls_move2_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6290801082368
+    m_Key: controls_move2_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6291400867840
+    m_Key: controls_move3_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6292025819136
+    m_Key: controls_move3_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6292688519168
+    m_Key: controls_nextweapon_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6293313470464
+    m_Key: controls_nextweapon_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6293900673024
+    m_Key: controls_previousweapon_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6294504652800
+    m_Key: controls_previousweapon_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6295108632576
+    m_Key: controls_primary_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6295700029440
+    m_Key: controls_primary_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6296274649088
+    m_Key: controls_quickgrenadelethal_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6296815714304
+    m_Key: controls_quickgrenadelethal_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6297449054208
+    m_Key: controls_quickgrenadenonlethal_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6298048839680
+    m_Key: controls_quickgrenadenonlethal_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6298623459328
+    m_Key: controls_quickmelee_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6299240022016
+    m_Key: controls_quickmelee_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6299793670144
+    m_Key: controls_reload_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6300351512576
+    m_Key: controls_reload_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6300951298048
+    m_Key: controls_respawn_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6301538500608
+    m_Key: controls_respawn_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6302180229120
+    m_Key: controls_run_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6302868094976
+    m_Key: controls_run_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6303518212096
+    m_Key: controls_scoreboard_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6304134774784
+    m_Key: controls_scoreboard_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6304814252032
+    m_Key: controls_secondary_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6305497923584
+    m_Key: controls_secondary_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6306072543232
+    m_Key: controls_use_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6306663940096
+    m_Key: controls_use_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6307305668608
+    m_Key: controls_voicechat_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6307959980032
+    m_Key: controls_voicechat_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6321373364224
+    m_Key: controls_voteno_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6322073812992
+    m_Key: controls_voteno_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6322761678848
+    m_Key: controls_voteyes_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6323474710528
+    m_Key: controls_voteyes_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7489126318080
+    m_Key: controls_bombselect_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7489814183936
+    m_Key: controls_bombselect_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7521497956352
+    m_Key: controls_bombquickuse_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7550753226752
+    m_Key: controls_bombquickuse_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7554117058560
+    m_Key: controls_aim_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7580289515520
+    m_Key: controls_aim_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14285152894976
+    m_Key: category_graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14286276968448
+    m_Key: category_audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14287837249536
+    m_Key: category_gameplay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14289376559104
+    m_Key: category_controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15533604257792
+    m_Key: graphics_anisotropicfiltering_opt0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15534728331264
+    m_Key: graphics_anisotropicfiltering_opt1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15536561242112
+    m_Key: graphics_anisotropicfiltering_opt2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16316911501312
+    m_Key: graphics_shadowresolution_opt0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16343205593088
+    m_Key: graphics_shadowresolution_opt1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16349778067456
+    m_Key: graphics_shadowresolution_opt2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16356467982336
+    m_Key: graphics_shadowresolution_opt3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16904025980928
+    m_Key: graphics_shadows_opt0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16904730624000
+    m_Key: graphics_shadows_opt1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16906412539904
+    m_Key: graphics_shadows_opt2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17236940472320
+    m_Key: graphics_textureresolution_opt0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17238655942656
+    m_Key: graphics_textureresolution_opt1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17239788404736
+    m_Key: graphics_textureresolution_opt2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17241285771264
+    m_Key: graphics_textureresolution_opt3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 696078139047936
+    m_Key: category_display
+    m_Metadata:
+      m_Items: []
+  - m_Id: 696106677092352
+    m_Key: display_language_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 696140562874368
+    m_Key: display_language_description
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6989338168989057026
+  references:
+    version: 2
+    RefIds:
+    - rid: 6989338168989057026
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1740842226852

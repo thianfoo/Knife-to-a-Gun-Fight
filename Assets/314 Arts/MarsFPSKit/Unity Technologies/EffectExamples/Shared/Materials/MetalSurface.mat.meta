@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4f477167fc0be5e4dab9a125b37c42ad
+timeCreated: 1474989036
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Shared/Materials/MetalSurface.mat
+  uploadId: 938586

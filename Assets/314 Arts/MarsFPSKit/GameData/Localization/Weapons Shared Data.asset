@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Weapons Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Weapons
+  m_TableCollectionNameGuidString: 79bd515e68cf49f4e98361f598b9583c
+  m_Entries:
+  - m_Id: 4424384512
+    m_Key: arms_swimming
+    m_Metadata:
+      m_Items: []
+  - m_Id: 121156059136
+    m_Key: flashbang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157176741888
+    m_Key: fraggrenade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 193344225280
+    m_Key: smokegrenade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 288265519104
+    m_Key: bat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 332322488320
+    m_Key: unselectable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 390707200000
+    m_Key: pistol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 444348153856
+    m_Key: automaticrifle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 517689753600
+    m_Key: sniper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 577064321024
+    m_Key: shotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1307514945536
+    m_Key: category_primary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1328335470592
+    m_Key: category_secondary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1337764265984
+    m_Key: category_melee
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1348610736128
+    m_Key: category_lethal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1360300261376
+    m_Key: category_nonlethal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2728687747072
+    m_Key: subcategory_rifle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2752586891264
+    m_Key: subcategory_pistol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2778293780480
+    m_Key: subcategory_melee
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2798619377664
+    m_Key: subcategory_grenade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2818001256448
+    m_Key: subcategory_other
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6989338209751138387
+  references:
+    version: 2
+    RefIds:
+    - rid: 6989338209751138387
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1741004600598

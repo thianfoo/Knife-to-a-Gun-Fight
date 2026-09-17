@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5e0b7dc1782a986469ed1446388360f5
+timeCreated: 1473092108
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Shared/Shaders/SurfaceShader_VC.shader
+  uploadId: 938586

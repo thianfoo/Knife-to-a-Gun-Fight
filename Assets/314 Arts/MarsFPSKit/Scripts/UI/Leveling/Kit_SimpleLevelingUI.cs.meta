@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 62a55bea9765d154ca988db14bc25d6b
+timeCreated: 1518968473
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/UI/Leveling/Kit_SimpleLevelingUI.cs
+  uploadId: 938586

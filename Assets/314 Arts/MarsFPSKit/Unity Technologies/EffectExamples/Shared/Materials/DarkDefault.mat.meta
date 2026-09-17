@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2062b6d0a7a2d4f46b4689198aedadd9
+timeCreated: 1471344566
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Shared/Materials/DarkDefault.mat
+  uploadId: 938586

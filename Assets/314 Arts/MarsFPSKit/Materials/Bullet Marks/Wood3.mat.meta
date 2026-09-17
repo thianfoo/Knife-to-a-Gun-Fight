@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 32a2f8a35e4549c49a2783a6d8372482
+timeCreated: 1494757498
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Materials/Bullet Marks/Wood3.mat
+  uploadId: 938586

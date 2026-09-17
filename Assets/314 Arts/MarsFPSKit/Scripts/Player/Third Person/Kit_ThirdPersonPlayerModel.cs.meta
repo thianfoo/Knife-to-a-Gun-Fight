@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 2b4c712d8b690d044b76b71c81917e26
+timeCreated: 1492177525
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/Player/Third Person/Kit_ThirdPersonPlayerModel.cs
+  uploadId: 938586

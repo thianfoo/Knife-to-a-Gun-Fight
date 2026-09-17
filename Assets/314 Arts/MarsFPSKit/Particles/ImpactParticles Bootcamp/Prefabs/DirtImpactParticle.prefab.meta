@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 03de6bc49ffb0c4419c754b4fd50f3e7
+timeCreated: 1494712518
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Particles/ImpactParticles Bootcamp/Prefabs/DirtImpactParticle.prefab
+  uploadId: 938586

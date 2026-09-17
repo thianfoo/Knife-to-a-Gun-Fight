@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dd9d60bf34f89ec4b8d42dfb359b5e93
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/UI/Ingame/MultiTeam/DominationPoints.prefab
+  uploadId: 938586

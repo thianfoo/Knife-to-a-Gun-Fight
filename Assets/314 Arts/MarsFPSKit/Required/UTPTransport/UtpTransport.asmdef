@@ -1,0 +1,21 @@
+{
+    "name": "UtpTransport",
+    "rootNamespace": "",
+    "references": [
+        "Mirror",
+        "Unity.Collections",
+        "Unity.Networking.Transport",
+        "Unity.Burst",
+        "Unity.Services.Multiplayer",
+        "Unity.Services.Relay"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

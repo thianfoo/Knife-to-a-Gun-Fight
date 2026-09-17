@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7366dc833f29f50459b68b6bc86ec8fb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Resources/ExplosiveBarrelNetworked.prefab
+  uploadId: 938586

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ec069ed34bd73fa4897ca2e96349c297
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/UI/Game Mode Menus/SandboxPveScreen.prefab
+  uploadId: 938586

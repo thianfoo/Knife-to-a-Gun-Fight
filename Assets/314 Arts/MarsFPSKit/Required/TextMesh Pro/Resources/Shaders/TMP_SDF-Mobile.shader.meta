@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: fe393ace9b354375a9cb14cdbbc28be4
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Required/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader
+  uploadId: 938586

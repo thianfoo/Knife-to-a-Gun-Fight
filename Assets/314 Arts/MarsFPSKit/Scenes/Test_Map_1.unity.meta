@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 23c19a8aaac50d445a64ed8ae18ef3d9
+timeCreated: 1499173352
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scenes/Test_Map_1.unity
+  uploadId: 938586

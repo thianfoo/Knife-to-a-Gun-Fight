@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 16ed2e5c3551d294dad4617aac3d7bfe
+timeCreated: 1496410815
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: -1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Animations/First Person/Generic/Reload.anim
+  uploadId: 938586

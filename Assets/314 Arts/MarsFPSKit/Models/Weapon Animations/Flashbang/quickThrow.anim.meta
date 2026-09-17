@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 79498d0ac54b96546a7bb7d911b97da3
+timeCreated: 1551116251
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Models/Weapon Animations/Flashbang/quickThrow.anim
+  uploadId: 938586

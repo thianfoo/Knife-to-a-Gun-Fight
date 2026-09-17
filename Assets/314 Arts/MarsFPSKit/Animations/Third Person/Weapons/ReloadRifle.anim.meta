@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2a5f8a2a0440478488ad4de8c927a45e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Animations/Third Person/Weapons/ReloadRifle.anim
+  uploadId: 938586

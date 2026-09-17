@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4f4797b789a21ca478ab609686f94216
+timeCreated: 1478026271
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/GameData/Game Modes/PvP/Deathmatch.asset
+  uploadId: 938586

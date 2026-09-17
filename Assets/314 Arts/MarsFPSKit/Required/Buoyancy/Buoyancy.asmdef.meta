@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 87dc678343f400e4197ec665ec8a21d2
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Required/Buoyancy/Buoyancy.asmdef
+  uploadId: 938586

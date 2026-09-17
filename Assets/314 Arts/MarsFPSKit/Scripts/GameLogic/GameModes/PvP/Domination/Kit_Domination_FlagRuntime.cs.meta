@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 524125eb535199749b6056555afe4657
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/GameLogic/GameModes/PvP/Domination/Kit_Domination_FlagRuntime.cs
+  uploadId: 938586

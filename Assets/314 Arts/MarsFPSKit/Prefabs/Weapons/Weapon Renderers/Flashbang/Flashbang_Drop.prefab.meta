@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0fd9dd391dd05bf469f8534585b36947
+timeCreated: 1551117184
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/Weapons/Weapon Renderers/Flashbang/Flashbang_Drop.prefab
+  uploadId: 938586

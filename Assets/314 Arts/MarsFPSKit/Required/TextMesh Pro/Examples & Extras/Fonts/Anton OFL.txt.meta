@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 73a79399807f4e8388c2cbb5494681ca
+timeCreated: 1484172033
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Required/TextMesh Pro/Examples & Extras/Fonts/Anton
+    OFL.txt
+  uploadId: 938586

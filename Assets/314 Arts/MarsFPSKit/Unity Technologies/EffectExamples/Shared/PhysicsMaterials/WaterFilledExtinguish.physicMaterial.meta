@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8e48a96595df5904da1626980936ebf7
+timeCreated: 1473778434
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Shared/PhysicsMaterials/WaterFilledExtinguish.physicMaterial
+  uploadId: 938586

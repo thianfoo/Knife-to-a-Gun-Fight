@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8d527b3ac98fb5e488927e4d339f56dd
+timeCreated: 1536518563
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Animations/Third Person/Bootcamp Soldier/Run_Anims/StrafeRunLeftAim.anim
+  uploadId: 938586

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c9edc618f3aff41ac1490e94303049, type: 3}
+  m_Name: Null attachment
+  m_EditorClassIdentifier: 
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:907e75d82f4b25845a3c95933ae70c30
+    m_TableEntryReference:
+      m_KeyId: 203775459328
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  defaultSet:
+    fpPrefab: {fileID: 0}
+    tpPrefabOverride: {fileID: 0}
+    dropPrefabOverride: {fileID: 0}
+  skinOverride:
+    m_keys: []
+    m_values: []
+  generalStatChanges:
+    changes: []
+  statChangeWeaponOverride:
+    m_keys: []
+    m_values: []
+  references:
+    version: 2
+    RefIds: []

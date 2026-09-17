@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 26274add81be9414cb9b3c6bcbd0beb2
+timeCreated: 1502216366
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/_Other314ArtsAssets/Attachments/Silencer/Materials/Cylinder002Mat.mat
+  uploadId: 938586

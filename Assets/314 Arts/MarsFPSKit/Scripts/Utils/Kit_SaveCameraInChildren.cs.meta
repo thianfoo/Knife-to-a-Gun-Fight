@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: d6d83fb3fd5b3bb4a98cdf9444668942
+timeCreated: 1556021132
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/Utils/Kit_SaveCameraInChildren.cs
+  uploadId: 938586

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bac09393288f8ce408bcf6d088001359
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Animations/UI/MainMenu/LoadingScreenStart.anim
+  uploadId: 938586

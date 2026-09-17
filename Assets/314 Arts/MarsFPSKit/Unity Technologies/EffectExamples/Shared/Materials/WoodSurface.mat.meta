@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ce4b77858ec6c0f469b07b034c21a85f
+timeCreated: 1473953683
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Shared/Materials/WoodSurface.mat
+  uploadId: 938586

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fd8ebe3c7242d364bae68f1548ae70bf
+timeCreated: 1473952868
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/WeaponEffects/Materials/WoodSplintersParticle.mat
+  uploadId: 938586

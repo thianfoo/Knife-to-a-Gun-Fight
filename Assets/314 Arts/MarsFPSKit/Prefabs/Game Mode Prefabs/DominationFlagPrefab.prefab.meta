@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 69c7e7e4bf9be5c4da8e0d2769da0f14
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/Game Mode Prefabs/DominationFlagPrefab.prefab
+  uploadId: 938586

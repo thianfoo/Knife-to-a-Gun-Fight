@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ad8cdca6a3106ad4c803418b75648555
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/Network/GameModeDataMultiTeamDomination.prefab
+  uploadId: 938586

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: b0f59db88820c1f41a336a8018a5565d
+timeCreated: 1532622451
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Resources/AmmoPickup.prefab
+  uploadId: 938586

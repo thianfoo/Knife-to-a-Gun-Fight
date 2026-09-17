@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b620f94abccc6384a93359802034f915
+timeCreated: 1496000642
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/Weapons/Weapon Renderers/Pistol/Pistol_TP.prefab
+  uploadId: 938586

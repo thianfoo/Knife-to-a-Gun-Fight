@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4011b36faa3f5ff4da6e784bbae8bf8f
+timeCreated: 1536518562
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Animations/Third Person/Bootcamp Soldier/Idle_Standing_Anims/StandingFire.anim
+  uploadId: 938586

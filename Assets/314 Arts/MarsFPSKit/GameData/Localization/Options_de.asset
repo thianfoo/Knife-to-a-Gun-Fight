@@ -1,0 +1,558 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Options_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 14efd8d8c5fc1ce4b805ca9d4348f943, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1170386370560
+    m_Localized: "Lautst\xE4rke"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1195841601536
+    m_Localized: "Lautst\xE4rke von allem"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1217580679168
+    m_Localized: Sprachchat-Modus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1220286005248
+    m_Localized: "Wie du den Sprachchat benutzen m\xF6chtest"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1262635892736
+    m_Localized: Sprachchat-Mikrofon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1263353118720
+    m_Localized: "Welches Mikrofon f\xFCr den Sprachchat benutzt werden soll"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1700730945536
+    m_Localized: ADS wechseln
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735094878208
+    m_Localized: Ob das Zielen mit wechsel (wahr) oder halten (falsch) sein soll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1750752215040
+    m_Localized: "ADS Sensitivit\xE4t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1775410528256
+    m_Localized: "Sensitivit\xE4t beim Zielen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1792179355648
+    m_Localized: Ducken wechseln
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1826371321856
+    m_Localized: Ob das Ducken mit wechsel (wahr) oder halten (falsch) sein soll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1846130688000
+    m_Localized: Sichtfeld (FOV)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1865231548416
+    m_Localized: Wie viel du sehen kannst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1885926244352
+    m_Localized: "Visier Sensitivit\xE4t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1890552561664
+    m_Localized: "Sensitivit\xE4t beim Zielen mit einem Scharfsch\xFCtzengewehr"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1972995801088
+    m_Localized: "H\xFCfte Sensitivit\xE4t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1990209224704
+    m_Localized: "Sensitivit\xE4t beim zielen aus der H\xFCfte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3085874675712
+    m_Localized: "Anisotrope Filterung wird h\xE4ufig verwendet, um das Erscheinungsbild
+      von Boden-, Untergrund- oder Stra\xDFentexturen zu verbessern."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3084071124992
+    m_Localized: Anisotrope Filterung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3534740701184
+    m_Localized: Vollbild
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3535357263872
+    m_Localized: Sollte das Spiel im Vollbild (wahr) oder Fenstermodus (falsch) laufen?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3757034618880
+    m_Localized: LOD-Bias
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3757592461312
+    m_Localized: "Globaler Multiplikator f\xFCr die Umschaltdistanz des LOD.\r\n\r\nEin
+      gr\xF6\xDFerer Wert f\xFChrt zu einer gr\xF6\xDFeren Sichtdistanz, bevor ein
+      LOD mit niedrigerer Aufl\xF6sung ausgew\xE4hlt wird."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950702411776
+    m_Localized: "Aufl\xF6sung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3951331557376
+    m_Localized: "Die Aufl\xF6sung in welcher das Spiel ausgegeben werden soll"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4148371570688
+    m_Localized: Schattendistanz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4149000716288
+    m_Localized: Wie weit Schatten sichtbar sein sollten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4533765193728
+    m_Localized: Schatten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4534461448192
+    m_Localized: Welche Art von Schatten gerendert werden soll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703357681664
+    m_Localized: Weiche Partikel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703986827264
+    m_Localized: "Ist diese Einstellung an k\xF6nnen Partikel weiche \xFCberg\xE4nge
+      an harten Kanten haben"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5119390695424
+    m_Localized: "Schattenaufl\xF6sung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5119994675200
+    m_Localized: Wie detailreich Schatten gerendert werden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5286265274368
+    m_Localized: Weiche Vegetation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5286894419968
+    m_Localized: "Wenn aktiviert, hat die Vegetation gegl\xE4ttete Kanten. Wenn deaktiviert,
+      haben alle Pflanzen harte Kanten, werden aber etwa doppelt so schnell gerendert."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5541048270848
+    m_Localized: "Texturqualit\xE4t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5541652250624
+    m_Localized: Wie detailreich texturen sind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5706945576960
+    m_Localized: V-Sync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5707541168128
+    m_Localized: Wenn diese Option aktiviert ist, wird die Bildwiederholfrequenz
+      des Spiels mit der Ihres Monitors synchronisiert, um Screen Tearing zu verhindern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7554117058560
+    m_Localized: ADS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7580289515520
+    m_Localized: Zielen mit Kimme und Korn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7521497956352
+    m_Localized: Bombe (Schnell)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7550753226752
+    m_Localized: "Diesen Knopf gedr\xFCckt halten um die Bombe zu legen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7489126318080
+    m_Localized: "Bombe (Ausw\xE4hlen)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7489814183936
+    m_Localized: "Diesen Knopf dr\xFCcken um die Bombe auszuw\xE4hlen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6322761678848
+    m_Localized: Abstimmen mit Ja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6323474710528
+    m_Localized: "Diesen Knopf dr\xFCcken um mit JA abzustimmen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6321373364224
+    m_Localized: Abstimmen mit Nein
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6322073812992
+    m_Localized: "Diesen Knopf dr\xFCcken um mit NEIN abzustimmen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6269909254144
+    m_Localized: Taschenlampe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6271893159936
+    m_Localized: Die Taschenlampe an oder aus machen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6274694955008
+    m_Localized: "Granate t\xF6dlich (Ausw\xE4hlen)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6277006016512
+    m_Localized: "Diesen Knopf dr\xFCcken um die t\xF6dliche Granate auszur\xFCsten"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6278734069760
+    m_Localized: "Granate nicht-t\xF6dlich (Ausw\xE4hlen)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6280634089472
+    m_Localized: "Diesen Knopf dr\xFCcken um die nicht-t\xF6dliche Granate auszur\xFCsten"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6281271623680
+    m_Localized: Springen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6281867214848
+    m_Localized: "Diesen Knopf dr\xFCcken um zu springen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6282487971840
+    m_Localized: Laser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6283100340224
+    m_Localized: "Diesen Knopf dr\xFCcken um das Laser-Attachment an/aus zu machen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6283733680128
+    m_Localized: Lehnen Link
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6285021331456
+    m_Localized: Lehnen Rechts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6284362825728
+    m_Localized: Diesen Knopf halten um nach links zu lehnen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6285608534016
+    m_Localized: Diesen Knopf halten um nach rechts zu lehnen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6286250262528
+    m_Localized: "Nahkampf (Ausw\xE4hlen)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6286866825216
+    m_Localized: "Diesen Knopf dr\xFCcken um die Nahkampfwaffe auszuw\xE4hlen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6287487582208
+    m_Localized: "Vorw\xE4rts"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6288200613888
+    m_Localized: "Diesen Knopf halten um vorw\xE4rts zu laufen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6288892674048
+    m_Localized: Links
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6289530208256
+    m_Localized: Diesen Knopf halten um nach links zu laufen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6290192908288
+    m_Localized: "R\xFCckw\xE4rts"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6290801082368
+    m_Localized: "Diesen Knopf halten um r\xFCckw\xE4rts zu laufen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6291400867840
+    m_Localized: Rechts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6292025819136
+    m_Localized: Diesen Knopf halten um nach rechts zu laufen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6292688519168
+    m_Localized: "N\xE4chste Waffe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6293313470464
+    m_Localized: "Diesen Knopf dr\xFCcken um die n\xE4chste Waffe auszuw\xE4hlen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6293900673024
+    m_Localized: Vorherige Waffe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6294504652800
+    m_Localized: "Diesen Knopf dr\xFCcken um die vorherige Waffe auszuw\xE4hlen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6295108632576
+    m_Localized: "Prim\xE4rwaffe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6295700029440
+    m_Localized: "Diesen Knopf dr\xFCcken um die Prim\xE4rwaffe auszuw\xE4hlen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6296274649088
+    m_Localized: "Granate t\xF6dlich (schnell)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6296815714304
+    m_Localized: "Halten diese Taste gedr\xFCckt, um die Granate zu feuern, und lasse
+      sie los, um sie zu werfen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6297449054208
+    m_Localized: "Granate nicht-t\xF6dlich (schnell)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6298048839680
+    m_Localized: "Halten diese Taste gedr\xFCckt, um die Granate zu feuern, und lasse
+      sie los, um sie zu werfen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6298623459328
+    m_Localized: Nahkampf (schnell)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6299240022016
+    m_Localized: "Diesen Knopf dr\xFCcken um einen schnellen Nahkampf auszuf\xFChren"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6299793670144
+    m_Localized: Nachladen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6300351512576
+    m_Localized: "Diesen Knopf dr\xFCcken um deine Waffe nachzuladen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6300951298048
+    m_Localized: Respawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6301538500608
+    m_Localized: "Diesen Knopf dr\xFCcken um zu respawnen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6302180229120
+    m_Localized: Rennen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6302868094976
+    m_Localized: "Diesen Knopf dr\xFCcken um zu rennen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6303518212096
+    m_Localized: Scoreboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6304134774784
+    m_Localized: "Diesen Knopf gedr\xFCckt halten um das Scoreboard anzuzeigen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6304814252032
+    m_Localized: "Sekund\xE4rwaffe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6305497923584
+    m_Localized: "Diesen Knopf dr\xFCcken um die Sekund\xE4rwaffe auszur\xFCsten"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6306072543232
+    m_Localized: Benutzen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6306663940096
+    m_Localized: "Diesen Knopf dr\xFCcken um etwas zu benutzen (falls angezeigt)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6307305668608
+    m_Localized: "Sprachchat Push to Talk (Dr\xFCcken zum Reden)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6307959980032
+    m_Localized: Diese Taste halten um zu reden und loslassen um wieder zu schweigen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6263424860160
+    m_Localized: Feuern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6263957536768
+    m_Localized: "Diesen Knopf dr\xFCcken um deine Waffe abzufeuern"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6262300786688
+    m_Localized: "Nicht-t\xF6dliche Granate wechseln"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6261168324608
+    m_Localized: "T\xF6dliche Granate wechseln"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6262833463296
+    m_Localized: "Falls mehrere Granaten in deinem nicht-t\xF6dlichen Granatenslot
+      ausger\xFCstet sind kannst du mit diesem Knopf zwischen ihnen wechseln"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6261730361344
+    m_Localized: "Falls mehrere Granaten in deinem t\xF6dlichen Granatenslot ausger\xFCstet
+      sind kannst du mit diesem Knopf zwischen ihnen wechseln"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6259968753664
+    m_Localized: Ducken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6260585316352
+    m_Localized: "Diesen Knopf dr\xFCcken um zu ducken"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6257586388992
+    m_Localized: Perspektive Wechseln
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6259280887808
+    m_Localized: "Diesen Knopf dr\xFCcken um zwischen erster und dritter Person-Ansicht
+      zu wechseln"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14289376559104
+    m_Localized: Steuerung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14287837249536
+    m_Localized: Gameplay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14286276968448
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14285152894976
+    m_Localized: Grafik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15533604257792
+    m_Localized: Aus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15534728331264
+    m_Localized: Ein
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15536561242112
+    m_Localized: Erzwingen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16316911501312
+    m_Localized: Niedrig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16343205593088
+    m_Localized: Mittel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16349778067456
+    m_Localized: Hoch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16356467982336
+    m_Localized: Sehr Hoch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16904025980928
+    m_Localized: Aus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16904730624000
+    m_Localized: Hart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16906412539904
+    m_Localized: Weich
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17236940472320
+    m_Localized: Sehr Hoch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17238655942656
+    m_Localized: Hoch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17239788404736
+    m_Localized: Mittel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17241285771264
+    m_Localized: Niedrig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 696078139047936
+    m_Localized: Anzeige
+    m_Metadata:
+      m_Items: []
+  - m_Id: 696106677092352
+    m_Localized: Sprache
+    m_Metadata:
+      m_Items: []
+  - m_Id: 696140562874368
+    m_Localized: In welcher Sprache der Text im Spiel ist
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

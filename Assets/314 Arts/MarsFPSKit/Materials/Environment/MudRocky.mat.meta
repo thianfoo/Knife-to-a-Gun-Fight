@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3bedbd91c4dec8844849bd9a22c8f0ad
+timeCreated: 1496249114
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Materials/Environment/MudRocky.mat
+  uploadId: 938586

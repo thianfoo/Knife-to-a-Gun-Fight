@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 20d9ae3e8b23ffc4e81027a5e76edeaf
+timeCreated: 1502185714
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/UI/Voting/Kit_VotingBase.cs
+  uploadId: 938586

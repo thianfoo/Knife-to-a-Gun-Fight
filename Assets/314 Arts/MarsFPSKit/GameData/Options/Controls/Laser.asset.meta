@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: abb1eac8dd2e5f940936bb68f9fc7a23
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/GameData/Options/Controls/Laser.asset
+  uploadId: 938586

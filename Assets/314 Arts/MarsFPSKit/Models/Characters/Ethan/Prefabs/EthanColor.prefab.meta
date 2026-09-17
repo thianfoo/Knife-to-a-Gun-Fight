@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7648123c1b0624a4ea7b3fc06058179c
+timeCreated: 1536081562
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Models/Characters/Ethan/Prefabs/EthanColor.prefab
+  uploadId: 938586

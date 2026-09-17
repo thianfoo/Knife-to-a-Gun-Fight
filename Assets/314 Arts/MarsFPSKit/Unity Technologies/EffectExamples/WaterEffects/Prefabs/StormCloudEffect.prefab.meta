@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ca55dd9d7d291014a8b13aaf95318a3a
+timeCreated: 1473256939
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/WaterEffects/Prefabs/StormCloudEffect.prefab
+  uploadId: 938586

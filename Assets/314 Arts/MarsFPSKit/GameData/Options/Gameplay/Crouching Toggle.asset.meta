@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6bd3d0e6a8f5f964c87ea7bb54629146
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/GameData/Options/Gameplay/Crouching Toggle.asset
+  uploadId: 938586

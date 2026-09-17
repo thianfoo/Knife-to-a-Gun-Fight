@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a24a209a6bd187d49929d1a6d40a92ec
+timeCreated: 1473426796
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/WeaponEffects/Materials/Projectile.mat
+  uploadId: 938586

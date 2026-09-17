@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7bb7b9145f1e49c4692d5ee817f52a1f
+timeCreated: 1494070039
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Animators/Weapons/FP_SmokeGrenade.controller
+  uploadId: 938586

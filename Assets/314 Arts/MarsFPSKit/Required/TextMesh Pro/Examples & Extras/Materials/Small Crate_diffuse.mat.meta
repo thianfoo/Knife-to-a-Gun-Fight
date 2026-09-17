@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 22262639920f43d6be32430e4e58350d
+timeCreated: 1473643741
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Required/TextMesh Pro/Examples & Extras/Materials/Small
+    Crate_diffuse.mat
+  uploadId: 938586

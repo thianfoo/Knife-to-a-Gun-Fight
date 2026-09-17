@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1841fcd8bc2b1b64099a661cf01fd87e
+timeCreated: 1494185504
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/UI/KillFeedEntryPrefab.prefab
+  uploadId: 938586

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Attachments_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 907e75d82f4b25845a3c95933ae70c30, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6219546624
+    m_Localized: "Schalld\xE4mpfer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751551561728
+    m_Localized: Auf dem Lauf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110116651008
+    m_Localized: Taschenlampe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160494436352
+    m_Localized: flashlight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 203775459328
+    m_Localized: Nichts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 235039801344
+    m_Localized: Rotpunktvisier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772648910848
+    m_Localized: Aussehen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 830966513664
+    m_Localized: Visier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 870699155456
+    m_Localized: Seite
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

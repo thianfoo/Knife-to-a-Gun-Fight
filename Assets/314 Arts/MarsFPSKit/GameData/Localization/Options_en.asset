@@ -1,0 +1,553 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Options_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 14efd8d8c5fc1ce4b805ca9d4348f943, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1170386370560
+    m_Localized: Master Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1195841601536
+    m_Localized: Controls the volume of everything
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1217580679168
+    m_Localized: Voice Chat Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1220286005248
+    m_Localized: How you want to use voice chat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1262635892736
+    m_Localized: Voice Chat Microphone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1263353118720
+    m_Localized: Microphone to use for the voice chat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1700730945536
+    m_Localized: Aiming Toggle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735094878208
+    m_Localized: Wether the aiming should be toggle (true) or hold (false)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1750752215040
+    m_Localized: Aim Sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1775410528256
+    m_Localized: Sensitivity while ADS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1792179355648
+    m_Localized: Crouch Toggle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1826371321856
+    m_Localized: Wether the crouching should be toggle (true) or hold (false)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1846130688000
+    m_Localized: Field of View
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1865231548416
+    m_Localized: How much you can see
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1885926244352
+    m_Localized: Scope Sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1890552561664
+    m_Localized: Sensitivity while in a sniper scope
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1972995801088
+    m_Localized: Hip Sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1990209224704
+    m_Localized: Sensitivity while not scoping
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3084071124992
+    m_Localized: Anisotropic Filtering
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3085874675712
+    m_Localized: Anisotropic filtering is commonly used to improve the appearance
+      of floor, ground or road Textures
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3534740701184
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3535357263872
+    m_Localized: Should the game run in fullscreen (true) or windowed mode (false)?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3757034618880
+    m_Localized: LOD-Bias
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3757592461312
+    m_Localized: "Global multiplier for the LOD's switching distance.\r\n\r\nA larger
+      value leads to a longer view distance before a lower resolution LOD is picked.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950702411776
+    m_Localized: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3951331557376
+    m_Localized: The resolution the game should be outputted in
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4148371570688
+    m_Localized: Shadow Distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4149000716288
+    m_Localized: How far shadows should be drawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4533765193728
+    m_Localized: Shadows
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4534461448192
+    m_Localized: Which type of shadow should be renderered
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703357681664
+    m_Localized: Soft Particles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703986827264
+    m_Localized: If enabled particles will have soft transitions at edges
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5119390695424
+    m_Localized: Shadow Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5119994675200
+    m_Localized: How detailed shadows are rendered
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5286265274368
+    m_Localized: Soft Vegetation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5286894419968
+    m_Localized: If enabled, vegetation will have smoothed edges, if disabled all
+      plants will have hard edges but are rendered roughly twice as fast.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5541048270848
+    m_Localized: Texture Quality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5541652250624
+    m_Localized: How detailed textures are
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5706945576960
+    m_Localized: Vsync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5707541168128
+    m_Localized: When enabled, the refresh rate of the game will be synchronized
+      to that of your monitor to prevent screen-tearing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7554117058560
+    m_Localized: ADS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7580289515520
+    m_Localized: Aiming down sights
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7521497956352
+    m_Localized: Bomb Quick Use
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7550753226752
+    m_Localized: Hold this button to plant the bomb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7489126318080
+    m_Localized: Bomb Select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7489814183936
+    m_Localized: Press this button to select the bomb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6322761678848
+    m_Localized: Vote Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6323474710528
+    m_Localized: Press this to vote with YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6321373364224
+    m_Localized: Vote No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6322073812992
+    m_Localized: Press this to vote with NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6269909254144
+    m_Localized: Flashlight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6271893159936
+    m_Localized: Turn the flashlight on/off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6274694955008
+    m_Localized: Grenade Lethal (Select)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6277006016512
+    m_Localized: Press this button to select the lethal grenade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6278734069760
+    m_Localized: Grenade Non Lethal (Select)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6280634089472
+    m_Localized: Press this button to select the non-lethal grenade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6281271623680
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6281867214848
+    m_Localized: Press this button to jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6282487971840
+    m_Localized: Laser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6283100340224
+    m_Localized: Press this button to turn the laser attachment on/off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6283733680128
+    m_Localized: Lean Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6285021331456
+    m_Localized: Lean Right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6284362825728
+    m_Localized: Hold this button to lean left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6285608534016
+    m_Localized: Hold this button to lean right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6286250262528
+    m_Localized: Melee (Select)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6286866825216
+    m_Localized: Press this button to select the melee weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6287487582208
+    m_Localized: Forward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6288200613888
+    m_Localized: Hold this button to walk forward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6288892674048
+    m_Localized: Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6289530208256
+    m_Localized: Hold this button to walk left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6290192908288
+    m_Localized: Backwards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6290801082368
+    m_Localized: Hold this button to walk backward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6291400867840
+    m_Localized: Right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6292025819136
+    m_Localized: Hold this button to walk right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6292688519168
+    m_Localized: Next Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6293313470464
+    m_Localized: Press this button to select the next weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6293900673024
+    m_Localized: Previous Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6294504652800
+    m_Localized: Press this button to select the previous weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6295108632576
+    m_Localized: Primary Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6295700029440
+    m_Localized: Press this button to select the primary weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6296274649088
+    m_Localized: Grenade Lethal (Quick)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6296815714304
+    m_Localized: Hold this button to cook the grenade and let go to throw it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6297449054208
+    m_Localized: Grenade Non-Lethal (Quick)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6298048839680
+    m_Localized: Hold this button to cook the grenade and let go to throw it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6298623459328
+    m_Localized: Melee (Quick)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6299240022016
+    m_Localized: Press this button to execute a quick melee attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6299793670144
+    m_Localized: Reload
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6300351512576
+    m_Localized: Press this button to reload your weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6300951298048
+    m_Localized: Respawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6301538500608
+    m_Localized: Press this button to respawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6302180229120
+    m_Localized: Run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6302868094976
+    m_Localized: Press this button to run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6303518212096
+    m_Localized: Scoreboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6304134774784
+    m_Localized: Hold this button to show the scoreboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6304814252032
+    m_Localized: Secondary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6305497923584
+    m_Localized: Press this button to select the secondary weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6306072543232
+    m_Localized: Use
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6306663940096
+    m_Localized: Press this button to use something (if shown)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6307305668608
+    m_Localized: Voice Chat Push to Talk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6307959980032
+    m_Localized: Hold this button to talk and let go to go mute again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6263424860160
+    m_Localized: Fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6263957536768
+    m_Localized: Press this button to fire your weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6262300786688
+    m_Localized: Cycle Grenade Non Lethal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6262833463296
+    m_Localized: If there are multiple grenades equipped in your non-lethal grenade
+      slot, you can use this button to cycle between them
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6261730361344
+    m_Localized: If there are multiple grenades equipped in your lethal grenade slot,
+      you can use this button to cycle between them
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6261168324608
+    m_Localized: Cycle Grenade Lethal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6259968753664
+    m_Localized: Crouch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6260585316352
+    m_Localized: Press this button to crouch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6257586388992
+    m_Localized: Change Perspective
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6259280887808
+    m_Localized: Press this button to switch between first and third person view
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14285152894976
+    m_Localized: Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14286276968448
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14287837249536
+    m_Localized: Gameplay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14289376559104
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15533604257792
+    m_Localized: Disable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15534728331264
+    m_Localized: Enable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15536561242112
+    m_Localized: Force Enable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16356467982336
+    m_Localized: Very High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16349778067456
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16343205593088
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16316911501312
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16904025980928
+    m_Localized: Disable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16904730624000
+    m_Localized: Hard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16906412539904
+    m_Localized: Soft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17236940472320
+    m_Localized: Very High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17238655942656
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17239788404736
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17241285771264
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 696078139047936
+    m_Localized: Display
+    m_Metadata:
+      m_Items: []
+  - m_Id: 696106677092352
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 696140562874368
+    m_Localized: The language in which the game's text is
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

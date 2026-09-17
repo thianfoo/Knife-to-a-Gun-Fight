@@ -1,0 +1,584 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UserInterface_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: c8fd8e9b5de7f1941989f8fc19a933b2, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 6989338168989057034
+  m_TableData:
+  - m_Id: 9432383488
+    m_Localized: Benutzername
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8524758695936
+    m_Localized: Einloggen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9321038921728
+    m_Localized: Einzelspieler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9339531608064
+    m_Localized: COOP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9356132663296
+    m_Localized: Mehrspieler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9379130032128
+    m_Localized: "Ausr\xFCstung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9396414758912
+    m_Localized: Statistiken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9414383157248
+    m_Localized: Optionen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9435509866496
+    m_Localized: Beenden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9892303126528
+    m_Localized: "Zur\xFCck"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10107076657152
+    m_Localized: Spiel suchen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10107940683776
+    m_Localized: Spiel hosten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10414112292864
+    m_Localized: SPIEL HOSTEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10439026458624
+    m_Localized: 'Server Name:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10454859956224
+    m_Localized: 'Passwort:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10469602934784
+    m_Localized: 'Spielmodus:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10481963548672
+    m_Localized: 'Karte:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10492851961856
+    m_Localized: 'Dauer:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10506634444800
+    m_Localized: 'Spielerlimit:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10521666830336
+    m_Localized: "Ben\xF6tigte Spieler:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10538473406464
+    m_Localized: 'Pinglimit:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10552486576128
+    m_Localized: 'Afk Limit:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10566571048960
+    m_Localized: 'Bots:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10575064514560
+    m_Localized: "Konnektivit\xE4t:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11059275939840
+    m_Localized: Server hosten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11589884755968
+    m_Localized: Willst du das Spiel wirklich beenden?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11590711033856
+    m_Localized: Ja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11592082571264
+    m_Localized: Nein
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11941317099520
+    m_Localized: SERVER DURCHSUCHEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11941858164736
+    m_Localized: Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11992168841216
+    m_Localized: Dediziert?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12003325689856
+    m_Localized: Spielmodus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12013991804928
+    m_Localized: Karte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12023655481344
+    m_Localized: Spieler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12032757121024
+    m_Localized: Ping
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12042357882880
+    m_Localized: Password
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12055611883520
+    m_Localized: Beitreten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12068203184128
+    m_Localized: Erneuern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12703363416064
+    m_Localized: Passwort eingeben
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12740105519104
+    m_Localized: Passwort
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12777401270272
+    m_Localized: "Zur\xFCck"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12808506228736
+    m_Localized: Verbinden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13082419445760
+    m_Localized: Fehler!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13083019231232
+    m_Localized: OK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13914732937216
+    m_Localized: MEHRSPIELER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419348081983488
+    m_Localized: Verbindung Trennen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419736503894016
+    m_Localized: Abstimmung starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419754480680960
+    m_Localized: Optionen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419775062130688
+    m_Localized: Verbindung trennen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419669227257856
+    m_Localized: "Zur\xFCck zum Spiel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419685945753600
+    m_Localized: Team wechseln
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419707575779328
+    m_Localized: "Ausr\xFCstung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 438670112243712
+    m_Localized: Spawnschutz aktiv!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 438779961065472
+    m_Localized: "DU VERL\xC4SST DAS SCHLACHTFELD!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 438932293992448
+    m_Localized: Konnte Team nicht beitreten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 439522885550080
+    m_Localized: An alle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 439541185298432
+    m_Localized: An team
+    m_Metadata:
+      m_Items: []
+  - m_Id: 439667266076672
+    m_Localized: Warte darauf dass mehr Spieler beitreten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 439850624270336
+    m_Localized: Automatischer Respawn in {0} Sekunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 439855212838912
+    m_Localized: "Dr\xFCcke F um jetzt zu respawnen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441150783012864
+    m_Localized: Zuschauen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441318152519680
+    m_Localized: Blau
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441319977041920
+    m_Localized: "Gr\xFCn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441320803319808
+    m_Localized: Rot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441527779639296
+    m_Localized: "Team ausw\xE4hlen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 443775498764288
+    m_Localized: 'Neues Level!
+
+      {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455082876780544
+    m_Localized: Sieg!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455083673698304
+    m_Localized: Niederlage!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455084982321152
+    m_Localized: Unentschieden!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455554043920384
+    m_Localized: Du musst {0} Sekunden warten bevor du eine weiterer Abstimmung starten
+      kannst!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455681668202496
+    m_Localized: Eine Abstimmung kann jetzt nicht gestartet werden!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455771606663168
+    m_Localized: Du bist alleine in diesem Server!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455830133981184
+    m_Localized: Es gibt nur eine Karte!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455922601607168
+    m_Localized: Es gibt nur einen Spielmodus!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 455974745194496
+    m_Localized: 'Spieler Kicken: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456097399226368
+    m_Localized: 'Karte wechseln zu: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456179699859456
+    m_Localized: 'Spielmodus wechseln zu: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 456271198601216
+    m_Localized: F1 <color=#00ff00ff>JA</color> F2 <color=#ff0000ff>NEIN</color>
+    m_Metadata:
+      m_Items:
+      - rid: 6989338168989057034
+  - m_Id: 456429000900608
+    m_Localized: Du hast mit <color=#00ff00ff>JA</color> gestimmt
+    m_Metadata:
+      m_Items:
+      - rid: 6989338168989057034
+  - m_Id: 456444423356416
+    m_Localized: Du hast mit <color=#ff0000ff>NEIN</color> gestimmt
+    m_Metadata:
+      m_Items:
+      - rid: 6989338168989057034
+  - m_Id: 474363622506496
+    m_Localized: Spieler kicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 474428500000768
+    m_Localized: Karte wechseln
+    m_Metadata:
+      m_Items: []
+  - m_Id: 474469797117952
+    m_Localized: Spielmodus wechseln
+    m_Metadata:
+      m_Items: []
+  - m_Id: 474548268351488
+    m_Localized: Abstimmung starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476897795817472
+    m_Localized: Spawnen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476953592643584
+    m_Localized: "Schlie\xDFen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476970751541248
+    m_Localized: Selbstmord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478060574326784
+    m_Localized: Deathmatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478101925969920
+    m_Localized: Domination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478134490546176
+    m_Localized: Gun Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478167742988288
+    m_Localized: Multi Team Deathmatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478201532301312
+    m_Localized: Multi Team Domination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 478231781621760
+    m_Localized: Team Deathmatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1070886991347712
+    m_Localized: Sandbox
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071105032241152
+    m_Localized: SANDBOX EINZELSPIELER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071204407885824
+    m_Localized: 'Karte:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071307516461056
+    m_Localized: "Zur\xFCck"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071308384681984
+    m_Localized: Starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071445525839872
+    m_Localized: SANDBOX COOP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071448940003328
+    m_Localized: Spiele durchsuchen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071455323734016
+    m_Localized: Spiel erstellen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072122234847232
+    m_Localized: Erstellt Von
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071990206545920
+    m_Localized: Spiel durchsuchen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072247107665920
+    m_Localized: Karte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072287616253952
+    m_Localized: Spieler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072323708239872
+    m_Localized: Ping
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072360697806848
+    m_Localized: Erneuern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089198911569920
+    m_Localized: 'K/D: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089195400937472
+    m_Localized: 'Tode: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089194125869056
+    m_Localized: 'Assists: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089187888939008
+    m_Localized: 'Kills: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089187184295936
+    m_Localized: Statistiken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1093788247703552
+    m_Localized: "W\xC4HLE DEINE AUSR\xDCSTUNG AUS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094008566104064
+    m_Localized: "KATEGORIE AUSW\xC4HLEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094146437070848
+    m_Localized: "WAFFENKATEGORIE AUSW\xC4HLEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094295527800832
+    m_Localized: "UNTERKATEGORIE AUSW\xC4HLEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094403996696576
+    m_Localized: "WAFFE AUSW\xC4HLEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094529834205184
+    m_Localized: "KATEGORIE AUSW\xC4HLEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094662755893248
+    m_Localized: "ATTACHMENT AUSW\xC4HLEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094846848090112
+    m_Localized: "TEAM AUSW\xC4HLEN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1094953488269312
+    m_Localized: "W\xC4HLE DEIN NEUES AUSSEHEN!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1095545128402944
+    m_Localized: Loadout #{0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1095596189859840
+    m_Localized: '{0} [wird bei level {1} freigeschaltet]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1101011346702336
+    m_Localized: "[F] dr\xFCcken: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1102396637233152
+    m_Localized: Waffen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1102397505454080
+    m_Localized: Spielermodell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110733646905344
+    m_Localized: Servernamen eingeben
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110735370764288
+    m_Localized: Serverpasswort eingeben
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1110913884536832
+    m_Localized: '{0:p:{} Spieler|{} Spieler}'
+    m_Metadata:
+      m_Items:
+      - rid: 6989338168989057034
+  - m_Id: 1111598017462272
+    m_Localized: Aus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1111636747665408
+    m_Localized: Ein
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113783124017152
+    m_Localized: Offline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113808570859520
+    m_Localized: Online
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113878456352768
+    m_Localized: '{0} ms'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113880138268672
+    m_Localized: '{0} Sekunden'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1113881262342144
+    m_Localized: '{0} Minuten'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 6989338168989057034
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 456271198601216
+        - id: 456429000900608
+        - id: 456444423356416
+        - id: 1110913884536832

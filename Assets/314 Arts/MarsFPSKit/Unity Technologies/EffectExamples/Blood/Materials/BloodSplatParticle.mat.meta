@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3ea2e59d181ffce4e97d5d1d07a22c05
+timeCreated: 1473851832
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Blood/Materials/BloodSplatParticle.mat
+  uploadId: 938586

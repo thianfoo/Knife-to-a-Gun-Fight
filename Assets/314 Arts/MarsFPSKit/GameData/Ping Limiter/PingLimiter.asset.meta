@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3d8ff428acb499b4eb9336db8a1a186a
+timeCreated: 1498065588
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/GameData/Ping Limiter/PingLimiter.asset
+  uploadId: 938586

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 90c5259b066de004ab39c3567da2a63d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Materials/Environment/PenetrationWoodTest.mat
+  uploadId: 938586

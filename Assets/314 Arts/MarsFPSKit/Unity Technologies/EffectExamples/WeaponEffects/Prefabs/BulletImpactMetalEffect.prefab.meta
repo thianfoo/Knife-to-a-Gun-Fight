@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 02a509a7fa70ed740ba4197e20c5d32d
+timeCreated: 1473691201
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/WeaponEffects/Prefabs/BulletImpactMetalEffect.prefab
+  uploadId: 938586

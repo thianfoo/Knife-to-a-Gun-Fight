@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d771645f9ac10d241b18277409d02a55
+timeCreated: 1473942081
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/WeaponEffects/Materials/BulletFleshDecal.mat
+  uploadId: 938586

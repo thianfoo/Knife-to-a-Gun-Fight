@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d695529081158d44f84e349bd501fde6
+timeCreated: 1475058582
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Shared/Models/Materials/MazeLowMan.mat
+  uploadId: 938586

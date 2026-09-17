@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b96fa3159375fa641a8fb46223c5d108
+timeCreated: 1502276348
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/UI/WeaponCustomizationDropdownSlotPrefab.prefab
+  uploadId: 938586

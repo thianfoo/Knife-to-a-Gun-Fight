@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2a2eef72bafcf754eaf030f37de4d1a9
+timeCreated: 1499267466
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Models/Map Pack/Prefabs/Collider.prefab
+  uploadId: 938586

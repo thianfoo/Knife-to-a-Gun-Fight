@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 05617171fa0748b4594643812eb67ce8
+timeCreated: 1506856917
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/GameData/Player/Vitals/HealthRegenerationVitals.asset
+  uploadId: 938586

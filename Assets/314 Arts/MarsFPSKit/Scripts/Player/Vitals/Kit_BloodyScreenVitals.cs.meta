@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: fb1342d453eef4543bfc888a4d6412ca
+timeCreated: 1506856678
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/Player/Vitals/Kit_BloodyScreenVitals.cs
+  uploadId: 938586

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: bac3c2c333ea94842ae57069d47c0966
+timeCreated: 1494712539
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Particles/ImpactParticles Bootcamp/Prefabs/WoodImpactParticle.prefab
+  uploadId: 938586

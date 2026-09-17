@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1fc11ee95796e7c4fb26156caef62b17
+timeCreated: 1550956987
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Models/Weapon Animations/FragGrenade/runLoop.anim
+  uploadId: 938586

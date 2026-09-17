@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f0888f199ae8b474b8bfff08ce8409c4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Models/Game Mode Items/Ammo Box/Prefabs/Ammo_Box_1.prefab
+  uploadId: 938586

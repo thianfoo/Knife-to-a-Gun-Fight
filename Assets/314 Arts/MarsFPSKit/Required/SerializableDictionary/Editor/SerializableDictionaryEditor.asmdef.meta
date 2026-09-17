@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1dd3f2adebd74ab42b4465eb98bdd620
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Required/SerializableDictionary/Editor/SerializableDictionaryEditor.asmdef
+  uploadId: 938586

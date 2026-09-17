@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7bb5d2afbb224fd4cbf49e5d66171994
+timeCreated: 1551117865
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/FireExplosionEffects/Prefabs/FlashbangExplosion.prefab
+  uploadId: 938586

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 698a8134f4ebbbd4e848648685f68067
+timeCreated: 1471944184
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/FireExplosionEffects/Materials/SmokeDarkParticle.mat
+  uploadId: 938586

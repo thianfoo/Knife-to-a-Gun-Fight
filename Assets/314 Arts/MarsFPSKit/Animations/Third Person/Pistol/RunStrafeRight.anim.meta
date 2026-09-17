@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 47e1186cdef7b754daa919216a35df15
+timeCreated: 1536263552
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Animations/Third Person/Pistol/RunStrafeRight.anim
+  uploadId: 938586

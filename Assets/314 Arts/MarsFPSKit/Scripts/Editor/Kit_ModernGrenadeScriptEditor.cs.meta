@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: d761d554862242242aa9bae7d9090543
+timeCreated: 1551299407
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/Editor/Kit_ModernGrenadeScriptEditor.cs
+  uploadId: 938586

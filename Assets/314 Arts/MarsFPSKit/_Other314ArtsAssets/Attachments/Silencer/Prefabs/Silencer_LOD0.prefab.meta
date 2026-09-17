@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6d76eb33c8c3e234da3e5ba88f4c6d14
+timeCreated: 1536080050
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/_Other314ArtsAssets/Attachments/Silencer/Prefabs/Silencer_LOD0.prefab
+  uploadId: 938586

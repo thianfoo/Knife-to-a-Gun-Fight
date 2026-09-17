@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 20c0f7e297297fc468f9740f6bb08cb1
+timeCreated: 1474030663
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/WeaponEffects/Prefabs/RocketTrailEffect.prefab
+  uploadId: 938586

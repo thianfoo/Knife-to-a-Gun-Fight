@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba82633d475eef4d9e7efad5be34f6e, type: 3}
+  m_Name: Anisotropic Filtering
+  m_EditorClassIdentifier: 
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:14efd8d8c5fc1ce4b805ca9d4348f943
+    m_TableEntryReference:
+      m_KeyId: 3084071124992
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  hover:
+    m_TableReference:
+      m_TableCollectionName: GUID:14efd8d8c5fc1ce4b805ca9d4348f943
+    m_TableEntryReference:
+      m_KeyId: 3085874675712
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  valueToString:
+  - m_TableReference:
+      m_TableCollectionName: GUID:14efd8d8c5fc1ce4b805ca9d4348f943
+    m_TableEntryReference:
+      m_KeyId: 15533604257792
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:14efd8d8c5fc1ce4b805ca9d4348f943
+    m_TableEntryReference:
+      m_KeyId: 15534728331264
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:14efd8d8c5fc1ce4b805ca9d4348f943
+    m_TableEntryReference:
+      m_KeyId: 15536561242112
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

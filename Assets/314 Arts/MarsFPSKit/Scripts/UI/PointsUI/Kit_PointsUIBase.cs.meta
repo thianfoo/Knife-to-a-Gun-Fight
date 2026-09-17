@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 962b73dacacfda644bad627919c2506e
+timeCreated: 1497865438
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/UI/PointsUI/Kit_PointsUIBase.cs
+  uploadId: 938586

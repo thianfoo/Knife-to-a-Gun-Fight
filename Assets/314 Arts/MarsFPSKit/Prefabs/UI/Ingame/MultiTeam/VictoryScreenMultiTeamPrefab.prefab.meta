@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4caed4d20937f2c4a9ca6775c0e4037d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/UI/Ingame/MultiTeam/VictoryScreenMultiTeamPrefab.prefab
+  uploadId: 938586

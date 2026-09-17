@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 26bc8648a85c6b041a5d5b00ca61062b
+timeCreated: 1474987722
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Shared/Materials/SandSurface.mat
+  uploadId: 938586

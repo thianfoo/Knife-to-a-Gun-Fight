@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5f69ec0dcdc17f847a6ed4e9bf531348
+timeCreated: 1546436283
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/UI/Lobby Map Preview.prefab
+  uploadId: 938586

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 713f8d12f5dbfb640b7a4874212c2c08
+timeCreated: 1473769591
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/WeaponEffects/Materials/ShallCasing.mat
+  uploadId: 938586

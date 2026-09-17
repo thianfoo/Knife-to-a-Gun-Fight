@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7ca96822084510147adb2aea03d45e3b
+timeCreated: 1473770355
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/WeaponEffects/Prefabs/CartridgeEjectEffect.prefab
+  uploadId: 938586

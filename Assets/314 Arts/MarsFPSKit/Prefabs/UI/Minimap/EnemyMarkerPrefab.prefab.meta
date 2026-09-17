@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b77170d7b7ba0324cb6576ce1677c22f
+timeCreated: 1523105787
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/UI/Minimap/EnemyMarkerPrefab.prefab
+  uploadId: 938586

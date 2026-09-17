@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3462a6d3360ea3d4cb23905fbdcdaf47
+timeCreated: 1551545712
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Models/Weapon Animations/Smoke/putaway.anim
+  uploadId: 938586

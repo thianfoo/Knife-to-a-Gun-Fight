@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ce728555fb89c9f4a84d1ef06427ea1c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/Network/GameModeDataMultiTeamDeathmatch.prefab
+  uploadId: 938586

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: de13e66bfa41c6242bbe0381b0b74b30
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/UI/Game Mode HUDs/Flag UI Prefab.prefab
+  uploadId: 938586

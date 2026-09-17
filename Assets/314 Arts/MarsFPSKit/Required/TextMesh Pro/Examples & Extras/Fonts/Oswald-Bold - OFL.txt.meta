@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d2cf87a8a7a94aa8b80dff1c807c1178
+timeCreated: 1484171296
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Required/TextMesh Pro/Examples & Extras/Fonts/Oswald-Bold
+    - OFL.txt
+  uploadId: 938586

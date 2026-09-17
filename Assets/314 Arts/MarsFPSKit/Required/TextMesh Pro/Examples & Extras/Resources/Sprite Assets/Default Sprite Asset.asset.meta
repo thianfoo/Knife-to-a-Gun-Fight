@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: fbef3c704dce48f08a44612d6c856c8d
+timeCreated: 1454544381
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Required/TextMesh Pro/Examples & Extras/Resources/Sprite
+    Assets/Default Sprite Asset.asset
+  uploadId: 938586

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1a8704a866e139446a8bc7650f63b5ad
+timeCreated: 1551011438
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Models/Weapon Animations/FragGrenade/quickThrow.anim
+  uploadId: 938586

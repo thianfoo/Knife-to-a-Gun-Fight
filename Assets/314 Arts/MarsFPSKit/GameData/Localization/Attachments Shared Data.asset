@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Attachments Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Attachments
+  m_TableCollectionNameGuidString: 907e75d82f4b25845a3c95933ae70c30
+  m_Entries:
+  - m_Id: 6219546624
+    m_Key: suppresor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110116651008
+    m_Key: flashlight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160494436352
+    m_Key: laser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 203775459328
+    m_Key: nothing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 235039801344
+    m_Key: reddot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751551561728
+    m_Key: slot_onbarrel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772648910848
+    m_Key: slot_skin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 830966513664
+    m_Key: slot_scope
+    m_Metadata:
+      m_Items: []
+  - m_Id: 870699155456
+    m_Key: slot_side
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6989338209751138382
+  references:
+    version: 2
+    RefIds:
+    - rid: 6989338209751138382
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1741003485839

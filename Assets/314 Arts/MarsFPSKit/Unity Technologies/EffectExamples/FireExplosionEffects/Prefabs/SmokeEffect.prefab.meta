@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 85a8865d1bf4a63478038fae23776de8
+timeCreated: 1473159155
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/FireExplosionEffects/Prefabs/SmokeEffect.prefab
+  uploadId: 938586

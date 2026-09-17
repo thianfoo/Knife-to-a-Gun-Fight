@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 19a1e36bbcb5b4c429a5dfdc8fb914de
+timeCreated: 1473684431
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Unity Technologies/EffectExamples/Misc Effects/Materials/SparkParticle.mat
+  uploadId: 938586

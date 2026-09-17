@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: f77adc611d6950b4480297f3bbb0607b
+timeCreated: 1502463673
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/Player/Weapons/Kit_DropBehaviour.cs
+  uploadId: 938586

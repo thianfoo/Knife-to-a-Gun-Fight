@@ -1,0 +1,28 @@
+{
+    "name": "UTPTests",
+    "rootNamespace": "",
+    "references": [
+        "Mirror",
+        "UtpTransport",
+        "Unity.Services.Core",
+        "Unity.Services.Authentication",
+        "Unity.Networking.Transport",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Unity.Services.Multiplayer",
+        "Unity.Services.Relay"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a831bd684f751f74c82e80df58ce1045
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scenes/MainMenu/LightingData.asset
+  uploadId: 938586

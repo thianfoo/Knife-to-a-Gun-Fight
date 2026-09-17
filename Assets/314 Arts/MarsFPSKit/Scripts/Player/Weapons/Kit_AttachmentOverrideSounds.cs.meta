@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 71806236091ecc74181419f6d4ad12b5
+timeCreated: 1502216557
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Scripts/Player/Weapons/Kit_AttachmentOverrideSounds.cs
+  uploadId: 938586

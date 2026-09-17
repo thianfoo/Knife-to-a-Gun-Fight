@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bb4718f1a7a9bb54f97c342566cdee7d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192482
+  packageName: Modular Multiplayer FPS Engine (Mirror) (MMFPSE)
+  packageVersion: 0.8.8.1 BETA
+  assetPath: Assets/314 Arts/MarsFPSKit/Prefabs/Weapons/Attachments/RedDot.prefab
+  uploadId: 938586
