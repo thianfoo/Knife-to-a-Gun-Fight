@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/314 Arts/MarsFPSKit/Scenes/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 43be8ab043238de4b97016875c33b883
   - enabled: 1
     path: Assets/314 Arts/MarsFPSKit/Scenes/Test_Map_1.unity

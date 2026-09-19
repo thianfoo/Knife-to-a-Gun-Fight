@@ -425,7 +425,7 @@ namespace MarsFPSKit.UI
 
         private void OnApplicationQuit()
         {
-            if (game.leveling)
+            /*if (game.leveling)
             {
                 game.leveling.Save();
             }
@@ -433,7 +433,7 @@ namespace MarsFPSKit.UI
             if (game.statistics)
             {
                 game.statistics.Save(this);
-            }
+            }*/
         }
     }
 }

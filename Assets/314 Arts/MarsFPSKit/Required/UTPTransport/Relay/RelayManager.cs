@@ -33,7 +33,7 @@ namespace Utp
 
 		private void Awake()
 		{
-			UtpLog.Info("RelayManager initialized");
+			//UtpLog.Info("RelayManager initialized");
 		}
 
 		/// <summary>

@@ -91,7 +91,7 @@ namespace Utp
 				relayManager = gameObject.AddComponent<RelayManager>();
 			}
 
-            UtpLog.Info("UTPTransport initialized!");
+            //UtpLog.Info("UTPTransport initialized!");
 		}
 
 		private void SetupDefaultCallbacks()
