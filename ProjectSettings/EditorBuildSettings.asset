@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 43be8ab043238de4b97016875c33b883
   - enabled: 1
-    path: Assets/314 Arts/MarsFPSKit/Scenes/Test_Map_1.unity
+    path: Assets/Scenes/Test_Map_1.unity
     guid: 23c19a8aaac50d445a64ed8ae18ef3d9
   - enabled: 1
     path: Assets/314 Arts/MarsFPSKit/Scenes/Test_Map_3.unity
