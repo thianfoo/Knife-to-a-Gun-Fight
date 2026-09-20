@@ -37,8 +37,23 @@ public class EnemyAI : MonoBehaviour
 
     void OnEnable()
     {
-        // Reset health every time the enemy is pulled from the pool
+        // Reset health every time it spawns
         currentHealth = maxHealth;
+        FindPlayer();
+    }
+
+    void FindPlayer()
+    {
+        int playerLayer = LayerMask.NameToLayer("PlayerRoot");
+        GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.layer == playerLayer)
+            {
+                player = obj.transform;
+                break;
+            }
+        }
     }
 
     void Update()
