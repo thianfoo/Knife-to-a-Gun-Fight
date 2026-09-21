@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // If using UI text for score
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public int enemiesToSpawn = 5;
     private int activeEnemies = 0;
 
+    [Header("UI")]
+    public TextMeshProUGUI scoreText;
+
     [Header("Scoring")]
     public int score = 0;
 
@@ -30,6 +33,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnWave());
+        UpdateScoreDisplay();
     }
 
     void InitializePool()
@@ -76,12 +80,21 @@ public class GameManager : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
-        Debug.Log("Score: " + score);
-        
+        UpdateScoreDisplay();
+
         activeEnemies--;
         if (activeEnemies <= 0)
         {
             NextWave();
+        }
+    }
+
+    void UpdateScoreDisplay()
+    {
+        if (scoreText != null)
+        {
+            // D4 format pads numbers with leading zeros (e.g., 0010, 0250) for an arcade feel
+            scoreText.text = $"SCORE: {score:D4}";
         }
     }
 
