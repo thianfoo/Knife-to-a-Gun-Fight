@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,36 +11,26 @@ public class EnemyAI : MonoBehaviour
     private Animator animator;
     private Transform player;
 
+    // Stores references to any bullet marks stuck to this enemy
+    private List<BulletMark> attachedBulletMarks = new List<BulletMark>();
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-
-        // Convert layer name to layer index
-        int playerLayer = LayerMask.NameToLayer("PlayerRoot");
-
-        // Search active scene objects to find the one matching the PlayerRoot layer
-        GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
-        foreach (GameObject obj in allObjects)
-        {
-            if (obj.layer == playerLayer)
-            {
-                player = obj.transform;
-                break;
-            }
-        }
-
-    if (player == null)
-    {
-        Debug.LogWarning("EnemyAI: Could not find any GameObject on the 'PlayerRoot' layer!");
+        FindPlayer();
     }
-}
 
     void OnEnable()
     {
-        // Reset health every time it spawns
         currentHealth = maxHealth;
         FindPlayer();
+    }
+
+    void OnDisable()
+    {
+        // Deactivate all marks if the enemy is disabled
+        DeactivateAllBulletMarks();
     }
 
     void FindPlayer()
@@ -54,6 +45,11 @@ public class EnemyAI : MonoBehaviour
                 break;
             }
         }
+
+        if (player == null)
+        {
+            Debug.LogWarning("EnemyAI: Could not find any GameObject on the 'PlayerRoot' layer!");
+        }
     }
 
     void Update()
@@ -65,7 +61,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // Call this function from your Raycast shooting script when the gun hits this enemy
+    // Called by BulletMark upon impact
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -75,12 +71,40 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    // Called by BulletMark to register itself
+    public void RegisterBulletMark(BulletMark mark)
+    {
+        if (!attachedBulletMarks.Contains(mark))
+        {
+            attachedBulletMarks.Add(mark);
+        }
+    }
+
+    // Cleans up all decals stuck on this body
+    public void DeactivateAllBulletMarks()
+    {
+        for (int i = 0; i < attachedBulletMarks.Count; i++)
+        {
+            if (attachedBulletMarks[i] != null)
+            {
+                attachedBulletMarks[i].DeactivateMark();
+            }
+        }
+        attachedBulletMarks.Clear();
+    }
+
     void Die()
     {
-        // Tell the GameManager we killed one and get points
-        GameManager.Instance.AddScore(10);
+        // 1. Clear marks so they don't float in mid-air or stay when recycled
+        DeactivateAllBulletMarks();
 
-        // Instead of Destroy(gameObject), we deactivate it to return it to the pool
+        // 2. Add score to the GameManager
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.AddScore(10);
+        }
+
+        // 3. Return to object pool
         gameObject.SetActive(false);
     }
 }
