@@ -1,17 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using MarsFPSKit; // Needed to interact with Kit_PlayerBehaviour
 
 public class EnemyAI : MonoBehaviour
 {
+    [Header("Stats")]
     public int maxHealth = 100;
     private int currentHealth;
+
+    [Header("Attack Settings")]
+    public float attackRange = 2.0f;
+    public float attackCooldown = 1.5f;
+    public float attackDamage = 15f;
+    private float lastAttackTime;
 
     private NavMeshAgent agent;
     private Animator animator;
     private Transform player;
+    private Kit_PlayerBehaviour playerBehaviour;
 
-    // Stores references to any bullet marks stuck to this enemy
     private List<BulletMark> attachedBulletMarks = new List<BulletMark>();
 
     void Awake()
@@ -24,12 +32,12 @@ public class EnemyAI : MonoBehaviour
     void OnEnable()
     {
         currentHealth = maxHealth;
+        lastAttackTime = -attackCooldown; // Allow immediate attack if in range
         FindPlayer();
     }
 
     void OnDisable()
     {
-        // Deactivate all marks if the enemy is disabled
         DeactivateAllBulletMarks();
     }
 
@@ -42,26 +50,74 @@ public class EnemyAI : MonoBehaviour
             if (obj.layer == playerLayer)
             {
                 player = obj.transform;
+                playerBehaviour = obj.GetComponent<Kit_PlayerBehaviour>();
                 break;
             }
-        }
-
-        if (player == null)
-        {
-            Debug.LogWarning("EnemyAI: Could not find any GameObject on the 'PlayerRoot' layer!");
         }
     }
 
     void Update()
     {
-        if (player != null && currentHealth > 0 && agent.isOnNavMesh)
+        if (player == null || currentHealth <= 0 || !agent.isOnNavMesh) return;
+
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        if (distanceToPlayer <= attackRange)
         {
+            // Stop moving to execute attack
+            agent.isStopped = true;
+            animator.SetFloat("Speed", 0f);
+
+            // Smoothly face the player
+            Vector3 lookDirection = (player.position - transform.position).normalized;
+            lookDirection.y = 0; // Keep rotation horizontal
+            if (lookDirection != Vector3.zero)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), Time.deltaTime * 10f);
+            }
+
+            // Check attack cooldown
+            if (Time.time >= lastAttackTime + attackCooldown)
+            {
+                AttackPlayer();
+            }
+        }
+        else
+        {
+            // Resume chasing
+            agent.isStopped = false;
             agent.SetDestination(player.position);
             animator.SetFloat("Speed", agent.velocity.magnitude);
         }
     }
 
-    // Called by BulletMark upon impact
+    void AttackPlayer()
+    {
+        lastAttackTime = Time.time;
+
+        // Trigger the attack animation in the Animator
+        if (animator != null)
+        {
+            animator.SetTrigger("Attack");
+        }
+
+        // Deal damage to the player
+        if (playerBehaviour != null)
+        {
+            playerBehaviour.ServerDamage(
+                attackDamage,       // e.g., 25f
+                -1,                 // Gun ID
+                transform.position, // shotFrom
+                transform.forward,  // direction
+                100f,               // ragdoll force
+                player.position,    // hit position
+                0,                  // ragdoll body part ID
+                true,               // isBot
+                999                 // shooter ID
+            );
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -71,7 +127,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // Called by BulletMark to register itself
     public void RegisterBulletMark(BulletMark mark)
     {
         if (!attachedBulletMarks.Contains(mark))
@@ -80,7 +135,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // Cleans up all decals stuck on this body
     public void DeactivateAllBulletMarks()
     {
         for (int i = 0; i < attachedBulletMarks.Count; i++)
@@ -95,16 +149,13 @@ public class EnemyAI : MonoBehaviour
 
     void Die()
     {
-        // 1. Clear marks so they don't float in mid-air or stay when recycled
         DeactivateAllBulletMarks();
 
-        // 2. Add score to the GameManager
         if (GameManager.Instance != null)
         {
             GameManager.Instance.AddScore(10);
         }
 
-        // 3. Return to object pool
         gameObject.SetActive(false);
     }
 }
