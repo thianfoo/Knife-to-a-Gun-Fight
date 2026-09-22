@@ -13,22 +13,8 @@ MonoBehaviour:
   m_Name: Localization-Locales
   m_EditorClassIdentifier: 
   m_GroupName: Localization-Locales
-  m_Data:
-    m_SerializedData: []
   m_GUID: a8297d8afa4138f4f9e5a8510603b1b9
-  m_SerializeEntries:
-  - m_GUID: 5243a69b97ad7a746a6706c7b7700e83
-    m_Address: English (en)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d523210752175474ea5958a351bb34cc
-    m_Address: German (de)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 31cde831a2c5d934e889afc63fc20835, type: 2}
   m_SchemaSet:

@@ -702,7 +702,7 @@ namespace Mirror
         {
             if (prefab == null)
             {
-                Debug.LogError("Could not register prefab because it was null");
+                //Debug.LogError("Could not register prefab because it was null");
                 return;
             }
 

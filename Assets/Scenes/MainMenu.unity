@@ -6608,7 +6608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &708359505
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7228,6 +7228,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 134824499}
     m_Modifications:
+    - target: {fileID: 1745426795639555646, guid: 97442c01d1b96e14f850f49e3ee19a2c,
+        type: 3}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745426795639555646, guid: 97442c01d1b96e14f850f49e3ee19a2c,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745426795639555646, guid: 97442c01d1b96e14f850f49e3ee19a2c,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745426795639555646, guid: 97442c01d1b96e14f850f49e3ee19a2c,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1745426795639555646, guid: 97442c01d1b96e14f850f49e3ee19a2c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -17831,6 +17851,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuInputField
       objectReference: {fileID: 0}
+    - target: {fileID: 4161382446112239782, guid: f9ff071a31f84164e8d9211de3ca2974,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5048229772169978827, guid: f9ff071a31f84164e8d9211de3ca2974,
         type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
@@ -18111,6 +18136,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 134824499}
     m_Modifications:
+    - target: {fileID: 1745426795639555646, guid: 97442c01d1b96e14f850f49e3ee19a2c,
+        type: 3}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745426795639555646, guid: 97442c01d1b96e14f850f49e3ee19a2c,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745426795639555646, guid: 97442c01d1b96e14f850f49e3ee19a2c,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745426795639555646, guid: 97442c01d1b96e14f850f49e3ee19a2c,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1745426795639555646, guid: 97442c01d1b96e14f850f49e3ee19a2c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -20109,7 +20154,7 @@ PrefabInstance:
     - target: {fileID: 1677444255508998765, guid: f68a833f0ba046149a6d4c770b7ab489,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4281678021
+      value: 4294964075
       objectReference: {fileID: 0}
     - target: {fileID: 1677444255508998765, guid: f68a833f0ba046149a6d4c770b7ab489,
         type: 3}
@@ -20125,6 +20170,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainMenuButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328923226017912829, guid: f68a833f0ba046149a6d4c770b7ab489,
+        type: 3}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328923226017912829, guid: f68a833f0ba046149a6d4c770b7ab489,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328923226017912829, guid: f68a833f0ba046149a6d4c770b7ab489,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328923226017912829, guid: f68a833f0ba046149a6d4c770b7ab489,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2328923226017912829, guid: f68a833f0ba046149a6d4c770b7ab489,
         type: 3}
