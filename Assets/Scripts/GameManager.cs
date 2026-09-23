@@ -14,16 +14,19 @@ public class GameManager : MonoBehaviour
     public float regenDelay = 5f;
     public float regenRate = 20f;
     private float lastHitTime;
+    private bool isPlayerDead = false;
 
     [Header("Delayed Health Bar Settings")]
     public Slider healthSlider;           // Front Bar (instant)
-    public Slider delayedHealthSlider;    // Back Bar (delayed "ghost" damage)
-    public float damageDrainDelay = 0.5f; // Pause before the ghost bar begins draining
-    public float damageDrainSpeed = 35f;  // Speed at which the ghost bar catches up
+    public Slider delayedHealthSlider;    // Back Bar (ghost damage)
+    public float damageDrainDelay = 0.5f;
+    public float damageDrainSpeed = 35f;
     private float lastDamageTime;
 
-    [Header("Health UI")]
+    [Header("UI Overlays")]
     public CanvasGroup bloodyScreen;
+    public GameObject deathScreenPanel;   // Drag DeathScreenPanel here
+    public TextMeshProUGUI scoreEndText;
 
     [Header("Score & Spawning")]
     public TextMeshProUGUI scoreText;
@@ -37,6 +40,7 @@ public class GameManager : MonoBehaviour
     public int currentWave = 1;
     public int enemiesToSpawn = 5;
     private int activeEnemies = 0;
+    private Coroutine spawnWaveCoroutine;
 
     void Awake()
     {
@@ -46,9 +50,18 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        InitializeGame();
+    }
 
-        // Initialize sliders
+    void InitializeGame()
+    {
+        isPlayerDead = false;
+        currentHealth = maxHealth;
+        score = 0;
+        currentWave = 1;
+        enemiesToSpawn = 5;
+
+        // Reset Sliders
         if (healthSlider != null)
         {
             healthSlider.maxValue = maxHealth;
@@ -61,36 +74,43 @@ public class GameManager : MonoBehaviour
             delayedHealthSlider.value = currentHealth;
         }
 
-        if (bloodyScreen != null)
-        {
-            bloodyScreen.alpha = 0f;
-        }
+        // Reset overlays
+        if (bloodyScreen != null) bloodyScreen.alpha = 0f;
+        if (deathScreenPanel != null) deathScreenPanel.SetActive(false);
+
+        // Lock cursor back into FPS mode
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         UpdateScoreDisplay();
-        StartCoroutine(SpawnWave());
+
+        // Start initial wave
+        if (spawnWaveCoroutine != null) StopCoroutine(spawnWaveCoroutine);
+        spawnWaveCoroutine = StartCoroutine(SpawnWave());
     }
 
     void Update()
     {
+        if (isPlayerDead) return;
+
         // 1. Health Regeneration
         if (currentHealth < maxHealth && Time.time > lastHitTime + regenDelay)
         {
             currentHealth += regenRate * Time.deltaTime;
             currentHealth = Mathf.Min(currentHealth, maxHealth);
-            
+
             if (healthSlider != null) healthSlider.value = currentHealth;
-            // On regen, make both bars rise together
             if (delayedHealthSlider != null) delayedHealthSlider.value = currentHealth;
         }
 
-        // 2. Delayed "Ghost" Bar Drain (Catching down to current health)
+        // 2. Delayed Ghost Bar Drain
         if (delayedHealthSlider != null && delayedHealthSlider.value > currentHealth)
         {
             if (Time.time >= lastDamageTime + damageDrainDelay)
             {
                 delayedHealthSlider.value = Mathf.MoveTowards(
-                    delayedHealthSlider.value, 
-                    currentHealth, 
+                    delayedHealthSlider.value,
+                    currentHealth,
                     damageDrainSpeed * Time.deltaTime
                 );
             }
@@ -106,19 +126,16 @@ public class GameManager : MonoBehaviour
 
     public void TakePlayerDamage(float amount)
     {
+        if (isPlayerDead) return;
+
         currentHealth -= amount;
         lastHitTime = Time.time;
-        lastDamageTime = Time.time; // Starts the timer for the ghost bar delay
+        lastDamageTime = Time.time;
 
         if (currentHealth < 0) currentHealth = 0;
 
-        // Instantly drop the primary health bar
-        if (healthSlider != null)
-        {
-            healthSlider.value = currentHealth;
-        }
+        if (healthSlider != null) healthSlider.value = currentHealth;
 
-        // Flash blood overlay
         if (bloodyScreen != null)
         {
             float targetAlpha = 1f - (currentHealth / maxHealth);
@@ -131,21 +148,50 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UpdateHealthUI()
-    {
-        if (healthSlider != null)
-        {
-            healthSlider.value = currentHealth;
-        }
-    }
-
     void PlayerDied()
     {
-        Debug.Log("Game Over! Player Health reached 0.");
-        // Optional: show a game over canvas or restart the scene
+        isPlayerDead = true;
+
+        // Stop incoming wave spawns
+        if (spawnWaveCoroutine != null)
+        {
+            StopCoroutine(spawnWaveCoroutine);
+            spawnWaveCoroutine = null;
+        }
+
+        // Show death UI
+        if (deathScreenPanel != null)
+        {
+            deathScreenPanel.SetActive(true);
+        }
+
+        // Unlock mouse cursor so the player can click Restart
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
-    #region Pooling & Wave Logic
+    /// 
+    /// Call this method from the Restart Button's OnClick event
+    /// 
+    public void RestartGame()
+    {
+        // 1. Despawn all active enemies in pool
+        for (int i = 0; i < enemyPool.Count; i++)
+        {
+            if (enemyPool[i] != null && enemyPool[i].activeInHierarchy)
+            {
+                EnemyAI enemyAI = enemyPool[i].GetComponent<EnemyAI>();
+                if (enemyAI != null)
+                {
+                    enemyAI.DeactivateAllBulletMarks();
+                }
+                enemyPool[i].SetActive(false);
+            }
+        }
+
+        // 2. Reset stats and start clean
+        InitializeGame();
+    }
 
     void InitializePool()
     {
@@ -174,6 +220,8 @@ public class GameManager : MonoBehaviour
         activeEnemies = enemiesToSpawn;
         for (int i = 0; i < enemiesToSpawn; i++)
         {
+            if (isPlayerDead) yield break;
+
             GameObject enemy = GetPooledEnemy();
             if (enemy != null)
             {
@@ -199,6 +247,8 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int points)
     {
+        if (isPlayerDead) return;
+
         score += points;
         UpdateScoreDisplay();
 
@@ -213,7 +263,11 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = $"SCORE: {score:D6}";
+            scoreText.text = $"SCORE: {score:D5}";
+        }
+        if (scoreEndText != null)
+        {
+            scoreEndText.text = $"FINAL SCORE: {score:D5}";
         }
     }
 
@@ -221,8 +275,6 @@ public class GameManager : MonoBehaviour
     {
         currentWave++;
         enemiesToSpawn += 3;
-        StartCoroutine(SpawnWave());
+        spawnWaveCoroutine = StartCoroutine(SpawnWave());
     }
-
-    #endregion
 }
