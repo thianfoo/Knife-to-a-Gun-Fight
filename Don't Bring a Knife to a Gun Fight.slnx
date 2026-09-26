@@ -38,6 +38,7 @@
   <Project Path="Mirror.Editor.csproj" />
   <Project Path="Unity.Services.QoS.csproj" />
   <Project Path="Unity.Services.Authentication.Editor.csproj" />
+  <Project Path="Unity.RenderPipelines.Universal.Editor.Tests.csproj" />
   <Project Path="Unity.Services.Lobbies.csproj" />
   <Project Path="Unity.Searcher.Editor.csproj" />
   <Project Path="Unity.ResourceManager.csproj" />
@@ -105,6 +106,7 @@
   <Project Path="Unity.Profiling.Core.csproj" />
   <Project Path="Unity.Services.Core.Device.csproj" />
   <Project Path="Unity.Services.Core.Analytics.csproj" />
+  <Project Path="Unity.RenderPipelines.Universal.Runtime.Tests.csproj" />
   <Project Path="Unity.Services.Lobby.Editor.csproj" />
   <Project Path="Unity.InputSystem.ForUI.Editor.csproj" />
   <Project Path="Unity.CollabProxy.Editor.csproj" />
