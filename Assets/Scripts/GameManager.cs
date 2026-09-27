@@ -36,9 +36,15 @@ public class GameManager : MonoBehaviour
     public Transform[] spawnPoints;
     private List<GameObject> enemyPool = new List<GameObject>();
 
+    [Header("Spawn Obstruction Checks")]
+    [Tooltip("Radius around the spawn point to verify no existing enemy is standing")]
+    public float spawnClearanceRadius = 1.2f;
+    [Tooltip("Set this to the layer enemies are on")]
+    public LayerMask spawnBlockerMask;
+
     [Header("Wave Stats")]
     public int currentWave = 1;
-    public int enemiesToSpawn = 5;
+    public int enemiesToSpawn = 10;
     private int activeEnemies = 0;
     private Coroutine spawnWaveCoroutine;
 
@@ -217,30 +223,61 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        activeEnemies = enemiesToSpawn;
-        for (int i = 0; i < enemiesToSpawn; i++)
+        activeEnemies = 0;
+        int spawnedCount = 0;
+        int maxAttemptsPerEnemy = 10;
+
+        while (spawnedCount < enemiesToSpawn)
         {
             if (isPlayerDead) yield break;
 
             GameObject enemy = GetPooledEnemy();
-            if (enemy != null)
+            if (enemy == null)
             {
-                Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+                // Pool exhausted; wait for an active enemy to die before trying again
+                yield return new WaitForSeconds(1.0f);
+                continue;
+            }
 
-                UnityEngine.AI.NavMeshAgent agent = enemy.GetComponent<UnityEngine.AI.NavMeshAgent>();
-                if (agent != null) agent.enabled = false;
-
-                enemy.transform.position = spawnPoint.position;
-                enemy.transform.rotation = spawnPoint.rotation;
-
-                enemy.SetActive(true);
-
-                if (agent != null)
+            // Try to find a clear spawn point
+            Transform chosenPoint = null;
+            for (int attempt = 0; attempt < maxAttemptsPerEnemy; attempt++)
+            {
+                Transform candidate = spawnPoints[Random.Range(0, spawnPoints.Length)];
+                
+                // Check clearance radius against enemy/obstacle colliders
+                bool isBlocked = Physics.CheckSphere(candidate.position, spawnClearanceRadius, spawnBlockerMask);
+                if (!isBlocked)
                 {
-                    agent.enabled = true;
-                    agent.Warp(spawnPoint.position);
+                    chosenPoint = candidate;
+                    break;
                 }
             }
+
+            // If all candidate points were blocked this frame, wait briefly and retry
+            if (chosenPoint == null)
+            {
+                yield return new WaitForSeconds(0.5f);
+                continue;
+            }
+
+            // Safe to spawn
+            UnityEngine.AI.NavMeshAgent agent = enemy.GetComponent<UnityEngine.AI.NavMeshAgent>();
+            if (agent != null) agent.enabled = false;
+
+            enemy.transform.position = chosenPoint.position;
+            enemy.transform.rotation = chosenPoint.rotation;
+            enemy.SetActive(true);
+
+            if (agent != null)
+            {
+                agent.enabled = true;
+                agent.Warp(chosenPoint.position);
+            }
+
+            spawnedCount++;
+            activeEnemies++;
+
             yield return new WaitForSeconds(1.5f);
         }
     }
