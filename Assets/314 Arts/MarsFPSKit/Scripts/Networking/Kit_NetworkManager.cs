@@ -306,10 +306,14 @@ namespace MarsFPSKit
 
         public override void OnServerDisconnect(NetworkConnectionToClient conn)
         {
-            Kit_Player leftPlayer = networkPlayerManager.players.Where(x => x.serverToClientConnection == conn).FirstOrDefault();
-            if (leftPlayer != null)
+            // Check if the manager and the players list actually exist before trying to read them
+            if (networkPlayerManager != null && networkPlayerManager.players != null)
             {
-                networkPlayerManager.players.Remove(leftPlayer);
+                Kit_Player leftPlayer = networkPlayerManager.players.Where(x => x.serverToClientConnection == conn).FirstOrDefault();
+                if (leftPlayer != null)
+                {
+                    networkPlayerManager.players.Remove(leftPlayer);
+                }
             }
 
             base.OnServerDisconnect(conn);

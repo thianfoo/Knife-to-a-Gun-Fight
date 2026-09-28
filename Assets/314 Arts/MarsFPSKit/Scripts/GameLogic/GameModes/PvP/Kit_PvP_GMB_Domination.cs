@@ -993,9 +993,24 @@ namespace MarsFPSKit
 
         public override void RegisterNetworkPrefabs()
         {
-            if (!NetworkClient.prefabs.ContainsKey(flagPrefab.GetComponent<NetworkIdentity>().assetId))
+            if (flagPrefab != null)
             {
-                NetworkClient.RegisterPrefab(flagPrefab);
+                NetworkIdentity identity = flagPrefab.GetComponent<NetworkIdentity>();
+                if (identity != null)
+                {
+                    if (!NetworkClient.prefabs.ContainsKey(identity.assetId))
+                    {
+                        NetworkClient.RegisterPrefab(flagPrefab);
+                    }
+                }
+                else
+                {
+                    Debug.LogError("Domination flagPrefab is missing a NetworkIdentity component!");
+                }
+            }
+            else
+            {
+                //Debug.LogError("Domination flagPrefab is not assigned in the Game Mode Inspector!");
             }
         }
 
