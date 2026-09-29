@@ -29,6 +29,11 @@ namespace MarsFPSKit
             /// </summary>
             public int coopBrowserScreenId = 2;
 
+            [Header("Singleplayer Loading Transition")]
+            public Image transitionImage;
+            public Sprite newTransitionSprite;
+            public float transitionDelay = 2.0f;
+
             /// <summary>
             /// Displays the name of our selected map
             /// </summary>
@@ -153,6 +158,17 @@ namespace MarsFPSKit
 
             public void SingleplayerStart()
             {
+                if (transitionImage != null && newTransitionSprite != null)
+                {
+                    transitionImage.sprite = newTransitionSprite;
+                    
+                    // Optional: Ensure the image GameObject is active
+                    if (!transitionImage.gameObject.activeSelf)
+                    {
+                        transitionImage.gameObject.SetActive(true);
+                    }
+                }
+
                 //Create a room with this game mode
                 if (myCurrentState == 0)
                 {

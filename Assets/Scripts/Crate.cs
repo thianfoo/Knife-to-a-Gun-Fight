@@ -84,13 +84,6 @@ public class Crate : MonoBehaviour
 
         if (isPlayerNearby)
         {
-            if (promptCanvas != null && promptCanvas.activeSelf && mainCamera != null)
-            {
-                promptCanvas.transform.rotation = Quaternion.LookRotation(
-                    promptCanvas.transform.position - mainCamera.transform.position
-                );
-            }
-
             float bounceOffset = Mathf.Abs(Mathf.Sin(Time.time * bounceSpeed)) * bounceHeight;
             float wiggleOffset = Mathf.Sin(Time.time * shakeSpeed) * shakeAngle;
 
