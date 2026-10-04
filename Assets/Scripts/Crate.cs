@@ -1,35 +1,40 @@
 using System.Collections;
 using UnityEngine;
-using TMPro;
-using UnityEngine.InputSystem; // 1. Added the New Input System namespace
+using UnityEngine.InputSystem; 
 
 [RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(AudioSource))]
 public class Crate : MonoBehaviour
 {
     [Header("Detection Settings")]
-    // 2. Changed KeyCode to Key for the new system
-    public Key interactKey = Key.I; 
-    [Tooltip("The layer name your player is on, matching your EnemyAI script")]
+    [Tooltip("The layer name your player is on")]
     public string playerLayerName = "PlayerRoot";
+
+    [Header("Input System (Scriptable Object)")]
+    public InputActionReference interactAction; // Drag your Input Action here
+
+    [Header("Observer Pattern / Scoring")]
+    public ScoreEventChannel scoreEventChannel; // Drag the Event Channel here
+    public int crateScoreValue = 50;
 
     [Header("UI Prompt")]
     public GameObject promptCanvas;
 
-    [Header("Anticipation Animation (In Range)")]
+    [Header("Animations")]
     public float bounceHeight = 0.3f;
     public float bounceSpeed = 6f;
     public float shakeAngle = 8f;
     public float shakeSpeed = 15f;
-
-    [Header("Open Animation (Fly & Shrink)")]
     public float openDuration = 1.2f;
     public float flyUpwardDistance = 2.5f;
     public float spinSpeed = 1000f;
 
-    // Internal State
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip openSound;
+
     private Camera mainCamera;
     private int playerLayerIndex;
-    
     private bool isPlayerNearby = false;
     private bool isOpened = false;
 
@@ -40,26 +45,51 @@ public class Crate : MonoBehaviour
     void Awake()
     {
         mainCamera = Camera.main;
-        
         basePosition = transform.localPosition;
         baseRotation = transform.localRotation;
         baseScale = transform.localScale;
+
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
     {
         playerLayerIndex = LayerMask.NameToLayer(playerLayerName);
+        if (promptCanvas != null) promptCanvas.SetActive(false);
+    }
 
-        if (promptCanvas != null)
+    void OnEnable()
+    {
+        // Subscribe to the Input Action event
+        if (interactAction != null)
         {
-            promptCanvas.SetActive(false);
+            interactAction.action.Enable();
+            interactAction.action.performed += OnInteractInput;
+        }
+    }
+
+    void OnDisable()
+    {
+        // Unsubscribe from the Input Action
+        if (interactAction != null)
+        {
+            interactAction.action.performed -= OnInteractInput;
+            interactAction.action.Disable();
+        }
+    }
+
+    // Input System Event Callback
+    private void OnInteractInput(InputAction.CallbackContext context)
+    {
+        if (isPlayerNearby && !isOpened)
+        {
+            OpenChest();
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (isOpened) return;
-
         if (other.gameObject.layer == playerLayerIndex)
         {
             isPlayerNearby = true;
@@ -70,7 +100,6 @@ public class Crate : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (isOpened) return;
-
         if (other.gameObject.layer == playerLayerIndex)
         {
             isPlayerNearby = false;
@@ -89,12 +118,6 @@ public class Crate : MonoBehaviour
 
             transform.localPosition = basePosition + new Vector3(0f, bounceOffset, 0f);
             transform.localRotation = baseRotation * Quaternion.Euler(0f, 0f, wiggleOffset);
-
-            // 3. New Input System check for the interaction key
-            if (Keyboard.current != null && Keyboard.current[interactKey].wasPressedThisFrame)
-            {
-                OpenChest();
-            }
         }
         else
         {
@@ -109,10 +132,17 @@ public class Crate : MonoBehaviour
     void OpenChest()
     {
         isOpened = true;
+        if (promptCanvas != null) promptCanvas.SetActive(false);
 
-        if (promptCanvas != null)
+        // Meaningful use of Observer Pattern: Broadcast that an obstacle was overcome
+        if (scoreEventChannel != null)
         {
-            promptCanvas.SetActive(false);
+            scoreEventChannel.RaiseEvent(crateScoreValue);
+        }
+
+        if (audioSource != null && openSound != null)
+        {
+            audioSource.PlayOneShot(openSound);
         }
 
         StartCoroutine(FlyAndShrinkRoutine());
@@ -121,8 +151,7 @@ public class Crate : MonoBehaviour
     IEnumerator FlyAndShrinkRoutine()
     {
         float elapsed = 0f;
-        Vector3 startPos = transform.localPosition;
-        Vector3 targetPos = startPos + new Vector3(0f, flyUpwardDistance, 0f);
+        Vector3 targetPos = basePosition + new Vector3(0f, flyUpwardDistance, 0f);
 
         while (elapsed < openDuration)
         {
@@ -130,10 +159,8 @@ public class Crate : MonoBehaviour
             float normalizedTime = elapsed / openDuration;
 
             transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime, Space.World);
-
             float easeOut = Mathf.Sin(normalizedTime * Mathf.PI * 0.5f);
-            transform.localPosition = Vector3.Lerp(startPos, targetPos, easeOut);
-
+            transform.localPosition = Vector3.Lerp(basePosition, targetPos, easeOut);
             transform.localScale = Vector3.Lerp(baseScale, Vector3.zero, normalizedTime);
 
             yield return null;
