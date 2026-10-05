@@ -30,6 +30,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  targetMixer: {fileID: 24100000, guid: 7dc112a78ab5d224db1f0f06e937f49b, type: 2}
+  exposedParameterName: SFXVolume
   references:
     version: 2
     RefIds: []

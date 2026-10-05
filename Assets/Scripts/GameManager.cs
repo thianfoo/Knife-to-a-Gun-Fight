@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("Observer Pattern")]
+    public ScoreEventChannel scoreChannel;
+
     [Header("Player Health Settings")]
     public float maxHealth = 100f;
     public float currentHealth;
@@ -293,6 +296,22 @@ public class GameManager : MonoBehaviour
         if (activeEnemies <= 0)
         {
             NextWave();
+        }
+    }
+
+    void OnEnable()
+    {
+        if (scoreChannel != null)
+        {
+            scoreChannel.OnScoreAdded += AddScore;
+        }
+    }
+
+    void OnDisable()
+    {
+        if (scoreChannel != null)
+        {
+            scoreChannel.OnScoreAdded -= AddScore;
         }
     }
 

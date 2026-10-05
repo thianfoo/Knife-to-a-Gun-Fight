@@ -60,21 +60,22 @@ public class Crate : MonoBehaviour
 
     void OnEnable()
     {
-        // Subscribe to the Input Action event
         if (interactAction != null)
         {
-            interactAction.action.Enable();
+            if (!interactAction.action.enabled)
+            {
+                interactAction.action.Enable();
+            }
+
             interactAction.action.performed += OnInteractInput;
         }
     }
 
     void OnDisable()
     {
-        // Unsubscribe from the Input Action
         if (interactAction != null)
         {
             interactAction.action.performed -= OnInteractInput;
-            interactAction.action.Disable();
         }
     }
 

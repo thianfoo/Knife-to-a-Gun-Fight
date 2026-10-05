@@ -232,4 +232,9 @@ public class EnemyAI : MonoBehaviour
 
         gameObject.SetActive(false);
     }
+
+    void OnDestroy()
+    {
+        DeactivateAllBulletMarks();
+    }
 }
