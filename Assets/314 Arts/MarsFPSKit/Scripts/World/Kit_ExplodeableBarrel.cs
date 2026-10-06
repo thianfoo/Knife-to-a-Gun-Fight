@@ -36,7 +36,7 @@ namespace MarsFPSKit
         /// </summary>
         private uint destroyedById = 0;
 
-        private bool wasDestroyed;
+        public bool wasDestroyed;
 
         public override void OnStartServer()
         {
