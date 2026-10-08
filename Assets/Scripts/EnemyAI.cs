@@ -17,11 +17,14 @@ public class EnemyAI : MonoBehaviour
     public float attackImpactDelay = 1f;
     private float lastAttackTime;
 
-    [Header("Hit Flash Feedback")]
-    public Color hitFlashColor = Color.white;
+    [Header("Hit Flash Setup")]
+    [Tooltip("Drag the specific SkinnedMeshRenderer of the enemy body here")]
+    public SkinnedMeshRenderer targetRenderer;
+    [Tooltip("Default material used by the enemy mesh")]
+    public Material normalMaterial;
+    [Tooltip("Material swapped in briefly when hit (e.g., solid white/unlit)")]
+    public Material hitFlashMaterial;
     public float flashDuration = 0.08f;
-    private SkinnedMeshRenderer[] meshRenderers;
-    private List<Color> originalColors = new List<Color>();
     private Coroutine flashRoutine;
 
     // Component references
@@ -30,24 +33,15 @@ public class EnemyAI : MonoBehaviour
     private Transform player;
     private List<BulletMark> attachedBulletMarks = new List<BulletMark>();
 
-    // Shader property ID for performance
-    private static readonly int BaseColorId = Shader.PropertyToID("_BaseColor"); // URP default; use "_Color" for Built-in RP
-
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
-        // Cache all renderers on this model (including child bones)
-        meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
-        foreach (var r in meshRenderers)
+        // Fallback: If you forgot to drag normalMaterial, grab the renderer's current one
+        if (targetRenderer != null && normalMaterial == null)
         {
-            if (r.material.HasProperty(BaseColorId))
-                originalColors.Add(r.material.GetColor(BaseColorId));
-            else if (r.material.HasProperty("_Color"))
-                originalColors.Add(r.material.GetColor("_Color"));
-            else
-                originalColors.Add(Color.white);
+            normalMaterial = targetRenderer.sharedMaterial;
         }
 
         FindPlayer();
@@ -57,7 +51,7 @@ public class EnemyAI : MonoBehaviour
     {
         currentHealth = maxHealth;
         lastAttackTime = -attackCooldown;
-        ResetRendererColors();
+        ResetToNormalMaterial();
         FindPlayer();
     }
 
@@ -69,7 +63,7 @@ public class EnemyAI : MonoBehaviour
             StopCoroutine(flashRoutine);
             flashRoutine = null;
         }
-        ResetRendererColors();
+        ResetToNormalMaterial();
     }
 
     void FindPlayer()
@@ -128,7 +122,6 @@ public class EnemyAI : MonoBehaviour
             animator.SetTrigger("Attack");
         }
 
-        // Delay the actual damage to match the animation frame
         StartCoroutine(DealAttackDamageDelayed(attackImpactDelay));
     }
 
@@ -136,11 +129,9 @@ public class EnemyAI : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        // Ensure enemy hasn't died during the windup swing
         if (currentHealth > 0 && player != null)
         {
             float dist = Vector3.Distance(transform.position, player.position);
-            // Verify player is still in melee distance
             if (dist <= attackRange + 0.6f)
             {
                 if (GameManager.Instance != null)
@@ -167,37 +158,38 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator DamageFlashRoutine()
     {
-        animator.SetTrigger("Hit");
-
-        // Set all mesh parts to flash color
-        for (int i = 0; i < meshRenderers.Length; i++)
+        if (animator != null)
         {
-            if (meshRenderers[i] != null)
+            animator.SetTrigger("Hit");
+        }
+
+        if (targetRenderer != null && hitFlashMaterial != null)
+        {
+            // Replace all submesh material slots with the flash material
+            Material[] flashMats = new Material[targetRenderer.sharedMaterials.Length];
+            for (int i = 0; i < flashMats.Length; i++)
             {
-                if (meshRenderers[i].material.HasProperty(BaseColorId))
-                    meshRenderers[i].material.SetColor(BaseColorId, hitFlashColor);
-                else if (meshRenderers[i].material.HasProperty("_Color"))
-                    meshRenderers[i].material.SetColor("_Color", hitFlashColor);
+                flashMats[i] = hitFlashMaterial;
             }
+            targetRenderer.materials = flashMats;
         }
 
         yield return new WaitForSeconds(flashDuration);
 
-        ResetRendererColors();
+        ResetToNormalMaterial();
         flashRoutine = null;
     }
 
-    void ResetRendererColors()
+    void ResetToNormalMaterial()
     {
-        for (int i = 0; i < meshRenderers.Length; i++)
+        if (targetRenderer != null && normalMaterial != null)
         {
-            if (meshRenderers[i] != null && i < originalColors.Count)
+            Material[] normalMats = new Material[targetRenderer.sharedMaterials.Length];
+            for (int i = 0; i < normalMats.Length; i++)
             {
-                if (meshRenderers[i].material.HasProperty(BaseColorId))
-                    meshRenderers[i].material.SetColor(BaseColorId, originalColors[i]);
-                else if (meshRenderers[i].material.HasProperty("_Color"))
-                    meshRenderers[i].material.SetColor("_Color", originalColors[i]);
+                normalMats[i] = normalMaterial;
             }
+            targetRenderer.materials = normalMats;
         }
     }
 

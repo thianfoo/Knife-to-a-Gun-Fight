@@ -78,6 +78,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 22
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -113,8 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c9f417aaffbd6469104fcf505a1e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crate
-  interactKey: 23
   playerLayerName: PlayerRoot
+  interactAction: {fileID: 0}
+  scoreEventChannel: {fileID: 0}
+  crateScoreValue: 50
   promptCanvas: {fileID: 0}
   bounceHeight: 1
   bounceSpeed: 4
@@ -125,6 +132,12 @@ MonoBehaviour:
   spinSpeed: 1000
   audioSource: {fileID: 900966463733986648}
   openSound: {fileID: 8300000, guid: 81bf49d621f62b047b4747d0ca010fb3, type: 3}
+  landSound: {fileID: 0}
+  waitForBarrelExplosion: 0
+  watchedBarrel: {fileID: 0}
+  dropHeightOffset: 15
+  fallSpeed: 18
+  impactBounceHeight: 0.4
 --- !u!65 &2671498688741558771
 BoxCollider:
   m_ObjectHideFlags: 0
