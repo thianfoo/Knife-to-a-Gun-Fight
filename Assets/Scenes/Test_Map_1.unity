@@ -223784,6 +223784,8 @@ MonoBehaviour:
     m_Bits: 0
   currentWave: 1
   enemiesToSpawn: 10
+  playerObject: {fileID: 0}
+  playerSpawn: {fileID: 1103222784}
 --- !u!4 &642113756
 Transform:
   m_ObjectHideFlags: 0
@@ -271148,6 +271150,26 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.12156863
       objectReference: {fileID: 0}
+    - target: {fileID: 5190205328894949769, guid: 917aa706938d53749a6518d91e0f6d0b,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190205328894949769, guid: 917aa706938d53749a6518d91e0f6d0b,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190205328894949769, guid: 917aa706938d53749a6518d91e0f6d0b,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190205328894949769, guid: 917aa706938d53749a6518d91e0f6d0b,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4291624704
+      objectReference: {fileID: 0}
     - target: {fileID: 5245716558960531619, guid: 917aa706938d53749a6518d91e0f6d0b,
         type: 3}
       propertyPath: m_IsActive
@@ -271253,6 +271275,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.12156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098510654619778273, guid: 917aa706938d53749a6518d91e0f6d0b,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098510654619778273, guid: 917aa706938d53749a6518d91e0f6d0b,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098510654619778273, guid: 917aa706938d53749a6518d91e0f6d0b,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098510654619778273, guid: 917aa706938d53749a6518d91e0f6d0b,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4291624704
       objectReference: {fileID: 0}
     - target: {fileID: 6218470164023706622, guid: 917aa706938d53749a6518d91e0f6d0b,
         type: 3}

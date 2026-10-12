@@ -51,6 +51,10 @@ public class GameManager : MonoBehaviour
     private int activeEnemies = 0;
     private Coroutine spawnWaveCoroutine;
 
+    [Header("Player Respawn Settings")]
+    public GameObject playerObject; 
+    public Transform playerSpawn;
+
     void Awake()
     {
         Instance = this;
@@ -100,6 +104,22 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (playerObject == null)
+        {
+            int targetLayer = LayerMask.NameToLayer("PlayerRoot");
+            GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+
+            foreach (GameObject obj in allObjects)
+            {
+                if (obj.layer == targetLayer)
+                {
+                    // Get the highest level parent transform in the hierarchy
+                    playerObject = obj.transform.root.gameObject;
+                    break;
+                }
+            }
+        }
+
         if (isPlayerDead) return;
 
         // 1. Health Regeneration
@@ -179,9 +199,6 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    /// 
-    /// Call this method from the Restart Button's OnClick event
-    /// 
     public void RestartGame()
     {
         // 1. Despawn all active enemies in pool
@@ -198,7 +215,18 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // 2. Reset stats and start clean
+        // 2. Reset Player Position
+        if (playerObject != null && playerSpawn != null)
+        {
+            playerObject.transform.position = playerSpawn.position;
+            playerObject.transform.rotation = playerSpawn.rotation;
+        }
+        else
+        {
+            Debug.LogWarning("Player Object or Player Spawn is not assigned in the GameManager!");
+        }
+
+        // 3. Reset stats and start clean
         InitializeGame();
     }
 
