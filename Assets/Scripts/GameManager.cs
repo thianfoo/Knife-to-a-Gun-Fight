@@ -55,6 +55,10 @@ public class GameManager : MonoBehaviour
     public GameObject playerObject; 
     public Transform playerSpawn;
 
+    [Header("Power-Up States")]
+    public bool isGogglesActive = false;
+    public bool isWeakZoneActive = false;
+
     void Awake()
     {
         Instance = this;
@@ -300,6 +304,12 @@ public class GameManager : MonoBehaviour
             enemy.transform.rotation = chosenPoint.rotation;
             enemy.SetActive(true);
 
+            EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
+            if (enemyAI != null)
+            {
+                enemyAI.RefreshPowerUpVisuals();
+            }
+
             if (agent != null)
             {
                 agent.enabled = true;
@@ -360,5 +370,53 @@ public class GameManager : MonoBehaviour
         currentWave++;
         enemiesToSpawn += 3;
         spawnWaveCoroutine = StartCoroutine(SpawnWave());
+    }
+
+    public void ActivateGoggles(float duration)
+    {
+        StartCoroutine(GogglesRoutine(duration));
+    }
+
+    private IEnumerator GogglesRoutine(float duration)
+    {
+        isGogglesActive = true;
+        UpdateEnemyPowerUpStates();
+
+        yield return new WaitForSeconds(duration);
+
+        isGogglesActive = false;
+        UpdateEnemyPowerUpStates();
+    }
+
+    public void ActivateWeakZones(float duration)
+    {
+        StartCoroutine(WeakZoneRoutine(duration));
+    }
+
+    private IEnumerator WeakZoneRoutine(float duration)
+    {
+        isWeakZoneActive = true;
+        UpdateEnemyPowerUpStates();
+
+        yield return new WaitForSeconds(duration);
+
+        isWeakZoneActive = false;
+        UpdateEnemyPowerUpStates();
+    }
+
+    private void UpdateEnemyPowerUpStates()
+    {
+        // Loop through the existing enemyPool to apply effects to active enemies
+        for (int i = 0; i < enemyPool.Count; i++)
+        {
+            if (enemyPool[i] != null && enemyPool[i].activeInHierarchy)
+            {
+                EnemyAI enemyAI = enemyPool[i].GetComponent<EnemyAI>();
+                if (enemyAI != null)
+                {
+                    enemyAI.RefreshPowerUpVisuals();
+                }
+            }
+        }
     }
 }

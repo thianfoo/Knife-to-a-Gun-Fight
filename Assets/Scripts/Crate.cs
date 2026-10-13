@@ -63,6 +63,10 @@ namespace MarsFPSKit
     private Vector3 baseScale;
     private BoxCollider boxCollider;
 
+    [Header("Power-Ups")]
+    public GameObject[] powerUpPrefabs;
+    public Transform powerUpSpawnPoint;
+
     void Awake()
 {
     mainCamera = Camera.main;
@@ -250,9 +254,15 @@ namespace MarsFPSKit
             audioSource.PlayOneShot(openSound);
         }
 
+        if (powerUpPrefabs != null && powerUpPrefabs.Length > 0)
+        {
+            GameObject selectedPowerUp = powerUpPrefabs[Random.Range(0, powerUpPrefabs.Length)];
+            Vector3 spawnPos = powerUpSpawnPoint != null ? powerUpSpawnPoint.position : transform.position + Vector3.up * 1.5f;
+            Instantiate(selectedPowerUp, spawnPos, Quaternion.identity);
+        }
+
         StartCoroutine(FlyAndShrinkRoutine());
     }
-
     IEnumerator FlyAndShrinkRoutine()
     {
         float elapsed = 0f;

@@ -33,6 +33,17 @@ public class EnemyAI : MonoBehaviour
     private Transform player;
     private List<BulletMark> attachedBulletMarks = new List<BulletMark>();
 
+    [Header("Power-Up Visuals")]
+    [Tooltip("The glowing cube above the enemy for Goggles")]
+    public GameObject gogglesIndicator; 
+    
+    [Tooltip("List of colliders that can become weak zones (e.g., Head, Arm, Leg)")]
+    public Collider[] possibleWeakZones;
+    [Tooltip("Corresponding visual cues for the weak zones (must match index order above)")]
+    public GameObject[] weakZoneVisuals;
+    
+    private Collider activeWeakZoneCollider;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -53,6 +64,59 @@ public class EnemyAI : MonoBehaviour
         lastAttackTime = -attackCooldown;
         ResetToNormalMaterial();
         FindPlayer();
+
+        activeWeakZoneCollider = null;
+        RefreshPowerUpVisuals();
+    }
+
+    public void RefreshPowerUpVisuals()
+    {
+        if (GameManager.Instance == null) return;
+
+        // 1. Goggles Power-Up Indicator
+        if (gogglesIndicator != null)
+        {
+            gogglesIndicator.SetActive(GameManager.Instance.isGogglesActive);
+        }
+
+        // 2. Weak Zone Power-Up
+        if (GameManager.Instance.isWeakZoneActive)
+        {
+            // Pick a random weak zone collider if none is currently active
+            if (activeWeakZoneCollider == null && possibleWeakZones != null && possibleWeakZones.Length > 0)
+            {
+                int randIndex = Random.Range(0, possibleWeakZones.Length);
+                activeWeakZoneCollider = possibleWeakZones[randIndex];
+            }
+
+            // Enable ONLY the active weak zone visual GameObject
+            for (int i = 0; i < weakZoneVisuals.Length; i++)
+            {
+                if (weakZoneVisuals[i] != null)
+                {
+                    bool isMatch = false;
+                    if (activeWeakZoneCollider != null && i < possibleWeakZones.Length)
+                    {
+                        isMatch = (possibleWeakZones[i] == activeWeakZoneCollider);
+                    }
+
+                    // Directly enable/disable the GameObject itself!
+                    weakZoneVisuals[i].SetActive(isMatch);
+                }
+            }
+        }
+        else
+        {
+            // Power-up expired: reset state and turn OFF all visual GameObjects
+            activeWeakZoneCollider = null;
+            for (int i = 0; i < weakZoneVisuals.Length; i++)
+            {
+                if (weakZoneVisuals[i] != null)
+                {
+                    weakZoneVisuals[i].SetActive(false);
+                }
+            }
+        }
     }
 
     void OnDisable()
@@ -64,6 +128,24 @@ public class EnemyAI : MonoBehaviour
             flashRoutine = null;
         }
         ResetToNormalMaterial();
+
+        // Reset Weak Zone states
+        activeWeakZoneCollider = null;
+        if (gogglesIndicator != null) gogglesIndicator.SetActive(false);
+
+        // Hide all visual GameObjects when disabled
+        for (int i = 0; i < weakZoneVisuals.Length; i++)
+        {
+            if (weakZoneVisuals[i] != null)
+            {
+                weakZoneVisuals[i].SetActive(false);
+            }
+        }
+    }
+
+    public bool CheckIfWeakZone(Collider hitCollider)
+    {
+        return GameManager.Instance != null && GameManager.Instance.isWeakZoneActive && hitCollider == activeWeakZoneCollider;
     }
 
     void FindPlayer()

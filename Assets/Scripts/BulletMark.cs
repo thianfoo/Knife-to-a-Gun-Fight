@@ -4,26 +4,33 @@ public class BulletMark : MonoBehaviour
 {
     [Header("Damage Settings")]
     public int damageAmount = 25;
+    public int weakZoneMultiplier = 3;
 
     private EnemyAI attachedEnemy;
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if we hit an enemy
+        // Ensure the hit object or its root is tagged Enemy
         if (other.CompareTag("Enemy"))
         {
             EnemyAI enemy = other.GetComponentInParent<EnemyAI>();
             if (enemy != null)
             {
-                // 1. Physically stick the mark to the hit bone/collider
+                // Stick mark to the hit weak zone bone/collider
                 transform.SetParent(other.transform);
 
-                // 2. Register this mark with the enemy so it can be cleaned up on death
                 attachedEnemy = enemy;
                 attachedEnemy.RegisterBulletMark(this);
 
-                // 3. Apply the damage!
-                enemy.TakeDamage(damageAmount);
+                // Calculate damage
+                int finalDamage = damageAmount;
+                if (enemy.CheckIfWeakZone(other))
+                {
+                    finalDamage *= weakZoneMultiplier;
+                    Debug.Log($"CRITICAL WEAK ZONE HIT on {other.gameObject.name}!");
+                }
+
+                enemy.TakeDamage(finalDamage);
             }
         }
     }
