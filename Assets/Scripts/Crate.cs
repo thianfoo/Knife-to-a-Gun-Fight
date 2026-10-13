@@ -263,11 +263,15 @@ namespace MarsFPSKit
             elapsed += Time.deltaTime;
             float normalizedTime = elapsed / openDuration;
 
-            transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime, Space.World);
-
+            // 1. Calculate easing and positions
             float easeOut = Mathf.Sin(normalizedTime * Mathf.PI * 0.5f);
-            transform.localPosition = Vector3.Lerp(groundPosition, targetPos, easeOut);
+            
+            // Use transform.position (World Space) to match groundPosition
+            transform.position = Vector3.Lerp(groundPosition, targetPos, easeOut);
             transform.localScale = Vector3.Lerp(baseScale, Vector3.zero, normalizedTime);
+
+            // 2. Rotate after applying world position
+            transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime, Space.World);
 
             yield return null;
         }

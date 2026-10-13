@@ -26,37 +26,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.18
+      value: 17.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.67
+      value: -21.379
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.91
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.6596866
+      value: -0.6769182
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.6950346
+      value: 0.6833232
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.254585
+      value: -0.20440601
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.13010351
+      value: 0.18185002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
         type: 3}
@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -259.5
+      value: -268.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
         type: 3}
@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3b75f499e75d3e742bcd29d3ee4f363c,
         type: 3}
       propertyPath: m_Layer
-      value: 22
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -119,8 +119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crate
   playerLayerName: PlayerRoot
-  interactAction: {fileID: 0}
-  scoreEventChannel: {fileID: 0}
+  interactAction: {fileID: -3352469397863121808, guid: ffb0f2c085f83bc4da11ea4e44d1f4ab,
+    type: 3}
+  scoreEventChannel: {fileID: 11400000, guid: d72ea2c08ece58f48a6887950a55b07d, type: 2}
   crateScoreValue: 50
   promptCanvas: {fileID: 0}
   bounceHeight: 1
@@ -129,9 +130,9 @@ MonoBehaviour:
   shakeSpeed: 15
   openDuration: 0.8
   flyUpwardDistance: 2.5
-  spinSpeed: 1000
+  spinSpeed: 200
   audioSource: {fileID: 900966463733986648}
-  openSound: {fileID: 8300000, guid: 81bf49d621f62b047b4747d0ca010fb3, type: 3}
+  openSound: {fileID: 8300000, guid: 9d4852016112d824781e995a069df089, type: 3}
   landSound: {fileID: 0}
   waitForBarrelExplosion: 0
   watchedBarrel: {fileID: 0}
@@ -168,7 +169,8 @@ AudioSource:
   m_GameObject: {fileID: 1472352009647440987}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7011040791984403290, guid: 7dc112a78ab5d224db1f0f06e937f49b,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
