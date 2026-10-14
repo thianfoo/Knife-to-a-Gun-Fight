@@ -59,6 +59,10 @@ public class GameManager : MonoBehaviour
     public bool isGogglesActive = false;
     public bool isWeakZoneActive = false;
 
+    // References to active power-up coroutines so we can cancel them on restart
+    private Coroutine gogglesCoroutine;
+    private Coroutine weakZoneCoroutine;
+
     void Awake()
     {
         Instance = this;
@@ -205,7 +209,10 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        // 1. Despawn all active enemies in pool
+        // 1. Reset and cancel all active power-ups
+        ResetPowerUps();
+
+        // 2. Despawn all active enemies in pool
         for (int i = 0; i < enemyPool.Count; i++)
         {
             if (enemyPool[i] != null && enemyPool[i].activeInHierarchy)
@@ -219,7 +226,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // 2. Reset Player Position
+        // 3. Reset Player Position
         if (playerObject != null && playerSpawn != null)
         {
             playerObject.transform.position = playerSpawn.position;
@@ -230,7 +237,7 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("Player Object or Player Spawn is not assigned in the GameManager!");
         }
 
-        // 3. Reset stats and start clean
+        // 4. Reset stats and start clean
         InitializeGame();
     }
 
@@ -374,7 +381,8 @@ public class GameManager : MonoBehaviour
 
     public void ActivateGoggles(float duration)
     {
-        StartCoroutine(GogglesRoutine(duration));
+        if (gogglesCoroutine != null) StopCoroutine(gogglesCoroutine);
+        gogglesCoroutine = StartCoroutine(GogglesRoutine(duration));
     }
 
     private IEnumerator GogglesRoutine(float duration)
@@ -386,11 +394,13 @@ public class GameManager : MonoBehaviour
 
         isGogglesActive = false;
         UpdateEnemyPowerUpStates();
+        gogglesCoroutine = null;
     }
 
     public void ActivateWeakZones(float duration)
     {
-        StartCoroutine(WeakZoneRoutine(duration));
+        if (weakZoneCoroutine != null) StopCoroutine(weakZoneCoroutine);
+        weakZoneCoroutine = StartCoroutine(WeakZoneRoutine(duration));
     }
 
     private IEnumerator WeakZoneRoutine(float duration)
@@ -401,6 +411,30 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         isWeakZoneActive = false;
+        UpdateEnemyPowerUpStates();
+        weakZoneCoroutine = null;
+    }
+
+    void ResetPowerUps()
+    {
+        // Stop active coroutines
+        if (gogglesCoroutine != null)
+        {
+            StopCoroutine(gogglesCoroutine);
+            gogglesCoroutine = null;
+        }
+
+        if (weakZoneCoroutine != null)
+        {
+            StopCoroutine(weakZoneCoroutine);
+            weakZoneCoroutine = null;
+        }
+
+        // Reset state booleans
+        isGogglesActive = false;
+        isWeakZoneActive = false;
+
+        // Force all active enemies to clear their visual indicators
         UpdateEnemyPowerUpStates();
     }
 
