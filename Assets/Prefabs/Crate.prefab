@@ -139,6 +139,8 @@ MonoBehaviour:
   dropHeightOffset: 15
   fallSpeed: 18
   impactBounceHeight: 0.4
+  powerUpPrefabs: []
+  powerUpSpawnPoint: {fileID: 0}
 --- !u!65 &2671498688741558771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -158,8 +160,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 50, y: 50, z: 50}
-  m_Center: {x: -0.04, y: -2.74, z: 2}
+  m_Size: {x: 50, y: 15.447976, z: 10.469104}
+  m_Center: {x: -0.04005431, y: -2.1024933, z: 0.21837355}
 --- !u!82 &900966463733986648
 AudioSource:
   m_ObjectHideFlags: 0
