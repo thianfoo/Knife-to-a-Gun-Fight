@@ -63,6 +63,17 @@ public class GameManager : MonoBehaviour
     private Coroutine gogglesCoroutine;
     private Coroutine weakZoneCoroutine;
 
+    [Header("Boss Cutscene Settings")]
+    public int bossWave = 5;                        // The wave number that triggers the boss
+    public Camera cutsceneCamera;                  // Dedicated cutscene camera in the scene
+    public Transform bossCutsceneLookAtPoint;       // Where the camera looks at the boss
+    public Transform bossCutsceneStartPoint;       // Where the camera starts panning from
+    public float cutsceneDuration = 4f;            // How long the pan lasts
+    public GameObject bossPrefab;                  // Special boss enemy prefab
+    public Transform bossSpawn;                        // Where the boss spawns
+
+    private bool isCutscenePlaying = false;
+
     void Awake()
     {
         Instance = this;
@@ -163,7 +174,7 @@ public class GameManager : MonoBehaviour
 
     public void TakePlayerDamage(float amount)
     {
-        if (isPlayerDead) return;
+        if (isPlayerDead || isCutscenePlaying) return;
 
         currentHealth -= amount;
         lastHitTime = Time.time;
@@ -269,6 +280,33 @@ public class GameManager : MonoBehaviour
         int spawnedCount = 0;
         int maxAttemptsPerEnemy = 10;
 
+        // --- BOSS WAVE CHECK ---
+        if (currentWave == bossWave && bossPrefab != null)
+        {
+            // Use the assigned bossSpawn transform; fallback to first spawn point if unassigned
+            Transform chosenBossSpawn = bossSpawn != null ? bossSpawn : spawnPoints[0];
+
+            GameObject bossObj = Instantiate(bossPrefab, chosenBossSpawn.position, chosenBossSpawn.rotation);
+            activeEnemies = 1;
+
+            // Focus cutscene camera on boss
+            bossCutsceneLookAtPoint = bossObj.transform;
+
+            // Play boss intro scream animation
+            BossAI bossAI = bossObj.GetComponent<BossAI>();
+            if (bossAI != null)
+            {
+                bossAI.PlaySpawnAnimation();
+            }
+
+            // Play camera pan cutscene and wait until complete
+            yield return StartCoroutine(PlayBossCutscene(bossObj));
+
+            // DO NOT spawn normal wave enemies during boss wave!
+            yield break;
+        }
+
+        // --- NORMAL WAVE SPAWNING ---
         while (spawnedCount < enemiesToSpawn)
         {
             if (isPlayerDead) yield break;
@@ -276,18 +314,14 @@ public class GameManager : MonoBehaviour
             GameObject enemy = GetPooledEnemy();
             if (enemy == null)
             {
-                // Pool exhausted; wait for an active enemy to die before trying again
                 yield return new WaitForSeconds(1.0f);
                 continue;
             }
 
-            // Try to find a clear spawn point
             Transform chosenPoint = null;
             for (int attempt = 0; attempt < maxAttemptsPerEnemy; attempt++)
             {
                 Transform candidate = spawnPoints[Random.Range(0, spawnPoints.Length)];
-                
-                // Check clearance radius against enemy/obstacle colliders
                 bool isBlocked = Physics.CheckSphere(candidate.position, spawnClearanceRadius, spawnBlockerMask);
                 if (!isBlocked)
                 {
@@ -296,14 +330,12 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            // If all candidate points were blocked this frame, wait briefly and retry
             if (chosenPoint == null)
             {
                 yield return new WaitForSeconds(0.5f);
                 continue;
             }
 
-            // Safe to spawn
             UnityEngine.AI.NavMeshAgent agent = enemy.GetComponent<UnityEngine.AI.NavMeshAgent>();
             if (agent != null) agent.enabled = false;
 
@@ -330,6 +362,60 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    IEnumerator PlayBossCutscene(GameObject boss)
+    {
+        isCutscenePlaying = true;
+
+        // Locate active local player camera
+        Camera playerCam = null;
+        if (playerObject != null)
+        {
+            playerCam = playerObject.GetComponentInChildren<Camera>();
+        }
+        if (playerCam == null) playerCam = Camera.main;
+
+        // Switch to Cutscene Camera
+        if (playerCam != null) playerCam.enabled = false;
+        if (cutsceneCamera != null)
+        {
+            cutsceneCamera.enabled = true;
+            if (bossCutsceneStartPoint != null)
+            {
+                cutsceneCamera.transform.position = bossCutsceneStartPoint.position;
+                cutsceneCamera.transform.rotation = bossCutsceneStartPoint.rotation;
+            }
+        }
+
+        // Smoothly Pan & Rotate Camera towards Boss during Intro Scream
+        float elapsed = 0f;
+        Quaternion startRot = cutsceneCamera != null ? cutsceneCamera.transform.rotation : Quaternion.identity;
+
+        while (elapsed < cutsceneDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / cutsceneDuration;
+            float smoothT = Mathf.SmoothStep(0f, 1f, t);
+
+            if (cutsceneCamera != null && boss != null)
+            {
+                Vector3 targetHeadPos = boss.transform.position + Vector3.up * 2f;
+                Vector3 lookDir = (targetHeadPos - cutsceneCamera.transform.position).normalized;
+                if (lookDir != Vector3.zero)
+                {
+                    Quaternion targetRot = Quaternion.LookRotation(lookDir);
+                    cutsceneCamera.transform.rotation = Quaternion.Slerp(startRot, targetRot, smoothT);
+                }
+            }
+
+            yield return null;
+        }
+
+        // Restore Player Camera
+        if (cutsceneCamera != null) cutsceneCamera.enabled = false;
+        if (playerCam != null) playerCam.enabled = true;
+
+        isCutscenePlaying = false;
+    }
     public void AddScore(int points)
     {
         if (isPlayerDead) return;

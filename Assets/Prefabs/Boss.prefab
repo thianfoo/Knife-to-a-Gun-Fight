@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6368913040072760273
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.24
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_Name
+      value: Boss
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3535770991804070658}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6012479112045649856}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 414841526306703204}
+  m_SourcePrefab: {fileID: 100100000, guid: 9f4c8d34a49c35b45b231543f68fcf2a, type: 3}
+--- !u!1 &6098865086316603008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6368913040072760273}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3535770991804070658
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098865086316603008}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6a693bc94623df468dc92494443bb3b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &6012479112045649856
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098865086316603008}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.51984847
+  m_Height: 1.7428894
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8648224, z: 0.1786374}
+--- !u!114 &414841526306703204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098865086316603008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da649bbe9f441b94085e653e71dc2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAI
+  maxHealth: 1000
+  turnSpeed: 5
+  meleeRange: 4
+  meleeDamage: 25
+  attackCooldown: 2
+  throwCooldown: 5
+  screamCooldown: 12
+  slamCooldown: 8
+  projectilePrefab: {fileID: 0}
+  handSpawnPoint: {fileID: 0}
+  targetRenderer: {fileID: 0}
+  normalMaterial: {fileID: 0}
+  hitFlashMaterial: {fileID: 0}
+  flashDuration: 0.08
+  gogglesIndicator: {fileID: 0}
+  possibleWeakZones: []
+  weakZoneVisuals: []
