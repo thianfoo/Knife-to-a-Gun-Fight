@@ -223943,10 +223943,13 @@ MonoBehaviour:
   cutsceneCamera: {fileID: 1784562111}
   bossCutsceneLookAtPoint: {fileID: 0}
   bossCutsceneStartPoint: {fileID: 1763779590}
-  cutsceneDuration: 10
+  cutsceneDuration: 5
   bossPrefab: {fileID: 6098865086316603008, guid: cd7f5c5ba2f9d8849b7c28e586ca3406,
     type: 3}
   bossSpawn: {fileID: 1524374609}
+  cutsceneLookHeight: 0.8
+  shakeIntensity: 0.3
+  shakeStartTime: 1
 --- !u!4 &642113756
 Transform:
   m_ObjectHideFlags: 0
@@ -613562,7 +613565,7 @@ Transform:
   m_GameObject: {fileID: 1763779589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 24.04}
+  m_LocalPosition: {x: 0, y: -13, z: 38.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -621463,7 +621466,7 @@ Transform:
   m_GameObject: {fileID: 1784562108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -15, z: 24.04}
+  m_LocalPosition: {x: 0, y: -13, z: 38.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

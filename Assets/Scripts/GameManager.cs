@@ -72,6 +72,14 @@ public class GameManager : MonoBehaviour
     public GameObject bossPrefab;                  // Special boss enemy prefab
     public Transform bossSpawn;                        // Where the boss spawns
 
+    [Header("Boss Cutscene Camera Tuning")]
+    [Tooltip("Vertical offset from boss base (lower = pans down less)")]
+    public float cutsceneLookHeight = 0.8f; 
+    [Tooltip("Intensity of the camera shake when the boss lands/screams")]
+    public float shakeIntensity = 0.3f;
+    [Tooltip("When during the cutscene the shake starts (in seconds)")]
+    public float shakeStartTime = 1.0f;
+
     private bool isCutscenePlaying = false;
 
     void Awake()
@@ -283,24 +291,30 @@ public class GameManager : MonoBehaviour
         // --- BOSS WAVE CHECK ---
         if (currentWave == bossWave && bossPrefab != null)
         {
-            // Use the assigned bossSpawn transform; fallback to first spawn point if unassigned
             Transform chosenBossSpawn = bossSpawn != null ? bossSpawn : spawnPoints[0];
-
             GameObject bossObj = Instantiate(bossPrefab, chosenBossSpawn.position, chosenBossSpawn.rotation);
             activeEnemies = 1;
 
-            // Focus cutscene camera on boss
-            bossCutsceneLookAtPoint = bossObj.transform;
-
-            // Play boss intro scream animation
+            // 1. Get BossAI component and disable it temporarily during cutscene
             BossAI bossAI = bossObj.GetComponent<BossAI>();
             if (bossAI != null)
             {
-                bossAI.PlaySpawnAnimation();
+                bossAI.enabled = false; 
+                bossAI.PlayIntroAnimation(); 
             }
 
-            // Play camera pan cutscene and wait until complete
+            // 2. Focus cutscene on boss
+            bossCutsceneLookAtPoint = bossObj.transform;
+
+            // 3. Play camera pan cutscene and wait until it finishes
             yield return StartCoroutine(PlayBossCutscene(bossObj));
+
+            // 4. Enable BossAI now that the cutscene is finished and snap rotation
+            if (bossAI != null)
+            {
+                bossAI.enabled = true;
+                bossAI.ForceFacePlayer(); // Instant turn toward player!
+            }
 
             // DO NOT spawn normal wave enemies during boss wave!
             yield break;
@@ -386,8 +400,9 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // Smoothly Pan & Rotate Camera towards Boss during Intro Scream
+        // Cache baseline positions for rotation lerping and shake offsets
         float elapsed = 0f;
+        Vector3 baseCameraPos = cutsceneCamera != null ? cutsceneCamera.transform.position : Vector3.zero;
         Quaternion startRot = cutsceneCamera != null ? cutsceneCamera.transform.rotation : Quaternion.identity;
 
         while (elapsed < cutsceneDuration)
@@ -398,20 +413,47 @@ public class GameManager : MonoBehaviour
 
             if (cutsceneCamera != null && boss != null)
             {
-                Vector3 targetHeadPos = boss.transform.position + Vector3.up * 2f;
-                Vector3 lookDir = (targetHeadPos - cutsceneCamera.transform.position).normalized;
+                // 1. REDUCED TILT: Use cutsceneLookHeight instead of hardcoded 2f
+                Vector3 targetFocusPos = boss.transform.position + Vector3.up * cutsceneLookHeight;
+                Vector3 lookDir = (targetFocusPos - baseCameraPos).normalized;
+
                 if (lookDir != Vector3.zero)
                 {
                     Quaternion targetRot = Quaternion.LookRotation(lookDir);
                     cutsceneCamera.transform.rotation = Quaternion.Slerp(startRot, targetRot, smoothT);
+                }
+
+                // 2. CAMERA SHAKE: Applies procedural offset after shakeStartTime
+                if (elapsed >= shakeStartTime)
+                {
+                    // Gradually fade shake out towards the end of the cutscene
+                    float shakeDamp = 1f - ((elapsed - shakeStartTime) / (cutsceneDuration - shakeStartTime));
+                    float currentIntensity = shakeIntensity * Mathf.Max(0f, shakeDamp);
+
+                    Vector3 shakeOffset = new Vector3(
+                        Random.Range(-1f, 1f) * currentIntensity,
+                        Random.Range(-1f, 1f) * currentIntensity,
+                        Random.Range(-1f, 1f) * currentIntensity
+                    );
+
+                    cutsceneCamera.transform.position = baseCameraPos + shakeOffset;
+                }
+                else
+                {
+                    cutsceneCamera.transform.position = baseCameraPos;
                 }
             }
 
             yield return null;
         }
 
-        // Restore Player Camera
-        if (cutsceneCamera != null) cutsceneCamera.enabled = false;
+        // Reset camera position cleanly before handing back control
+        if (cutsceneCamera != null)
+        {
+            cutsceneCamera.transform.position = baseCameraPos;
+            cutsceneCamera.enabled = false;
+        }
+        
         if (playerCam != null) playerCam.enabled = true;
 
         isCutscenePlaying = false;

@@ -76,6 +76,14 @@ public class BossAI : MonoBehaviour
         RefreshPowerUpVisuals();
     }
 
+    public void PlayIntroAnimation()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Jump");
+        }
+    }
+
     void OnDisable()
     {
         DeactivateAllBulletMarks();
@@ -95,6 +103,22 @@ public class BossAI : MonoBehaviour
         }
     }
 
+    // Call this to instantly snap the boss's Y-rotation towards the player
+    public void ForceFacePlayer()
+    {
+        if (player == null) FindPlayer();
+
+        if (player != null)
+        {
+            Vector3 lookDir = (player.position - transform.position).normalized;
+            lookDir.y = 0; // Keep rotation strictly on the Y-axis (upright)
+            if (lookDir != Vector3.zero)
+            {
+                transform.rotation = Quaternion.LookRotation(lookDir);
+            }
+        }
+    }
+
     void FindPlayer()
     {
         int playerLayer = LayerMask.NameToLayer("PlayerRoot");
@@ -111,9 +135,9 @@ public class BossAI : MonoBehaviour
 
     void Update()
     {
-        if (player == null || currentHealth <= 0 || isPerformingAction) return;
+        if (player == null || currentHealth <= 0) return;
 
-        // 1. Rotate to continuously face the player while stationary
+        // Continuously track and rotate toward the player every frame
         Vector3 lookDir = (player.position - transform.position).normalized;
         lookDir.y = 0;
         if (lookDir != Vector3.zero)
@@ -121,6 +145,9 @@ public class BossAI : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(lookDir);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
         }
+
+        // Pause attack patterns during action execution, but allow rotation above
+        if (isPerformingAction) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
