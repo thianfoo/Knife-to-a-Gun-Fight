@@ -27,14 +27,17 @@ public class BossAI : MonoBehaviour
     private Transform player; 
 
     [Header("Attack Timings & Cooldowns")]
-    public float meleeRange = 4.0f; 
-    public float throwMinRange = 8.0f; // Throws only if player is further than this
-    public float meleeDamage = 25f; 
+    public float stopChaseDistance = 7.0f; // Boss stops moving if player is within this range
     
-    public float attackCooldown = 2.0f; 
-    public float throwCooldown = 6.0f; 
-    public float screamCooldown = 15.0f; 
-    public float slamCooldown = 10.0f; 
+    public float meleeRange = 4.0f;
+    public float slamRange = 9.0f; // Range to allow jump slams
+    public float throwMinRange = 12.0f; // Throws only if player is further than this
+    
+    public float meleeDamage = 25f;
+    public float attackCooldown = 2.0f;
+    public float throwCooldown = 5.0f; // After throwing, he walks toward you for 5 seconds
+    public float screamCooldown = 15.0f;
+    public float slamCooldown = 10.0f;
 
     private float lastMeleeTime; 
     private float lastThrowTime; 
@@ -59,8 +62,11 @@ public class BossAI : MonoBehaviour
     private Collider activeWeakZoneCollider; 
 
     private Animator animator; 
-    private List<BulletMark> attachedBulletMarks = new List<BulletMark>(); 
+    private List<BulletMark> attachedBulletMarks = new List<BulletMark>();
 
+    [Header("Cutscene Animation Settings")]
+    public float jumpAnimDuration = 1.2f; // Time in seconds for the jump animation clip to finish
+    
     void Awake()
     {
         animator = GetComponent<Animator>(); 
@@ -93,11 +99,27 @@ public class BossAI : MonoBehaviour
         RefreshPowerUpVisuals(); 
     }
 
+    // Called by GameManager at the start of the cutscene
     public void PlayIntroAnimation()
     {
-        if (animator != null) 
+        StartCoroutine(IntroCutsceneSequence());
+    }
+
+    private IEnumerator IntroCutsceneSequence()
+    {
+        if (animator != null)
         {
-            animator.SetTrigger("Jump"); 
+            // 1. Play the Jump animation
+            animator.SetTrigger("Jump");
+        }
+
+        // Wait for the jump animation to finish landing
+        yield return new WaitForSeconds(jumpAnimDuration);
+
+        if (animator != null)
+        {
+            // 2. Immediately transition into the Scream animation
+            animator.SetTrigger("Scream");
         }
     }
 
@@ -168,38 +190,42 @@ public class BossAI : MonoBehaviour
     void HandleChaseState()
     {
         // 1. Rotate towards player
-        Vector3 lookDir = (player.position - transform.position).normalized; 
-        lookDir.y = 0; 
-        if (lookDir != Vector3.zero) 
+        Vector3 lookDir = (player.position - transform.position).normalized;
+        lookDir.y = 0;
+        if (lookDir != Vector3.zero)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(lookDir); 
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed); 
+            Quaternion targetRotation = Quaternion.LookRotation(lookDir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
         }
 
-        // 2. Play walk/run animation (Root Motion moves the transform)
-        if (animator != null)
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        // 2. Control Movement (Stop if close enough, walk if too far)
+        if (distanceToPlayer > stopChaseDistance)
         {
-            animator.SetFloat("Speed", 1f); // Ensures Animator transitions to movement state
+            if (animator != null) animator.SetFloat("Speed", 1f); // Move closer
+        }
+        else
+        {
+            if (animator != null) animator.SetFloat("Speed", 0f); // Hold ground
         }
 
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position); 
-
-        // 3. FSM Transitions based on distance and cooldowns
-        if (distanceToPlayer <= meleeRange && Time.time >= lastMeleeTime + attackCooldown) 
+        // 3. FSM Transitions based on distance zones and cooldowns
+        if (distanceToPlayer <= meleeRange && Time.time >= lastMeleeTime + attackCooldown)
         {
-            StartCoroutine(ExecuteMeleeAttack()); 
+            StartCoroutine(ExecuteMeleeAttack());
         }
         else if (distanceToPlayer >= throwMinRange && Time.time >= lastThrowTime + throwCooldown)
         {
-            StartCoroutine(ExecuteThrowAttack()); 
+            StartCoroutine(ExecuteThrowAttack());
         }
-        else if (Time.time >= lastSlamTime + slamCooldown) 
+        else if (distanceToPlayer <= slamRange && Time.time >= lastSlamTime + slamCooldown)
         {
-            StartCoroutine(ExecuteJumpSlam()); 
+            StartCoroutine(ExecuteJumpSlam());
         }
-        else if (Time.time >= lastScreamTime + screamCooldown) 
+        else if (Time.time >= lastScreamTime + screamCooldown)
         {
-            StartCoroutine(ExecuteScream()); 
+            StartCoroutine(ExecuteScream());
         }
     }
 

@@ -138,17 +138,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
         type: 3}
@@ -204,6 +204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -289,10 +294,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da649bbe9f441b94085e653e71dc2f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossAI
+  currentState: 0
   maxHealth: 1000
   turnSpeed: 5
+  stopChaseDistance: 7
   meleeRange: 4
-  meleeDamage: 25
+  slamRange: 4
+  throwMinRange: 8
+  meleeDamage: 20
   attackCooldown: 2
   throwCooldown: 5
   screamCooldown: 12

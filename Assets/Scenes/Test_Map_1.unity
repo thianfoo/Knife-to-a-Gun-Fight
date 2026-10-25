@@ -223929,17 +223929,17 @@ MonoBehaviour:
   - {fileID: 2010373096}
   - {fileID: 275263667}
   - {fileID: 836067235}
-  spawnClearanceRadius: 1.2
+  spawnClearanceRadius: 2
   spawnBlockerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   currentWave: 1
   enemiesToSpawn: 10
   playerObject: {fileID: 0}
   playerSpawn: {fileID: 1103222784}
   isGogglesActive: 0
   isWeakZoneActive: 0
-  bossWave: 1
+  bossWave: 2
   cutsceneCamera: {fileID: 1784562111}
   bossCutsceneLookAtPoint: {fileID: 0}
   bossCutsceneStartPoint: {fileID: 1763779590}

@@ -8,21 +8,23 @@ public class EnemyAI : MonoBehaviour
     [Header("Stats")]
     public int maxHealth = 100;
     private int currentHealth;
+    private bool isDead = false;
 
     [Header("Attack Timing")]
     public float attackRange = 2.0f;
     public float attackCooldown = 1.6f;
     public float attackDamage = 15f;
-    [Tooltip("Time from animation start until the hit lands (e.g. 0.4s into a punch)")]
     public float attackImpactDelay = 1f;
     private float lastAttackTime;
 
+    [Header("Hit Visuals & FX")]
+    [Tooltip("List of hit effects (blood splatters, streams, sparks) randomly chosen on hit")]
+    public GameObject[] bloodEffectPrefabs;
+    public float corpseDespawnDelay = 3.5f; // Time body stays after playing Dead animation
+
     [Header("Hit Flash Setup")]
-    [Tooltip("Drag the specific SkinnedMeshRenderer of the enemy body here")]
     public SkinnedMeshRenderer targetRenderer;
-    [Tooltip("Default material used by the enemy mesh")]
     public Material normalMaterial;
-    [Tooltip("Material swapped in briefly when hit (e.g., solid white/unlit)")]
     public Material hitFlashMaterial;
     public float flashDuration = 0.08f;
     private Coroutine flashRoutine;
@@ -31,25 +33,21 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
     private Transform player;
+    private Collider enemyCollider;
     private List<BulletMark> attachedBulletMarks = new List<BulletMark>();
 
     [Header("Power-Up Visuals")]
-    [Tooltip("The glowing cube above the enemy for Goggles")]
-    public GameObject gogglesIndicator; 
-    
-    [Tooltip("List of colliders that can become weak zones (e.g., Head, Arm, Leg)")]
+    public GameObject gogglesIndicator;
     public Collider[] possibleWeakZones;
-    [Tooltip("Corresponding visual cues for the weak zones (must match index order above)")]
     public GameObject[] weakZoneVisuals;
-    
     private Collider activeWeakZoneCollider;
 
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        enemyCollider = GetComponent<Collider>();
 
-        // Fallback: If you forgot to drag normalMaterial, grab the renderer's current one
         if (targetRenderer != null && normalMaterial == null)
         {
             normalMaterial = targetRenderer.sharedMaterial;
@@ -60,8 +58,13 @@ public class EnemyAI : MonoBehaviour
 
     void OnEnable()
     {
+        isDead = false;
         currentHealth = maxHealth;
         lastAttackTime = -attackCooldown;
+
+        if (agent != null) agent.enabled = true;
+        if (enemyCollider != null) enemyCollider.enabled = true;
+
         ResetToNormalMaterial();
         FindPlayer();
 
@@ -73,48 +76,34 @@ public class EnemyAI : MonoBehaviour
     {
         if (GameManager.Instance == null) return;
 
-        // 1. Goggles Power-Up Indicator
         if (gogglesIndicator != null)
         {
             gogglesIndicator.SetActive(GameManager.Instance.isGogglesActive);
         }
 
-        // 2. Weak Zone Power-Up
         if (GameManager.Instance.isWeakZoneActive)
         {
-            // Pick a random weak zone collider if none is currently active
             if (activeWeakZoneCollider == null && possibleWeakZones != null && possibleWeakZones.Length > 0)
             {
                 int randIndex = Random.Range(0, possibleWeakZones.Length);
                 activeWeakZoneCollider = possibleWeakZones[randIndex];
             }
 
-            // Enable ONLY the active weak zone visual GameObject
             for (int i = 0; i < weakZoneVisuals.Length; i++)
             {
                 if (weakZoneVisuals[i] != null)
                 {
-                    bool isMatch = false;
-                    if (activeWeakZoneCollider != null && i < possibleWeakZones.Length)
-                    {
-                        isMatch = (possibleWeakZones[i] == activeWeakZoneCollider);
-                    }
-
-                    // Directly enable/disable the GameObject itself!
+                    bool isMatch = (activeWeakZoneCollider != null && i < possibleWeakZones.Length && possibleWeakZones[i] == activeWeakZoneCollider);
                     weakZoneVisuals[i].SetActive(isMatch);
                 }
             }
         }
         else
         {
-            // Power-up expired: reset state and turn OFF all visual GameObjects
             activeWeakZoneCollider = null;
             for (int i = 0; i < weakZoneVisuals.Length; i++)
             {
-                if (weakZoneVisuals[i] != null)
-                {
-                    weakZoneVisuals[i].SetActive(false);
-                }
+                if (weakZoneVisuals[i] != null) weakZoneVisuals[i].SetActive(false);
             }
         }
     }
@@ -122,24 +111,15 @@ public class EnemyAI : MonoBehaviour
     void OnDisable()
     {
         DeactivateAllBulletMarks();
-        if (flashRoutine != null)
-        {
-            StopCoroutine(flashRoutine);
-            flashRoutine = null;
-        }
+        if (flashRoutine != null) StopCoroutine(flashRoutine);
         ResetToNormalMaterial();
 
-        // Reset Weak Zone states
         activeWeakZoneCollider = null;
         if (gogglesIndicator != null) gogglesIndicator.SetActive(false);
 
-        // Hide all visual GameObjects when disabled
         for (int i = 0; i < weakZoneVisuals.Length; i++)
         {
-            if (weakZoneVisuals[i] != null)
-            {
-                weakZoneVisuals[i].SetActive(false);
-            }
+            if (weakZoneVisuals[i] != null) weakZoneVisuals[i].SetActive(false);
         }
     }
 
@@ -151,7 +131,6 @@ public class EnemyAI : MonoBehaviour
     void FindPlayer()
     {
         int playerLayer = LayerMask.NameToLayer("PlayerRoot");
-
         GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
         foreach (GameObject obj in allObjects)
         {
@@ -165,7 +144,7 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        if (player == null || currentHealth <= 0 || !agent.isOnNavMesh) return;
+        if (isDead || player == null || currentHealth <= 0 || !agent.isOnNavMesh) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
@@ -174,7 +153,6 @@ public class EnemyAI : MonoBehaviour
             agent.isStopped = true;
             animator.SetFloat("Speed", 0f);
 
-            // Turn towards the player
             Vector3 lookDir = (player.position - transform.position).normalized;
             lookDir.y = 0;
             if (lookDir != Vector3.zero)
@@ -198,61 +176,59 @@ public class EnemyAI : MonoBehaviour
     void AttackPlayer()
     {
         lastAttackTime = Time.time;
-
-        if (animator != null)
-        {
-            animator.SetTrigger("Attack");
-        }
-
+        if (animator != null) animator.SetTrigger("Attack");
         StartCoroutine(DealAttackDamageDelayed(attackImpactDelay));
     }
 
     IEnumerator DealAttackDamageDelayed(float delay)
     {
         yield return new WaitForSeconds(delay);
-
-        if (currentHealth > 0 && player != null)
+        if (!isDead && currentHealth > 0 && player != null)
         {
             float dist = Vector3.Distance(transform.position, player.position);
             if (dist <= attackRange + 0.6f)
             {
-                if (GameManager.Instance != null)
-                {
-                    GameManager.Instance.TakePlayerDamage(attackDamage);
-                }
+                if (GameManager.Instance != null) GameManager.Instance.TakePlayerDamage(attackDamage);
+            }
+        }
+    }
+
+    public void SpawnHitEffect(Vector3 spawnPosition, Quaternion spawnRotation, Transform parentTransform)
+    {
+        if (bloodEffectPrefabs != null && bloodEffectPrefabs.Length > 0)
+        {
+            int randIdx = Random.Range(0, bloodEffectPrefabs.Length);
+            if (bloodEffectPrefabs[randIdx] != null)
+            {
+                GameObject fx = Instantiate(bloodEffectPrefabs[randIdx], spawnPosition, spawnRotation, parentTransform);
+                Destroy(fx, 2.5f); // Auto-destroy blood particle FX instance after 2.5s
             }
         }
     }
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
+
         currentHealth -= damage;
 
-        // Visual damage flash
         if (flashRoutine != null) StopCoroutine(flashRoutine);
         flashRoutine = StartCoroutine(DamageFlashRoutine());
 
         if (currentHealth <= 0)
         {
-            Die();
+            StartCoroutine(DieSequence());
         }
     }
 
     IEnumerator DamageFlashRoutine()
     {
-        if (animator != null)
-        {
-            animator.SetTrigger("Hit");
-        }
+        if (animator != null && !isDead) animator.SetTrigger("Hit");
 
         if (targetRenderer != null && hitFlashMaterial != null)
         {
-            // Replace all submesh material slots with the flash material
             Material[] flashMats = new Material[targetRenderer.sharedMaterials.Length];
-            for (int i = 0; i < flashMats.Length; i++)
-            {
-                flashMats[i] = hitFlashMaterial;
-            }
+            for (int i = 0; i < flashMats.Length; i++) flashMats[i] = hitFlashMaterial;
             targetRenderer.materials = flashMats;
         }
 
@@ -267,43 +243,52 @@ public class EnemyAI : MonoBehaviour
         if (targetRenderer != null && normalMaterial != null)
         {
             Material[] normalMats = new Material[targetRenderer.sharedMaterials.Length];
-            for (int i = 0; i < normalMats.Length; i++)
-            {
-                normalMats[i] = normalMaterial;
-            }
+            for (int i = 0; i < normalMats.Length; i++) normalMats[i] = normalMaterial;
             targetRenderer.materials = normalMats;
         }
     }
 
     public void RegisterBulletMark(BulletMark mark)
     {
-        if (!attachedBulletMarks.Contains(mark))
-        {
-            attachedBulletMarks.Add(mark);
-        }
+        if (!attachedBulletMarks.Contains(mark)) attachedBulletMarks.Add(mark);
     }
 
     public void DeactivateAllBulletMarks()
     {
         for (int i = 0; i < attachedBulletMarks.Count; i++)
         {
-            if (attachedBulletMarks[i] != null)
-            {
-                attachedBulletMarks[i].DeactivateMark();
-            }
+            if (attachedBulletMarks[i] != null) attachedBulletMarks[i].DeactivateMark();
         }
         attachedBulletMarks.Clear();
     }
 
-    void Die()
+    IEnumerator DieSequence()
     {
+        isDead = true;
+
+        // 1. Disable navigation & physical collisions so other enemies path around corpse
+        if (agent != null) agent.enabled = false;
+        if (enemyCollider != null) enemyCollider.enabled = false;
+
+        // 2. Play death animation
+        if (animator != null)
+        {
+            animator.SetTrigger("Dead");
+        }
+
+        // 3. Clear attached bullet marks
         DeactivateAllBulletMarks();
 
+        // 4. Update Score
         if (GameManager.Instance != null)
         {
             GameManager.Instance.AddScore(10);
         }
 
+        // 5. Keep corpse in scene temporarily
+        yield return new WaitForSeconds(corpseDespawnDelay);
+
+        // 6. Return object to object pool
         gameObject.SetActive(false);
     }
 
