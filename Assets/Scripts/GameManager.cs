@@ -245,11 +245,33 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // --- NEW: DESPAWN BOSSES ---
+        // Find and destroy any bosses currently in the scene
+        BossAI[] activeBosses = FindObjectsByType<BossAI>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (BossAI boss in activeBosses)
+        {
+            Destroy(boss.gameObject);
+        }
+
+        // --- NEW: DESPAWN LEFTOVER PROJECTILES ---
+        // Prevents the player from getting hit by a lingering rock immediately upon respawn
+        BossProjectile[] projectiles = FindObjectsByType<BossProjectile>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (BossProjectile proj in projectiles)
+        {
+            Destroy(proj.gameObject);
+        }
+
         // 3. Reset Player Position
         if (playerObject != null && playerSpawn != null)
         {
+            // Reset player momentum if they have a character controller or rigidbody
+            CharacterController cc = playerObject.GetComponent<CharacterController>();
+            if (cc != null) cc.enabled = false;
+
             playerObject.transform.position = playerSpawn.position;
             playerObject.transform.rotation = playerSpawn.rotation;
+
+            if (cc != null) cc.enabled = true;
         }
         else
         {

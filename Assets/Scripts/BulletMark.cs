@@ -21,6 +21,8 @@ public class BulletMark : MonoBehaviour
                 attachedEnemy = enemy;
                 attachedEnemy.RegisterBulletMark(this);
 
+                enemy.SpawnHitEffect(transform.position, transform.rotation, other.transform);
+
                 int finalDamage = damageAmount;
                 if (enemy.CheckIfWeakZone(other))
                 {

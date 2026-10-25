@@ -1125,11 +1125,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1969d97ac24ece42a5adcb9fc341b6f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 484730899767356731}
+      addedObject: {fileID: 7552897548555264237}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1969d97ac24ece42a5adcb9fc341b6f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7552897548555264237}
+      addedObject: {fileID: 484730899767356731}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1969d97ac24ece42a5adcb9fc341b6f,
         type: 3}
       insertIndex: -1
@@ -1198,6 +1198,36 @@ CapsuleCollider:
   m_Height: 2.2917657
   m_Direction: 1
   m_Center: {x: 0, y: 1.1282387, z: 0}
+--- !u!114 &7552897548555264237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749159577433526367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04bf1ac9e643cb4d9d4793a6d6e4188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
+  maxHealth: 100
+  attackRange: 2
+  attackCooldown: 1.6
+  attackDamage: 15
+  attackImpactDelay: 1.5
+  bloodEffectPrefabs:
+  - {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
+  - {fileID: 1000010675638318, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c, type: 3}
+  corpseDespawnDelay: 3.5
+  targetRenderer: {fileID: 4490349134992224896}
+  normalMaterial: {fileID: 2100000, guid: 3f09459d04026ee4dbdc751c9650a889, type: 2}
+  hitFlashMaterial: {fileID: 2100000, guid: f98b3a72b001b624391429f2d3ef4cb1, type: 2}
+  flashDuration: 0.5
+  gogglesIndicator: {fileID: 4623688549958645452}
+  possibleWeakZones:
+  - {fileID: 4879618022696317418}
+  weakZoneVisuals:
+  - {fileID: 4396865046534464542}
 --- !u!195 &484730899767356731
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1220,32 +1250,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7552897548555264237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7749159577433526367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c04bf1ac9e643cb4d9d4793a6d6e4188, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  maxHealth: 100
-  attackRange: 2
-  attackCooldown: 1.6
-  attackDamage: 15
-  attackImpactDelay: 1.5
-  targetRenderer: {fileID: 4490349134992224896}
-  normalMaterial: {fileID: 2100000, guid: 3f09459d04026ee4dbdc751c9650a889, type: 2}
-  hitFlashMaterial: {fileID: 2100000, guid: f98b3a72b001b624391429f2d3ef4cb1, type: 2}
-  flashDuration: 0.5
-  gogglesIndicator: {fileID: 4623688549958645452}
-  possibleWeakZones:
-  - {fileID: 4879618022696317418}
-  weakZoneVisuals:
-  - {fileID: 4396865046534464542}
 --- !u!54 &-4445385696994926366
 Rigidbody:
   m_ObjectHideFlags: 0
