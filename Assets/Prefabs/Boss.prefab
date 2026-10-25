@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossAI
   currentState: 0
-  maxHealth: 1000
+  maxHealth: 5000
   turnSpeed: 5
   stopChaseDistance: 7
   meleeRange: 4
@@ -315,6 +315,7 @@ MonoBehaviour:
   gogglesIndicator: {fileID: 0}
   possibleWeakZones: []
   weakZoneVisuals: []
+  jumpAnimDuration: 1.2
 --- !u!4 &6910868010112564282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9f4c8d34a49c35b45b231543f68fcf2a,
