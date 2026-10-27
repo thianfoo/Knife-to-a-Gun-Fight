@@ -40,30 +40,26 @@ public class BossAI : MonoBehaviour
     [Header("Throw Attack Projectile")]
     public GameObject projectilePrefab; 
     public Transform handSpawnPoint; 
-    public float throwForce = 25f; // Added adjustable force
-    [Tooltip("Time in seconds to wait before the rock actually spawns/fires")]
+    public float throwForce = 25f; 
     public float throwReleaseDelay = 0.85f; 
-    [Tooltip("Height offset to aim higher than the player's root (e.g., 1.5 = chest/head height)")]
     public float throwAimHeightOffset = 1.6f;
 
     [Header("Hit Visuals & FX")]
     public GameObject[] bloodEffectPrefabs; 
-    public float corpseDespawnDelay = 5.0f; // Time the boss body stays on the ground
+    public float corpseDespawnDelay = 5.0f; 
     public SkinnedMeshRenderer targetRenderer;
     public Material normalMaterial; 
     public Material hitFlashMaterial; 
     public float flashDuration = 0.08f; 
     private Coroutine flashRoutine; 
 
-    [Header("Power-Up Visuals & Weak Zones")]
+    [Header("Power-Up Visuals & SO States")]
+    public BoolVariable gogglesState;
+    public BoolVariable weakZoneState;
     public GameObject gogglesIndicator; 
     public Collider[] possibleWeakZones; 
     public GameObject[] weakZoneVisuals; 
     private Collider activeWeakZoneCollider; 
-
-    // Trackers for GameManager states
-    private bool wasGogglesActive;
-    private bool wasWeakZoneActive;
 
     private Animator animator; 
     private List<BulletMark> attachedBulletMarks = new List<BulletMark>();
@@ -100,16 +96,35 @@ public class BossAI : MonoBehaviour
         ResetToNormalMaterial(); 
         FindPlayer(); 
 
+        // Subscribe to ScriptableObject events
+        if (gogglesState != null) gogglesState.OnValueChanged += OnGogglesStateChanged;
+        if (weakZoneState != null) weakZoneState.OnValueChanged += OnWeakZoneStateChanged;
+
         activeWeakZoneCollider = null; 
-        
-        // Sync initial power-up states
-        if (GameManager.Instance != null)
-        {
-            wasGogglesActive = GameManager.Instance.isGogglesActive;
-            wasWeakZoneActive = GameManager.Instance.isWeakZoneActive;
-        }
         RefreshPowerUpVisuals(); 
     }
+
+    void OnDisable()
+    {
+        // Unsubscribe from ScriptableObject events
+        if (gogglesState != null) gogglesState.OnValueChanged -= OnGogglesStateChanged;
+        if (weakZoneState != null) weakZoneState.OnValueChanged -= OnWeakZoneStateChanged;
+
+        DeactivateAllBulletMarks(); 
+        if (flashRoutine != null) StopCoroutine(flashRoutine); 
+        ResetToNormalMaterial(); 
+
+        activeWeakZoneCollider = null; 
+        if (gogglesIndicator != null) gogglesIndicator.SetActive(false); 
+
+        for (int i = 0; i < weakZoneVisuals.Length; i++) 
+        {
+            if (weakZoneVisuals[i] != null) weakZoneVisuals[i].SetActive(false); 
+        }
+    }
+
+    private void OnGogglesStateChanged(bool isActive) => RefreshPowerUpVisuals();
+    private void OnWeakZoneStateChanged(bool isActive) => RefreshPowerUpVisuals();
 
     public void PlayRoarSFX()
     {
@@ -129,21 +144,6 @@ public class BossAI : MonoBehaviour
         if (animator != null) animator.SetTrigger("Jump");
         yield return new WaitForSeconds(jumpAnimDuration);
         if (animator != null) animator.SetTrigger("Scream");
-    }
-
-    void OnDisable()
-    {
-        DeactivateAllBulletMarks(); 
-        if (flashRoutine != null) StopCoroutine(flashRoutine); 
-        ResetToNormalMaterial(); 
-
-        activeWeakZoneCollider = null; 
-        if (gogglesIndicator != null) gogglesIndicator.SetActive(false); 
-
-        for (int i = 0; i < weakZoneVisuals.Length; i++) 
-        {
-            if (weakZoneVisuals[i] != null) weakZoneVisuals[i].SetActive(false); 
-        }
     }
 
     public void ForceFacePlayer()
@@ -174,18 +174,6 @@ public class BossAI : MonoBehaviour
     void Update()
     {
         if (player == null || currentHealth <= 0 || currentState == BossState.Dead) return;
-
-        // Auto-detect if player picked up a power-up without relying on GameManager's enemy list
-        if (GameManager.Instance != null)
-        {
-            if (wasGogglesActive != GameManager.Instance.isGogglesActive || 
-                wasWeakZoneActive != GameManager.Instance.isWeakZoneActive)
-            {
-                wasGogglesActive = GameManager.Instance.isGogglesActive;
-                wasWeakZoneActive = GameManager.Instance.isWeakZoneActive;
-                RefreshPowerUpVisuals();
-            }
-        }
 
         switch (currentState)
         {
@@ -266,7 +254,6 @@ public class BossAI : MonoBehaviour
         lastThrowTime = Time.time;
         if (animator != null) { animator.SetFloat("Speed", 0f); animator.SetTrigger("Throw"); }
 
-        // Wait for the exact moment the hand releases the rock in the animation
         yield return new WaitForSeconds(throwReleaseDelay);
 
         if (projectilePrefab != null && player != null)
@@ -274,7 +261,6 @@ public class BossAI : MonoBehaviour
             Vector3 spawnPos = handSpawnPoint != null ? handSpawnPoint.position : transform.position + Vector3.up * 2f;
             GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
 
-            // Point projectile at the player with the new higher offset
             Vector3 targetCenter = player.position + (Vector3.up * throwAimHeightOffset);
             Vector3 throwDir = (targetCenter - spawnPos).normalized;
             proj.transform.forward = throwDir;
@@ -286,7 +272,6 @@ public class BossAI : MonoBehaviour
             }
         }
 
-        // Wait a brief moment for follow-through before resuming chase
         yield return new WaitForSeconds(0.8f);
         currentState = BossState.Chase;
     }
@@ -318,7 +303,6 @@ public class BossAI : MonoBehaviour
         currentState = BossState.Chase;
     }
 
-    // --- BLOOD FX INSTANTIATION ---
     public void SpawnHitEffect(Vector3 spawnPosition, Quaternion spawnRotation, Transform parentTransform)
     {
         if (bloodEffectPrefabs != null && bloodEffectPrefabs.Length > 0)
@@ -367,26 +351,18 @@ public class BossAI : MonoBehaviour
     {
         currentState = BossState.Dead;
 
-        // 1. Play death animation
-        if (animator != null)
-        {
-            animator.SetTrigger("Dead");
-        }
+        if (animator != null) animator.SetTrigger("Dead");
 
-        // 2. Disable main collider so the player/projectiles don't hit the corpse
         Collider bossCollider = GetComponent<Collider>();
         if (bossCollider != null) bossCollider.enabled = false;
 
-        // 3. Clear attached bullet marks
         DeactivateAllBulletMarks(); 
 
-        // 4. Update Score
         if (GameManager.Instance != null) 
         {
             GameManager.Instance.AddScore(100); 
         }
 
-        // 5. Keep corpse in scene temporarily
         yield return new WaitForSeconds(corpseDespawnDelay);
 
         gameObject.SetActive(false); 
@@ -404,11 +380,12 @@ public class BossAI : MonoBehaviour
 
     public void RefreshPowerUpVisuals()
     {
-        if (GameManager.Instance == null) return; 
+        bool isGogglesOn = gogglesState != null && gogglesState.Value;
+        bool isWeakZoneOn = weakZoneState != null && weakZoneState.Value;
 
-        if (gogglesIndicator != null) gogglesIndicator.SetActive(GameManager.Instance.isGogglesActive); 
+        if (gogglesIndicator != null) gogglesIndicator.SetActive(isGogglesOn); 
 
-        if (GameManager.Instance.isWeakZoneActive) 
+        if (isWeakZoneOn) 
         {
             if (activeWeakZoneCollider == null && possibleWeakZones != null && possibleWeakZones.Length > 0) 
             {
@@ -436,7 +413,8 @@ public class BossAI : MonoBehaviour
 
     public bool CheckIfWeakZone(Collider hitCollider)
     {
-        if (GameManager.Instance == null || !GameManager.Instance.isWeakZoneActive || activeWeakZoneCollider == null) return false; 
+        bool isWeakZoneOn = weakZoneState != null && weakZoneState.Value;
+        if (!isWeakZoneOn || activeWeakZoneCollider == null) return false; 
         return hitCollider == activeWeakZoneCollider || hitCollider.transform.IsChildOf(activeWeakZoneCollider.transform) || activeWeakZoneCollider.transform.IsChildOf(hitCollider.transform); 
     }
 
@@ -452,15 +430,6 @@ public class BossAI : MonoBehaviour
             if (attachedBulletMarks[i] != null) attachedBulletMarks[i].DeactivateMark(); 
         }
         attachedBulletMarks.Clear(); 
-    }
-
-    void Die()
-    {
-        currentState = BossState.Dead;
-        DeactivateAllBulletMarks(); 
-
-        if (GameManager.Instance != null) GameManager.Instance.AddScore(100); 
-        gameObject.SetActive(false); 
     }
 
     void OnDestroy()

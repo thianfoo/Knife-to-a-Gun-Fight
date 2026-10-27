@@ -1223,6 +1223,8 @@ MonoBehaviour:
   normalMaterial: {fileID: 2100000, guid: 3f09459d04026ee4dbdc751c9650a889, type: 2}
   hitFlashMaterial: {fileID: 2100000, guid: f98b3a72b001b624391429f2d3ef4cb1, type: 2}
   flashDuration: 0.5
+  gogglesState: {fileID: 11400000, guid: a19936f244306a84c9eed6d83328adf9, type: 2}
+  weakZoneState: {fileID: 11400000, guid: 334420c0881151846b035401bb9fb940, type: 2}
   gogglesIndicator: {fileID: 4623688549958645452}
   possibleWeakZones:
   - {fileID: 4879618022696317418}

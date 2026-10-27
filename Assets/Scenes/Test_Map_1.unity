@@ -9700,8 +9700,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tracker
   enemyTag: Enemy
+  bossTag: Boss
   rotationSpeed: 12
   requireGogglesPowerUp: 1
+  gogglesState: {fileID: 11400000, guid: a19936f244306a84c9eed6d83328adf9, type: 2}
   playerLayerName: PlayerRoot
   orbitOffset: {x: 0, y: 0, z: 4}
   followSpeed: 10
@@ -223937,8 +223939,8 @@ MonoBehaviour:
   enemiesToSpawn: 10
   playerObject: {fileID: 0}
   playerSpawn: {fileID: 1103222784}
-  isGogglesActive: 0
-  isWeakZoneActive: 0
+  gogglesState: {fileID: 11400000, guid: a19936f244306a84c9eed6d83328adf9, type: 2}
+  weakZoneState: {fileID: 11400000, guid: 334420c0881151846b035401bb9fb940, type: 2}
   bossWave: 2
   cutsceneCamera: {fileID: 1784562111}
   bossCutsceneLookAtPoint: {fileID: 0}

@@ -4,11 +4,13 @@ public class Tracker : MonoBehaviour
 {
     [Header("Targeting Settings")]
     public string enemyTag = "Enemy";
+    public string bossTag = "Boss";
     public float rotationSpeed = 12f;
 
-    [Header("Goggles Integration")]
+    [Header("Goggles Integration (SO Architecture)")]
     [Tooltip("Check this if you only want the pointer visible when Goggles power-up is active")]
     public bool requireGogglesPowerUp = false;
+    public BoolVariable gogglesState;
 
     [Header("Player Tracking & Orbit")]
     public string playerLayerName = "PlayerRoot";
@@ -28,6 +30,35 @@ public class Tracker : MonoBehaviour
         playerLayerIndex = LayerMask.NameToLayer(playerLayerName);
     }
 
+    void OnEnable()
+    {
+        // Subscribe to Goggles State event
+        if (gogglesState != null)
+        {
+            gogglesState.OnValueChanged += OnGogglesStateChanged;
+        }
+    }
+
+    void OnDisable()
+    {
+        // Unsubscribe from Goggles State event
+        if (gogglesState != null)
+        {
+            gogglesState.OnValueChanged -= OnGogglesStateChanged;
+        }
+
+        if (arrow != null) arrow.SetActive(false);
+    }
+
+    private void OnGogglesStateChanged(bool isActive)
+    {
+        // Instantly hide arrow if power-up turns off
+        if (requireGogglesPowerUp && !isActive && arrow != null)
+        {
+            arrow.SetActive(false);
+        }
+    }
+
     void Update()
     {
         // 1. Locate Player if not already assigned
@@ -42,20 +73,21 @@ public class Tracker : MonoBehaviour
             }
         }
 
-        // 2. Check Goggles state if required
-        if (requireGogglesPowerUp && GameManager.Instance != null)
+        // 2. Check Goggles state via Scriptable Object
+        if (requireGogglesPowerUp)
         {
-            if (!GameManager.Instance.isGogglesActive)
+            bool isGogglesActive = gogglesState != null && gogglesState.Value;
+            if (!isGogglesActive)
             {
                 if (arrow != null) arrow.SetActive(false); 
                 return;
             }
         }
 
-        // 3. Find closest active enemy
-        FindNearestEnemy(); 
+        // 3. Find closest active enemy or boss
+        FindNearestTarget(); 
 
-        // Hide pointer if no enemies exist
+        // Hide pointer if no enemies/boss exist
         if (targetEnemy == null) 
         {
             if (arrow != null) arrow.SetActive(false); 
@@ -75,16 +107,14 @@ public class Tracker : MonoBehaviour
 
     void FindPlayerByLayer()
     {
-        // Search active scene objects for the PlayerRoot layer
         GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
         foreach (GameObject obj in allObjects)
         {
             if (obj.layer == playerLayerIndex)
             {
-                // Grab the topmost root parent transform of the player
                 playerTransform = obj.transform.root;
 
-                // Option A: Parent directly so it moves seamlessly with player camera movement
+                // Parent directly to player root so it moves with the camera
                 transform.SetParent(playerTransform);
                 transform.localPosition = orbitOffset;
                 transform.localRotation = Quaternion.identity;
@@ -97,7 +127,7 @@ public class Tracker : MonoBehaviour
     {
         if (playerTransform == null) return;
 
-        // If not parented, smoothly lerp to the offset position relative to the player
+        // Smoothly lerp position if unparented
         if (transform.parent != playerTransform)
         {
             Vector3 targetPosition = playerTransform.TransformPoint(orbitOffset);
@@ -105,16 +135,15 @@ public class Tracker : MonoBehaviour
         }
     }
 
-    void FindNearestEnemy()
+    void FindNearestTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-
         float closestDist = Mathf.Infinity;
         Transform closest = null;
 
+        // Check normal enemies
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         foreach (GameObject enemy in enemies)
         {
-            // Ignore missing, destroyed, or inactive pooled enemies
             if (enemy == null || !enemy.activeInHierarchy) continue;
 
             float dist = Vector3.Distance(transform.position, enemy.transform.position);
@@ -125,6 +154,20 @@ public class Tracker : MonoBehaviour
             }
         }
 
+        // Check boss objects
+        GameObject[] bosses = GameObject.FindGameObjectsWithTag(bossTag);
+        foreach (GameObject boss in bosses)
+        {
+            if (boss == null || !boss.activeInHierarchy) continue;
+
+            float dist = Vector3.Distance(transform.position, boss.transform.position);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                closest = boss.transform;
+            }
+        }
+
         targetEnemy = closest;
     }
 
@@ -132,15 +175,11 @@ public class Tracker : MonoBehaviour
     {
         if (targetEnemy == null) return;
 
-        // Calculate direction vector from tracker to enemy
         Vector3 directionToEnemy = (targetEnemy.position - transform.position).normalized;
 
         if (directionToEnemy != Vector3.zero)
         {
-            // Calculate 3D rotation looking towards target
             Quaternion targetRotation = Quaternion.LookRotation(directionToEnemy);
-
-            // Smoothly rotate toward enemy
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
     }

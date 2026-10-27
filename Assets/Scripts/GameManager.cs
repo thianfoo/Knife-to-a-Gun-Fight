@@ -20,15 +20,15 @@ public class GameManager : MonoBehaviour
     private bool isPlayerDead = false;
 
     [Header("Delayed Health Bar Settings")]
-    public Slider healthSlider;           // Front Bar (instant)
-    public Slider delayedHealthSlider;    // Back Bar (ghost damage)
+    public Slider healthSlider;           
+    public Slider delayedHealthSlider;    
     public float damageDrainDelay = 0.5f;
     public float damageDrainSpeed = 35f;
     private float lastDamageTime;
 
     [Header("UI Overlays")]
     public CanvasGroup bloodyScreen;
-    public GameObject deathScreenPanel;   // Drag DeathScreenPanel here
+    public GameObject deathScreenPanel;   
     public TextMeshProUGUI scoreEndText;
 
     [Header("Score & Spawning")]
@@ -40,9 +40,7 @@ public class GameManager : MonoBehaviour
     private List<GameObject> enemyPool = new List<GameObject>();
 
     [Header("Spawn Obstruction Checks")]
-    [Tooltip("Radius around the spawn point to verify no existing enemy is standing")]
     public float spawnClearanceRadius = 1.2f;
-    [Tooltip("Set this to the layer enemies are on")]
     public LayerMask spawnBlockerMask;
 
     [Header("Wave Stats")]
@@ -55,29 +53,25 @@ public class GameManager : MonoBehaviour
     public GameObject playerObject; 
     public Transform playerSpawn;
 
-    [Header("Power-Up States")]
-    public bool isGogglesActive = false;
-    public bool isWeakZoneActive = false;
+    [Header("Power-Up States (SO Architecture)")]
+    public BoolVariable gogglesState;
+    public BoolVariable weakZoneState;
 
-    // References to active power-up coroutines so we can cancel them on restart
     private Coroutine gogglesCoroutine;
     private Coroutine weakZoneCoroutine;
 
     [Header("Boss Cutscene Settings")]
-    public int bossWave = 5;                        // The wave number that triggers the boss
-    public Camera cutsceneCamera;                  // Dedicated cutscene camera in the scene
-    public Transform bossCutsceneLookAtPoint;       // Where the camera looks at the boss
-    public Transform bossCutsceneStartPoint;       // Where the camera starts panning from
-    public float cutsceneDuration = 4f;            // How long the pan lasts
-    public GameObject bossPrefab;                  // Special boss enemy prefab
-    public Transform bossSpawn;                        // Where the boss spawns
+    public int bossWave = 5;                        
+    public Camera cutsceneCamera;                  
+    public Transform bossCutsceneLookAtPoint;       
+    public Transform bossCutsceneStartPoint;       
+    public float cutsceneDuration = 4f;            
+    public GameObject bossPrefab;                  
+    public Transform bossSpawn;                        
 
     [Header("Boss Cutscene Camera Tuning")]
-    [Tooltip("Vertical offset from boss base (lower = pans down less)")]
     public float cutsceneLookHeight = 0.8f; 
-    [Tooltip("Intensity of the camera shake when the boss lands/screams")]
     public float shakeIntensity = 0.3f;
-    [Tooltip("When during the cutscene the shake starts (in seconds)")]
     public float shakeStartTime = 1.0f;
 
     private bool isCutscenePlaying = false;
@@ -101,7 +95,6 @@ public class GameManager : MonoBehaviour
         currentWave = 1;
         enemiesToSpawn = 5;
 
-        // Reset Sliders
         if (healthSlider != null)
         {
             healthSlider.maxValue = maxHealth;
@@ -114,17 +107,14 @@ public class GameManager : MonoBehaviour
             delayedHealthSlider.value = currentHealth;
         }
 
-        // Reset overlays
         if (bloodyScreen != null) bloodyScreen.alpha = 0f;
         if (deathScreenPanel != null) deathScreenPanel.SetActive(false);
 
-        // Lock cursor back into FPS mode
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
         UpdateScoreDisplay();
 
-        // Start initial wave
         if (spawnWaveCoroutine != null) StopCoroutine(spawnWaveCoroutine);
         spawnWaveCoroutine = StartCoroutine(SpawnWave());
     }
@@ -140,7 +130,6 @@ public class GameManager : MonoBehaviour
             {
                 if (obj.layer == targetLayer)
                 {
-                    // Get the highest level parent transform in the hierarchy
                     playerObject = obj.transform.root.gameObject;
                     break;
                 }
@@ -149,7 +138,6 @@ public class GameManager : MonoBehaviour
 
         if (isPlayerDead) return;
 
-        // 1. Health Regeneration
         if (currentHealth < maxHealth && Time.time > lastHitTime + regenDelay)
         {
             currentHealth += regenRate * Time.deltaTime;
@@ -159,7 +147,6 @@ public class GameManager : MonoBehaviour
             if (delayedHealthSlider != null) delayedHealthSlider.value = currentHealth;
         }
 
-        // 2. Delayed Ghost Bar Drain
         if (delayedHealthSlider != null && delayedHealthSlider.value > currentHealth)
         {
             if (Time.time >= lastDamageTime + damageDrainDelay)
@@ -172,7 +159,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // 3. Smooth Blood Overlay Fade
         if (bloodyScreen != null)
         {
             float targetAlpha = 1f - (currentHealth / maxHealth);
@@ -208,30 +194,25 @@ public class GameManager : MonoBehaviour
     {
         isPlayerDead = true;
 
-        // Stop incoming wave spawns
         if (spawnWaveCoroutine != null)
         {
             StopCoroutine(spawnWaveCoroutine);
             spawnWaveCoroutine = null;
         }
 
-        // Show death UI
         if (deathScreenPanel != null)
         {
             deathScreenPanel.SetActive(true);
         }
 
-        // Unlock mouse cursor so the player can click Restart
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
     public void RestartGame()
     {
-        // 1. Reset and cancel all active power-ups
         ResetPowerUps();
 
-        // 2. Despawn all active enemies in pool
         for (int i = 0; i < enemyPool.Count; i++)
         {
             if (enemyPool[i] != null && enemyPool[i].activeInHierarchy)
@@ -245,26 +226,20 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // --- NEW: DESPAWN BOSSES ---
-        // Find and destroy any bosses currently in the scene
         BossAI[] activeBosses = FindObjectsByType<BossAI>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         foreach (BossAI boss in activeBosses)
         {
             Destroy(boss.gameObject);
         }
 
-        // --- NEW: DESPAWN LEFTOVER PROJECTILES ---
-        // Prevents the player from getting hit by a lingering rock immediately upon respawn
         BossProjectile[] projectiles = FindObjectsByType<BossProjectile>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         foreach (BossProjectile proj in projectiles)
         {
             Destroy(proj.gameObject);
         }
 
-        // 3. Reset Player Position
         if (playerObject != null && playerSpawn != null)
         {
-            // Reset player momentum if they have a character controller or rigidbody
             CharacterController cc = playerObject.GetComponent<CharacterController>();
             if (cc != null) cc.enabled = false;
 
@@ -278,7 +253,6 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("Player Object or Player Spawn is not assigned in the GameManager!");
         }
 
-        // 4. Reset stats and start clean
         InitializeGame();
     }
 
@@ -310,14 +284,12 @@ public class GameManager : MonoBehaviour
         int spawnedCount = 0;
         int maxAttemptsPerEnemy = 10;
 
-        // --- BOSS WAVE CHECK ---
         if (currentWave == bossWave && bossPrefab != null)
         {
             Transform chosenBossSpawn = bossSpawn != null ? bossSpawn : spawnPoints[0];
             GameObject bossObj = Instantiate(bossPrefab, chosenBossSpawn.position, chosenBossSpawn.rotation);
             activeEnemies = 1;
 
-            // 1. Get BossAI component and disable it temporarily during cutscene
             BossAI bossAI = bossObj.GetComponent<BossAI>();
             if (bossAI != null)
             {
@@ -325,24 +297,19 @@ public class GameManager : MonoBehaviour
                 bossAI.PlayIntroAnimation(); 
             }
 
-            // 2. Focus cutscene on boss
             bossCutsceneLookAtPoint = bossObj.transform;
 
-            // 3. Play camera pan cutscene and wait until it finishes
             yield return StartCoroutine(PlayBossCutscene(bossObj));
 
-            // 4. Enable BossAI now that the cutscene is finished and snap rotation
             if (bossAI != null)
             {
                 bossAI.enabled = true;
-                bossAI.ForceFacePlayer(); // Instant turn toward player!
+                bossAI.ForceFacePlayer(); 
             }
 
-            // DO NOT spawn normal wave enemies during boss wave!
             yield break;
         }
 
-        // --- NORMAL WAVE SPAWNING ---
         while (spawnedCount < enemiesToSpawn)
         {
             if (isPlayerDead) yield break;
@@ -402,7 +369,6 @@ public class GameManager : MonoBehaviour
     {
         isCutscenePlaying = true;
 
-        // Locate active local player camera
         Camera playerCam = null;
         if (playerObject != null)
         {
@@ -410,7 +376,6 @@ public class GameManager : MonoBehaviour
         }
         if (playerCam == null) playerCam = Camera.main;
 
-        // Switch to Cutscene Camera
         if (playerCam != null) playerCam.enabled = false;
         if (cutsceneCamera != null)
         {
@@ -422,7 +387,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // Cache baseline positions for rotation lerping and shake offsets
         float elapsed = 0f;
         Vector3 baseCameraPos = cutsceneCamera != null ? cutsceneCamera.transform.position : Vector3.zero;
         Quaternion startRot = cutsceneCamera != null ? cutsceneCamera.transform.rotation : Quaternion.identity;
@@ -435,7 +399,6 @@ public class GameManager : MonoBehaviour
 
             if (cutsceneCamera != null && boss != null)
             {
-                // 1. REDUCED TILT: Use cutsceneLookHeight instead of hardcoded 2f
                 Vector3 targetFocusPos = boss.transform.position + Vector3.up * cutsceneLookHeight;
                 Vector3 lookDir = (targetFocusPos - baseCameraPos).normalized;
 
@@ -445,10 +408,8 @@ public class GameManager : MonoBehaviour
                     cutsceneCamera.transform.rotation = Quaternion.Slerp(startRot, targetRot, smoothT);
                 }
 
-                // 2. CAMERA SHAKE: Applies procedural offset after shakeStartTime
                 if (elapsed >= shakeStartTime)
                 {
-                    // Gradually fade shake out towards the end of the cutscene
                     float shakeDamp = 1f - ((elapsed - shakeStartTime) / (cutsceneDuration - shakeStartTime));
                     float currentIntensity = shakeIntensity * Mathf.Max(0f, shakeDamp);
 
@@ -469,7 +430,6 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        // Reset camera position cleanly before handing back control
         if (cutsceneCamera != null)
         {
             cutsceneCamera.transform.position = baseCameraPos;
@@ -480,6 +440,7 @@ public class GameManager : MonoBehaviour
 
         isCutscenePlaying = false;
     }
+
     public void AddScore(int points)
     {
         if (isPlayerDead) return;
@@ -537,13 +498,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GogglesRoutine(float duration)
     {
-        isGogglesActive = true;
-        UpdateEnemyPowerUpStates();
+        if (gogglesState != null) gogglesState.Value = true;
 
         yield return new WaitForSeconds(duration);
 
-        isGogglesActive = false;
-        UpdateEnemyPowerUpStates();
+        if (gogglesState != null) gogglesState.Value = false;
         gogglesCoroutine = null;
     }
 
@@ -555,19 +514,16 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WeakZoneRoutine(float duration)
     {
-        isWeakZoneActive = true;
-        UpdateEnemyPowerUpStates();
+        if (weakZoneState != null) weakZoneState.Value = true;
 
         yield return new WaitForSeconds(duration);
 
-        isWeakZoneActive = false;
-        UpdateEnemyPowerUpStates();
+        if (weakZoneState != null) weakZoneState.Value = false;
         weakZoneCoroutine = null;
     }
 
     void ResetPowerUps()
     {
-        // Stop active coroutines
         if (gogglesCoroutine != null)
         {
             StopCoroutine(gogglesCoroutine);
@@ -580,27 +536,7 @@ public class GameManager : MonoBehaviour
             weakZoneCoroutine = null;
         }
 
-        // Reset state booleans
-        isGogglesActive = false;
-        isWeakZoneActive = false;
-
-        // Force all active enemies to clear their visual indicators
-        UpdateEnemyPowerUpStates();
-    }
-
-    private void UpdateEnemyPowerUpStates()
-    {
-        // Loop through the existing enemyPool to apply effects to active enemies
-        for (int i = 0; i < enemyPool.Count; i++)
-        {
-            if (enemyPool[i] != null && enemyPool[i].activeInHierarchy)
-            {
-                EnemyAI enemyAI = enemyPool[i].GetComponent<EnemyAI>();
-                if (enemyAI != null)
-                {
-                    enemyAI.RefreshPowerUpVisuals();
-                }
-            }
-        }
+        if (gogglesState != null) gogglesState.Value = false;
+        if (weakZoneState != null) weakZoneState.Value = false;
     }
 }
